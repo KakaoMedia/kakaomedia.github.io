@@ -1,0 +1,107 @@
+/* Header */
+header { 
+	background-color: #171717; 
+	margin-bottom: 0 !important;
+}
+
+header a, header a:visited { 
+	color: #FFF; 
+}
+
+/* Menu */
+.nav>li>a:hover, .nav>li>a:focus {
+	background-color: #171717;
+	color: #F69136;
+}
+
+@media (min-width: 768px) {
+	.navbar-nav {
+		display: inline-block;
+		float: none;
+		margin: 0;		
+	}
+}
+
+/* Front Page */
+#front_page {
+	background: url("../img/italy.png") no-repeat center center;
+	background-size: cover;
+	color: #F2F2F2;
+	padding: 30px 15px;
+	position: relative;
+	text-align: center;
+	z-index: -2;
+
+	-o-background-size: cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;	
+}
+
+#front_page .darker {
+	background: #000;
+	height: 100%;
+	left: 0;
+	opacity: 0.7;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+#front_page .main_title {
+	font-size: 10em;
+	margin: 0;
+	padding: 0;
+}
+
+#front_page .sub_title { 
+	color: #F69136;
+	display: inline;
+	font-size: 3em;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	right: -200px;
+	top: -45px;
+}
+
+#front_page ul {
+	border: 3px solid #FFF;
+	display: inline-block;
+	padding: 5px 10px;
+}
+
+#front_page li { 
+	font-size: 1em;
+	margin: 0 15px; 
+}
+
+@media (min-width: 768px) {
+	#front_page {
+		padding-top: 180px;
+		padding-bottom: 120px;
+	}
+}
+
+@media (max-width: 767px) {
+	#front_page .sub_title {		
+		right: -150px;
+		top: -30px;
+	}
+}
+
+@media (max-width: 495px) {
+	#front_page .main_title { font-size: 7em; }
+
+	#front_page .sub_title {		
+		font-size: 2em;
+		right: -110px;
+		top: -20px;
+	}
+}
+
+@media (max-width: 991px) {
+	#front_page li { 
+		font-size: 0.8em;
+	}
+}
