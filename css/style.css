@@ -1,14 +1,51 @@
-/* Header */
+.navbar-collapse.in { overflow: hidden; }
+
+.main {
+	padding: 150px 15px;
+	position: relative;
+	text-align: center;
+}
+
+.main .sub_title { 
+	font-size: 3em;
+	margin-bottom: 60px; 
+}
+
+
+.main .darker {
+	background: #000;
+	height: 100%;
+	left: 0;
+	opacity: 0.7;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
 header { 
 	background-color: #171717; 
 	margin-bottom: 0 !important;
 }
 
-header a, header a:visited { 
-	color: #FFF; 
-}
+header a, header a:visited {  color: #FFF;  }
 
-/* Menu */
+
+
+
+
+
+/*------------------------------------*\
+    $MENU
+\*------------------------------------*/
 .nav>li>a:hover, .nav>li>a:focus {
 	background-color: #171717;
 	color: #F69136;
@@ -22,14 +59,19 @@ header a, header a:visited {
 	}
 }
 
-/* Front Page */
+
+
+
+
+/*------------------------------------*\
+    $FRONT-PAGE
+\*------------------------------------*/
+
 #front_page {
 	background: url("../img/italy.png") no-repeat center center;
 	background-size: cover;
 	color: #F2F2F2;
 	padding: 30px 15px;
-	position: relative;
-	text-align: center;
 	z-index: -2;
 
 	-o-background-size: cover;
@@ -37,16 +79,7 @@ header a, header a:visited {
 	-webkit-background-size: cover;	
 }
 
-#front_page .darker {
-	background: #000;
-	height: 100%;
-	left: 0;
-	opacity: 0.7;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: -1;
-}
+	#front_page:after { border-top-color: #333;	}
 
 #front_page .main_title {
 	font-size: 10em;
@@ -57,7 +90,6 @@ header a, header a:visited {
 #front_page .sub_title { 
 	color: #F69136;
 	display: inline;
-	font-size: 3em;
 	margin: 0;
 	padding: 0;
 	position: relative;
@@ -100,8 +132,67 @@ header a, header a:visited {
 	}
 }
 
-@media (max-width: 991px) {
-	#front_page li { 
-		font-size: 0.8em;
-	}
+@media (max-width: 991px) { #front_page li { font-size: 0.8em; }  }
+
+
+
+
+
+/*------------------------------------*\
+    $QUOTE
+\*------------------------------------*/
+#quote:after { border-top-color: #FFF;	}
+
+
+
+
+
+/*------------------------------------*\
+	$WHO-WE-ARE
+\*------------------------------------*/
+#who_we_are {
+	background-color: #232323;
+	color: #FFF;
+}
+
+
+
+
+
+/*------------------------------------*\
+	$WHAT-WE-DO
+\*------------------------------------*/
+#what_we_do {
+	background: url("../img/what_we_do.jpg") no-repeat center center;
+	background-size: cover;
+	color: #FFF;
+	padding: 60px 15px 150px;
+	z-index: -2;
+
+	-o-background-size: cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+}
+
+#what_we_do .darker { opacity: 0.4; }
+
+#what_we_do ul { display: inline-block; }
+
+#what_we_do li {	
+	font-size: 1em;	
+}
+
+#what_we_do li span {
+	border: 3px solid #FFF;
+}
+
+#what_we_do li span:first-child {
+	font-size: 2em;
+	padding: 20px;
+}
+
+#what_we_do li span:last-child {
+	display: block;
+	padding: 5px 10px;
+	margin: 15px 15px 0;
 }
