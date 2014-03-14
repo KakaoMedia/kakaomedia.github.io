@@ -6,6 +6,8 @@
 	text-align: center;
 }
 
+.main .container { position: relative; }
+
 .main .sub_title { 
 	font-size: 3em;
 	margin-bottom: 60px; 
@@ -20,7 +22,6 @@
 	position: absolute;
 	top: 0;
 	width: 100%;
-	z-index: -1;
 }
 
 
@@ -72,7 +73,6 @@ header a, header a:visited {  color: #FFF;  }
 	background-size: cover;
 	color: #F2F2F2;
 	padding: 30px 15px;
-	z-index: -2;
 
 	-o-background-size: cover;
 	-moz-background-size: cover;
@@ -167,7 +167,6 @@ header a, header a:visited {  color: #FFF;  }
 	background-size: cover;
 	color: #FFF;
 	padding: 60px 15px 150px;
-	z-index: -2;
 
 	-o-background-size: cover;
 	-moz-background-size: cover;
@@ -178,13 +177,9 @@ header a, header a:visited {  color: #FFF;  }
 
 #what_we_do ul { display: inline-block; }
 
-#what_we_do li {	
-	font-size: 1em;	
-}
+#what_we_do li { font-size: 1em; }
 
-#what_we_do li span {
-	border: 3px solid #FFF;
-}
+#what_we_do li span { border: 3px solid #FFF; }
 
 #what_we_do li span:first-child {
 	font-size: 2em;
