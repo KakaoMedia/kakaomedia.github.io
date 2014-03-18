@@ -166,7 +166,6 @@ header a, header a:visited {  color: #FFF;  }
 	background: url("../img/what_we_do.jpg") no-repeat center center;
 	background-size: cover;
 	color: #FFF;
-	padding: 60px 15px 150px;
 
 	-o-background-size: cover;
 	-moz-background-size: cover;
@@ -175,19 +174,56 @@ header a, header a:visited {  color: #FFF;  }
 
 #what_we_do .darker { opacity: 0.4; }
 
-#what_we_do ul { display: inline-block; }
+#what_we_do .row div { margin-bottom: 20px; }
 
-#what_we_do li { font-size: 1em; }
-
-#what_we_do li span { border: 3px solid #FFF; }
-
-#what_we_do li span:first-child {
+#what_we_do .row span { 
+	border: 3px solid #FFF;
 	font-size: 2em;
 	padding: 20px;
 }
 
-#what_we_do li span:last-child {
-	display: block;
+#what_we_do .row p { margin-top: 20px; }
+
+#what_we_do .row p span {
+	font-size: 1em;
 	padding: 5px 10px;
 	margin: 15px 15px 0;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) { 
+	#what_we_do .row p span { font-size: 0.7em; }
+}
+
+
+
+
+
+/*------------------------------------*\
+	$WHAT-WE-DO
+\*------------------------------------*/
+#how_we_work .row div {
+	padding: 0 10px;
+	margin: 0 45px 20px;
+}
+
+#how_we_work h3 {  color: #1A1A1A; }
+
+#how_we_work p { 
+	font-size: 0.9em;
+	font-weight: bold;
+	text-align: justify;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) { 
+	#how_we_work .row div {
+		margin-left: 40px;
+		margin-right: 40px;
+	}
+}
+
+@media screen and (max-width: 991px) { 
+	#how_we_work .row div {
+		margin-left: 0;
+		margin-right: 0;
+	}
 }
