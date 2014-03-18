@@ -206,7 +206,7 @@ header a, header a:visited {  color: #FFF;  }
 	margin: 0 45px 20px;
 }
 
-#how_we_work h3 {  color: #1A1A1A; }
+#how_we_work h3 { color: #1A1A1A; }
 
 #how_we_work p { 
 	font-size: 0.9em;
@@ -226,4 +226,80 @@ header a, header a:visited {  color: #FFF;  }
 		margin-left: 0;
 		margin-right: 0;
 	}
+}
+
+@media screen and (max-width: 767px) {
+	#how_we_work p { font-size: 1em; }	
+}
+
+
+
+
+
+/*------------------------------------*\
+	$TOOLS
+\*------------------------------------*/
+#tools { 
+	background-color: #232323;
+	color: #FFF;
+	padding: 150px 15px 0;
+}
+
+#tools .resume_tools { 
+	padding-left: 160px;
+	padding-right: 160px;
+}
+
+#tools .resume_tools .media-body { 
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+
+#tools .resume_tools .media-object {
+	background-color: #31BBA6;
+	height: 250px;
+	width: 250px;
+}
+
+#tools .resume_tools .media:nth-child(even) .media-object { margin-right: 45px; }
+
+#tools .resume_tools .media:nth-child(odd) .media-object { margin-left: 45px; }
+
+#tools .resume_tools .first_img, #tools .resume_tools .media { margin-bottom: 100px; }
+
+#tools .resume_tools h3 { 
+	color: #31BBA6;
+	font-weight: bold;
+	margin-bottom: 30px;
+	text-align: left;
+}
+
+#tools .resume_tools p { 
+	font-size: 0.8em;
+	text-align: justify;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+	#tools .resume_tools {
+		padding-left: 100px;
+		padding-right: 100px;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	#tools .resume_tools {
+		padding-left: 70px;
+		padding-right: 70px;
+	}
+
+	#tools .resume_tools  .media-object { 
+		float: none !important;
+		margin: 0 auto 35px !important;
+	}
+
+	#tools .resume_tools h3 { text-align: center; }
+}
+
+@media screen and (max-width: 767px) {
+	#tools .resume_tools p { font-size: 1em; }	
 }
