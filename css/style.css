@@ -97,15 +97,11 @@ header a, header a:visited {  color: #FFF;  }
 	top: -45px;
 }
 
-#front_page ul {
-	border: 3px solid #FFF;
-	display: inline-block;
-	padding: 5px 10px;
-}
+#front_page .info_list { padding: 0 100px; }
 
-#front_page li { 
-	font-size: 1em;
-	margin: 0 15px; 
+#front_page .row {
+	border: 3px solid #FFF;
+	padding: 5px 0;
 }
 
 @media (min-width: 768px) {
@@ -132,7 +128,9 @@ header a, header a:visited {  color: #FFF;  }
 	}
 }
 
-@media (max-width: 991px) { #front_page li { font-size: 0.8em; }  }
+@media screen and (min-width: 992px) and (max-width: 1199px) { 
+	#front_page .row div { font-size: 0.8em; }
+}
 
 
 
