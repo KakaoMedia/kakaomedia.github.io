@@ -10,9 +10,18 @@
 
 .main .sub_title { 
 	font-size: 3em;
-	margin-bottom: 60px; 
+	margin-bottom: 60px;
 }
 
+.main .sub_title:after {	
+	background: #FFA500;
+	height: 2px;
+	content:'';
+	display: block;
+	margin: 10px auto 0;
+	
+	background: -webkit-gradient(linear, 0 0, 100% 0, from(#232323), to(#232323), color-stop(50%, #FFA500));
+}
 
 .main .darker {
 	background: #000;
@@ -87,9 +96,10 @@ header a, header a:visited {  color: #FFF;  }
 	padding: 0;
 }
 
-#front_page .sub_title { 
+#front_page h2 { 
 	color: #F69136;
 	display: inline;
+	font-size: 3em;
 	margin: 0;
 	padding: 0;
 	position: relative;
@@ -112,7 +122,7 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 @media (max-width: 767px) {
-	#front_page .sub_title {		
+	#front_page h2 {		
 		right: -150px;
 		top: -30px;
 	}
@@ -121,7 +131,7 @@ header a, header a:visited {  color: #FFF;  }
 @media (max-width: 495px) {
 	#front_page .main_title { font-size: 7em; }
 
-	#front_page .sub_title {		
+	#front_page h2 {		
 		font-size: 2em;
 		right: -110px;
 		top: -20px;
@@ -139,7 +149,10 @@ header a, header a:visited {  color: #FFF;  }
 /*------------------------------------*\
     $QUOTE
 \*------------------------------------*/
-#quote:after { border-top-color: #FFF;	}
+#quote h2 {
+	font-size: 3em;
+	margin-bottom: 60px;
+}
 
 
 
@@ -152,6 +165,8 @@ header a, header a:visited {  color: #FFF;  }
 	background-color: #232323;
 	color: #FFF;
 }
+
+#who_we_are .sub_title:after { width: 25%; }
 
 
 
@@ -169,6 +184,8 @@ header a, header a:visited {  color: #FFF;  }
 	-moz-background-size: cover;
 	-webkit-background-size: cover;
 }
+
+#what_we_do .sub_title:after { width: 25%; }
 
 #what_we_do .darker { opacity: 0.4; }
 
@@ -242,6 +259,8 @@ header a, header a:visited {  color: #FFF;  }
 	color: #FFF;
 	padding: 150px 15px 0;
 }
+
+#tools .sub_title:after { width: 50%; }
 
 #tools .resume_tools { 
 	padding-left: 160px;
