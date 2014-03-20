@@ -14,13 +14,13 @@
 }
 
 .main .sub_title:after {	
-	background: #FFA500;
+	background: #F97E03;
 	height: 2px;
 	content:'';
 	display: block;
 	margin: 10px auto 0;
 	
-	background: -webkit-gradient(linear, 0 0, 100% 0, from(#232323), to(#232323), color-stop(50%, #FFA500));
+	background: -webkit-gradient(linear, 0 0, 100% 0, from(#232323), to(#232323), color-stop(50%, #F97E03));
 }
 
 .main .darker {
@@ -214,7 +214,7 @@ header a, header a:visited {  color: #FFF;  }
 
 
 /*------------------------------------*\
-	$WHAT-WE-DO
+	$HOW-WE-WORK
 \*------------------------------------*/
 #how_we_work .row div {
 	padding: 0 10px;
@@ -303,13 +303,13 @@ header a, header a:visited {  color: #FFF;  }
 	}
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (min-width: 550px) and (max-width: 991px) {
 	#tools .resume_tools {
 		padding-left: 70px;
 		padding-right: 70px;
 	}
 
-	#tools .resume_tools  .media-object { 
+	#tools .resume_tools .media-object { 
 		float: none !important;
 		margin: 0 auto 35px !important;
 	}
@@ -317,6 +317,182 @@ header a, header a:visited {  color: #FFF;  }
 	#tools .resume_tools h3 { text-align: center; }
 }
 
+@media screen and (max-width: 549px) {
+	#tools .resume_tools {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	#tools .resume_tools .media-object { 
+		float: none !important;
+		margin: 0 auto 35px !important;
+	}
+}
+
 @media screen and (max-width: 767px) {
 	#tools .resume_tools p { font-size: 1em; }	
+}
+
+
+
+
+
+/*------------------------------------*\
+	$PORTFOLIO
+\*------------------------------------*/
+#portfolio h2 {
+	font-size: 3em;
+	margin-bottom: 60px;
+}
+
+#portfolio .row { color: #FFF; }
+
+#portfolio .row>div { 
+	background-color: #A2A2A2; 
+	height: 280px;
+	margin: 10px 15px;
+}
+
+#portfolio .row .project_body {
+	position: absolute;
+	height: 99%;
+	padding: 25%;
+	width: 99%;
+	z-index: 1;
+}
+
+#portfolio .project_body h3 {
+	border: 3px solid #FFF;
+	color: #FFF;
+	display: inline-block;
+	padding: 5px;
+}
+
+#portfolio .project_footer {
+	background: #31BBA6;
+	bottom: 0;
+	left: 0;
+	opacity: 0.8;
+	position: absolute;
+	width: 100%;
+}
+
+#portfolio .project_footer h5 { padding-left: 20px; }
+
+
+
+
+
+/*------------------------------------*\
+	$TEAM
+\*------------------------------------*/
+#team { 
+	background-color: #232323;
+	color: #FFF;
+	padding-top: 100px;
+}
+
+#team .sub_title:after { width: 13%; }
+
+#team .row { 
+	margin-bottom: 110px;
+	margin-left: -40px;
+	position: relative;
+	top: 80px; 
+}
+
+#team .row .team_container {
+	margin: -27px 65px;
+}
+
+#team .row .team_container:nth-child(4n+1) {
+	margin-left: 275px;
+}
+
+#team .thumbnail {
+	border: 3px solid #16C1A8;
+	border-radius: 0;
+	color: #FFF;
+	height: 260px;
+	overflow: hidden;
+	margin-bottom: 0;
+	transform: rotate(45deg);
+	width: 260px;
+
+	-0-border-radius: 0;
+	-mz-border-radius: 0;
+	-webkit-border-radius: 0;
+
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+
+#team .thumbnail div {
+	background-color: #16C1A8;
+	border: none;
+	height: 100%;
+	left: 0;
+	margin: 0;
+	opacity: 0;
+	padding: 40% 0;
+	position: absolute;
+	top: 0;
+	transition: visibility 0s linear 0.2s, opacity 0.2s linear;
+	visibility: hidden;
+	width: 100%;
+	z-index: 1;
+
+	-mz-transition: visibility 0s linear 0.2s, opacity 0.2s linear;
+	-webkit-transition: visibility 0s linear 0.2s, opacity 0.2s linear;
+}
+
+#team .thumbnail:hover div { 
+	opacity: 1;
+	transition-delay: 0s;
+	visibility: visible;
+
+	-mz-transition-delay: 0s;
+	-webkit-transition-delay: 0s;
+}
+
+#team .thumbnail p {
+	left: 10;
+	position: relative;
+	top: -5px;
+	transform: rotate(-45deg);
+
+	-mz-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+}
+ 
+#team .thumbnail span {
+	display: block;
+	font-size: 0.6em;
+	line-height: 17px;
+}
+
+#team .thumbnail .team_title { 
+	font-size: 1.7em;
+	margin-bottom: 10px;
+}
+
+#team .thumbnail img {
+	left: -24%;
+	max-width: none;
+	position: relative;
+	top: -23%;
+	transform: rotate(-45deg);
+
+	-mz-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+}
+
+@media screen and (min-width: 1021px) and (max-width: 1199px) {
+	#team .row .team_container {
+		margin: -35px 69px;
+	}
+
+	#team .row .team_container:nth-child(4n+1) {
+		margin-left: 260px;
+	}
 }

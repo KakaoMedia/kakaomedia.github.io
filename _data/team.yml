@@ -1,28 +1,41 @@
+- name: Josue Flores
+  twitter: elnacatamal
+  picture: team1.png
+  job: Desarrollador
+  phone: 85164727
+  email: josue@kakaomedia.com
+
 - name: Erick Vanegas
   twitter: eveevans
-  picture:
-  description:
+  picture: team2.png
+  job: Desarrollador
+  phone: 85164727
+  email: erick@kakaomedia.com
+
+- name: Gerardo Ortega
+  twitter: gortega
+  picture: team4.png
+  job: Desarrollador
+  phone: 85164727
+  email: gerardo@kakaomedia.com
 
 - name: Johannus Vogel
   twitter: jagovel
-  picture:
-  description:
+  picture: team4.png
+  job: Desarrollador
+  phone: 85164727
+  email: johannus@kakaomedia.com
 
 - name: Andrea Flores
   twitter: ffregina
-  picture:
-  description:
-
-- name: Josue Flores
-  twitter: elnacatamal
-  picture:
-  description:
+  picture: team3.png
+  job: Desarrollador
+  phone: 85164727
+  email: andrea@kakaomedia.com
 
 - name: Lucia Gaitán
   twitter: sassy_lulu25
-  picture:
-  description:
-
-- name: Maritza Flores
-  picture:	
-  description:
+  picture: team5.png
+  job: Desarrollador
+  phone: 85164727
+  email: lucia@kakaomedia.com

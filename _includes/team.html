@@ -1,17 +1,25 @@
-<h1>Meet the Team!</h1>
+<div class="container">
+	<div class="lead">
+		<h2 class="sub_title">TEAM</h2>
+	</div>
 
-<div class="team">
-
-<ul>
-{% for member in site.data.team %}
-  <li>
-    <a href="https://twitter.com/{{ member.twitter }}">
-      {{ member.name }}
-    </a>
-  </li>
-{% endfor %}
-</ul>
-
-
-
+	<div class="lead">
+		<div class="row">
+			{% for member in site.data.team %}
+				<div class="team_container col-xs-6 col-md-3">
+					<a href="https://twitter.com/{{ member.twitter }}" class="thumbnail">
+						<div>
+							<p>
+								<span class="team_title">{{ member.name }}</span>
+								<span>{{ member.job }}</span>
+								<span>{{ member.phone }}</span>
+								<span>{{ member.email }}</span>
+							</p>
+						</div>
+						<img src="img/{{ member.picture }}" alt="...">
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
 </div>
