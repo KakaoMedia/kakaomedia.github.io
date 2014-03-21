@@ -128,7 +128,7 @@ header a, header a:visited {  color: #FFF;  }
 	}
 }
 
-@media (max-width: 495px) {
+@media (max-width: 498px) {
 	#front_page .main_title { font-size: 7em; }
 
 	#front_page h2 {		
@@ -139,7 +139,7 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) { 
-	#front_page .row div { font-size: 0.8em; }
+	#front_page .row div { font-size: 0.7em; }
 }
 
 
@@ -402,11 +402,11 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 #team .row .team_container {
-	margin: -27px 65px;
+	margin: -21px 66px;
 }
 
 #team .row .team_container:nth-child(4n+1) {
-	margin-left: 275px;
+	margin-left: 281px;
 }
 
 #team .thumbnail {
@@ -472,7 +472,7 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 #team .thumbnail .team_title { 
-	font-size: 1.7em;
+	font-size: 1.6em;
 	margin-bottom: 10px;
 }
 
@@ -489,10 +489,77 @@ header a, header a:visited {  color: #FFF;  }
 
 @media screen and (min-width: 1021px) and (max-width: 1199px) {
 	#team .row .team_container {
-		margin: -35px 69px;
+		margin: -35px 67px;
 	}
 
 	#team .row .team_container:nth-child(4n+1) {
-		margin-left: 260px;
+		margin-left: 258px;
 	}
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1020px) {
+	#team .row .team_container {
+		margin: -36px 66px;
+	}
+
+	#team .row .team_container:nth-child(4n+1) {
+		margin-left: 255px;
+	}	
+}
+
+@media screen and (min-width: 992px) and (max-width: 999px) {
+	#team {
+		padding: 150px 15px 0;
+	}
+
+	#team .row .team_container {
+		margin: -36px 66px 155px;
+	}
+
+	#team .row .team_container:nth-child(2n+1) {
+		margin-left: 170px;	
+	}
+}
+
+@media screen and (min-width: 910px) and (max-width: 991px) {
+	#team .container {
+		padding-left: 0;
+		padding-right: 0;
+		width: 100%;
+	}
+
+	#team .row {
+		margin-right: 0;
+	}
+
+	#team .row .team_container {
+		margin: -36px 0 155px;
+		width: 41%;
+	}
+
+	#team .row .team_container:nth-child(2n+1) {
+		margin-left: 105px;	
+	}
+
+	#team .thumbnail {
+		display: inline-block;
+	}
+
+}
+
+@media screen and (max-width: 909px) {
+	#team .row {
+		margin-left: -15px;
+	}
+
+	#team .row .team_container {
+		margin: 0 0 120px !important;
+		padding: 0;
+		width: 100%;
+	}
+
+	#team .thumbnail {
+		display: inline-block;
+	}
+
 }
