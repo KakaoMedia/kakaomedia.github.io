@@ -1,1 +1,54 @@
-<h1>Contact</h1>
+<div class="darker"></div>
+<div class="container">
+	<div class="lead">
+		<h2>CONTACT</h2>
+	</div>
+	<div class="lead info_list">
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-12 form_container">
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<div class="col-sm-6">
+					  		<input type="text" class="form-control" placeholder="Your name">
+						</div>
+						<div class="col-sm-6">
+							<input type="email" class="form-control" placeholder="Email"> 
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" placeholder="Email Subject">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<textarea class="form-control" rows="3" placeholder="Your message"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<button class="btn">SEND</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12 info_container">
+				{% for item in site.data.contact %}
+					{% if item.url == "" or item.url == nil %}
+						<div class="col-md-12 col-sm-6 col-xs-12">
+							<div class="col-md-2"><span class="glyphicon {{ item.icon }} img-circle"></span></div>
+							<div class="col-md-9 info_value"><p>{{ item.value }}</p></div>
+						</div>
+					{% else %}
+						<div class="col-md-12 col-sm-6 col-xs-12">
+							<a href="{{ item.url }}">
+								<div class="col-md-2"><span class="glyphicon {{ item.icon }} img-circle"></span></div>
+								<div class="col-md-9 info_value"><p>{{ item.value }}</p></div>
+							</a>
+						</div>
+					{% endif %}					
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
