@@ -4,21 +4,7 @@ title: Kakao Media Web Site
 ---
 
 <div id="front_page" class="main">
-	<div class="darker"></div>
-	<div class="container">
-		<div class="lead">
-			<h1 class="main_title">Kakao</h1>
-			<h2>media</h2>
-		</div>
-		<div class="lead info_list">
-			<div class="row">
-				<div class="col-md-3 col-sm-6 col-xs-12">Startup Consulting</div>
-				<div class="col-md-3 col-sm-6 col-xs-12">Product Design</div>
-				<div class="col-md-3 col-sm-6 col-xs-12">User Interface Design</div>
-				<div class="col-md-3 col-sm-6 col-xs-12">Web Development</div>
-			</div>
-		</div>
-	</div>	
+	{% include front_page.html %}
 </div>
 
 <div id="quote" class="main">
@@ -51,8 +37,4 @@ title: Kakao Media Web Site
 
 <div id="contact" class="main">
 	{% include contact.html %}
-</div>
-
-<div id="footer">
-	{% include footer.html %}
 </div>

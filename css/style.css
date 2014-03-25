@@ -1,3 +1,5 @@
+body { overflow-x: hidden; }
+
 .navbar-collapse.in { overflow: hidden; }
 
 .main {
@@ -723,4 +725,25 @@ input:-ms-input-placeholder { color: #404041; }
 	#contact .row>div {
 		font-size: 0.8em;
 	}
+}
+
+
+
+
+
+/*------------------------------------*\
+	$FOOTER
+\*------------------------------------*/
+footer {
+	background-color: #000;
+	color: #FFF;
+	padding-bottom: 10px;
+	padding-top: 25px;
+	text-align: center;
+}
+
+footer p {
+	line-height: 15px;
+	margin: 0;
+	padding: 0;
 }
