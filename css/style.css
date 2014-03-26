@@ -179,6 +179,7 @@ header a, header a:visited {  color: #FFF;  }
 	background: url("../img/what_we_do.jpg") no-repeat center center;
 	background-size: cover;
 	color: #FFF;
+	padding-bottom: 200px;
 
 	-o-background-size: cover;
 	-moz-background-size: cover;
@@ -189,24 +190,68 @@ header a, header a:visited {  color: #FFF;  }
 
 #what_we_do .darker { opacity: 0.4; }
 
-#what_we_do .row div { margin-bottom: 20px; }
+#what_we_do .row { position: relative; }
 
-#what_we_do .row span { 
+#what_we_do .row > div { 
+	margin-bottom: 20px; 
+	position: initial;
+}
+
+#what_we_do .info {
+	left: 7%;
+	margin-top: 30px;
+	position: absolute;
+	text-align: justify;
+	width: 85%
+}
+
+#what_we_do .info > .arrow {
+  	border-color: transparent;
+	border-bottom-color: #17DDC5;
+	border-bottom-style: solid;
+  	border-width: 0.53em;
+	border-bottom-width: 0.60em;
+	border-style: dashed;
+	display: inline-block;
+	font-size: 30px;
+	height: 0;
+	line-height: 0;
+	opacity: 1 !important;
+	position: absolute;
+	top: -30px;
+	vertical-align: middle;
+	width: 0;
+
+	display: -moz-inline-box;
+}
+
+#what_we_do .row > div:nth-child(1) .arrow { left: 5%; }
+#what_we_do .row > div:nth-child(2) .arrow { left: 34%; }
+#what_we_do .row > div:nth-child(3) .arrow { right: 33%; }
+#what_we_do .row > div:nth-child(4) .arrow { right: 4%; }
+
+#what_we_do .info p {
+	background-color: #17DDC5;
+	opacity: 0.8;
+	padding: 30px;
+}
+
+#what_we_do .row .title_info span { 
 	border: 3px solid #FFF;
 	font-size: 2em;
 	padding: 20px;
 }
 
-#what_we_do .row p { margin-top: 20px; }
+#what_we_do .row .title_info p { margin-top: 20px; }
 
-#what_we_do .row p span {
+#what_we_do .row .title_info p span {
 	font-size: 1em;
 	padding: 5px 10px;
 	margin: 15px 15px 0;
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) { 
-	#what_we_do .row p span { font-size: 0.7em; }
+	#what_we_do .row .title_info p span { font-size: 0.7em; }
 }
 
 
