@@ -192,7 +192,7 @@ header a, header a:visited {  color: #FFF;  }
 
 #what_we_do .row { position: relative; }
 
-#what_we_do .row > div { 
+#what_we_do .row .first_group > div, #what_we_do .row .second_group > div { 
 	margin-bottom: 20px; 
 	position: initial;
 }
@@ -200,6 +200,7 @@ header a, header a:visited {  color: #FFF;  }
 #what_we_do .info {
 	left: 7%;
 	margin-top: 30px;
+	opacity: 0.8;
 	position: absolute;
 	text-align: justify;
 	width: 85%
@@ -225,14 +226,13 @@ header a, header a:visited {  color: #FFF;  }
 	display: -moz-inline-box;
 }
 
-#what_we_do .row > div:nth-child(1) .arrow { left: 5%; }
-#what_we_do .row > div:nth-child(2) .arrow { left: 34%; }
-#what_we_do .row > div:nth-child(3) .arrow { right: 33%; }
-#what_we_do .row > div:nth-child(4) .arrow { right: 4%; }
+#what_we_do .row .first_group > div:nth-child(1) .arrow { left: 5%; }
+#what_we_do .row .first_group > div:nth-child(2) .arrow { left: 34%; }
+#what_we_do .row .second_group > div:nth-child(1) .arrow { right: 33%; }
+#what_we_do .row .second_group > div:nth-child(2) .arrow { right: 4%; }
 
 #what_we_do .info p {
 	background-color: #17DDC5;
-	opacity: 0.8;
 	padding: 30px;
 }
 
@@ -254,7 +254,40 @@ header a, header a:visited {  color: #FFF;  }
 	#what_we_do .row .title_info p span { font-size: 0.7em; }
 }
 
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	#what_we_do { padding-bottom: 30px; }
 
+	#what_we_do .first_group, #what_we_do .second_group { 
+		height: 410px; 
+		margin-bottom: 60px;
+	}
+
+	#what_we_do .info {
+		left: 16%;
+		width: 68%;
+	}
+
+	#what_we_do .row .first_group > div:nth-child(1) .arrow { left: 10%; }
+	#what_we_do .row .first_group > div:nth-child(2) .arrow { left: 83%; }
+	#what_we_do .row .second_group > div:nth-child(1) .arrow { right: 85%; }
+	#what_we_do .row .second_group > div:nth-child(2) .arrow { right: 11%; }
+}
+
+@media screen and (max-width: 767px) {
+	#what_we_do { padding-bottom: 30px; }
+
+	#what_we_do .info {
+		left: 0;
+		width: 100%;
+		position: relative;
+	}
+
+	#what_we_do .row .arrow { 
+		left: 0 !important;
+		position: relative;
+		top: 0;
+	}
+}
 
 
 
