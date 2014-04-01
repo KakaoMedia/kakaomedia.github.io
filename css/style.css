@@ -1,6 +1,21 @@
 body { overflow-x: hidden; }
 
+.navbar {
+	bottom: 0;
+	position: absolute;
+}
+
+.navbar.affix {
+	height: 50px;
+	position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
 .navbar-collapse.in { overflow: hidden; }
+
+.navbar-nav>.active a { color: #FFA500 !important; }
 
 .main {
 	padding: 150px 15px;
@@ -43,9 +58,10 @@ body { overflow-x: hidden; }
 /*------------------------------------*\
     $HEADER
 \*------------------------------------*/
-header { 
+header  {
 	background-color: #171717; 
-	margin-bottom: 0 !important;
+	margin-bottom: 0 !important;	
+	width: 100%;
 }
 
 header a, header a:visited {  color: #FFF;  }
