@@ -180,6 +180,8 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 @media (max-width: 498px) {
+	#front_page { padding-bottom: 215px; }
+	
 	#front_page .main_title { font-size: 7em; }
 
 	#front_page h2 {		
