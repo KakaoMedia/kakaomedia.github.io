@@ -17,8 +17,10 @@
 
     </head>
     <body data-spy="scroll" data-target=".navbar-scroll">
-        <header class="navbar navbar-static-top" id="top" role="banner">
-            {% include navigation.html %}
+        <header>
+            <div id="front_page" class="main">
+                {% include front_page.html %}
+            </div>
         </header>
 
         <div class="site content">
@@ -32,6 +34,7 @@
         <!-- Javascript Files -->
         <script type="text/javascript" src="/js/jquery2.0.1.min.js"></script>
         <script type="text/javascript" src="/js/Bootstrap3.1.1/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/waypoints.2.0.4/waypoints.min.js"></script>
         <script type="text/javascript" src="/js/script.js"></script>
     </body>
 </html>

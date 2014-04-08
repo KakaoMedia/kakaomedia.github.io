@@ -1,22 +1,5 @@
 body { overflow-x: hidden; }
 
-.navbar {
-	bottom: 0;
-	position: absolute;
-}
-
-.navbar.affix {
-	height: 50px;
-	position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10000;
-}
-
-.navbar-collapse.in { overflow: hidden; }
-
-.navbar-nav>.active a { color: #FFA500 !important; }
-
 .main {
 	padding: 150px 15px;
 	position: relative;
@@ -59,9 +42,15 @@ body { overflow-x: hidden; }
     $HEADER
 \*------------------------------------*/
 header  {
-	background-color: #171717; 
-	margin-bottom: 0 !important;	
+	background: url("../img/italy.png"); 
+	background-repeat: no-repeat;
+	background-position: 0 -130px;
+	background-size: cover;
+	height: 675px;
+	position: fixed;
+	top: 0;
 	width: 100%;
+	z-index: 1;
 }
 
 header a, header a:visited {  color: #FFF;  }
@@ -70,14 +59,39 @@ header a, header a:visited {  color: #FFF;  }
 
 
 
-
 /*------------------------------------*\
     $MENU
 \*------------------------------------*/
+.navbar {	
+	background-color: #171717;
+	font-size: 14px;
+	line-height: 1px;
+	position: absolute;
+	text-align: center;
+	top: -50px;
+	width: 100%;
+}
+
+.navbar.affix {
+	height: 50px;
+	position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+.navbar-collapse.in { overflow: hidden; }
+
+.nav>li>a, .nav>li>a {	
+	color: #FFF;
+}
+
 .nav>li>a:hover, .nav>li>a:focus {
 	background-color: #171717;
 	color: #F69136;
 }
+
+.navbar-nav>.active a { color: #FFA500 !important; }
 
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
 	display: none;
@@ -89,6 +103,19 @@ header a, header a:visited {  color: #FFF;  }
 		float: none;
 		margin: 0;		
 	}
+}
+
+
+
+
+
+/*------------------------------------*\
+    $CONTENT
+\*------------------------------------*/
+.content {
+	position: relative;
+    top: 675px;
+    z-index: 200;
 }
 
 
@@ -136,16 +163,20 @@ header a, header a:visited {  color: #FFF;  }
 
 @media (min-width: 768px) {
 	#front_page {
-		padding-top: 180px;
-		padding-bottom: 120px;
+		padding-top: 100px;
+		padding-bottom: 140px;
 	}
 }
 
 @media (max-width: 767px) {
-	#front_page h2 {		
+	#front_page { padding-bottom: 145px; }
+
+	#front_page h2 {
 		right: -150px;
 		top: -30px;
 	}
+
+	#front_page .container { margin-top: 80px; }
 }
 
 @media (max-width: 498px) {
@@ -159,6 +190,8 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) { 
+	#front_page { padding-bottom: 150px; }
+
 	#front_page .row div { font-size: 0.7em; }
 }
 
@@ -169,9 +202,12 @@ header a, header a:visited {  color: #FFF;  }
 /*------------------------------------*\
     $QUOTE
 \*------------------------------------*/
-#quote h2 {
+#quote { background-color: #FFF; }
+
+#quote h2 {	
 	font-size: 3em;
 	margin-bottom: 60px;
+	opacity: 0;
 }
 
 
@@ -314,6 +350,8 @@ header a, header a:visited {  color: #FFF;  }
 /*------------------------------------*\
 	$HOW-WE-WORK
 \*------------------------------------*/
+#how_we_work { background-color: #FFF; }
+
 #how_we_work .row div {
 	padding: 0 10px;
 	margin: 0 45px 20px;
@@ -438,6 +476,8 @@ header a, header a:visited {  color: #FFF;  }
 /*------------------------------------*\
 	$PORTFOLIO
 \*------------------------------------*/
+#portfolio { background-color: #FFF; }
+
 #portfolio h2 {
 	font-size: 3em;
 	margin-bottom: 60px;
@@ -673,7 +713,6 @@ header a, header a:visited {  color: #FFF;  }
 	background: url("../img/contact.png") no-repeat center center;
 	background-size: cover;
 	color: #F2F2F2;
-	padding: 30px 15px;
 
 	-o-background-size: cover;
 	-moz-background-size: cover;

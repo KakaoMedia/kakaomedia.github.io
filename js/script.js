@@ -1,5 +1,17 @@
 $("document").ready(function() {
 
-	$('header').affix({ offset: { top: function() { return (this.top = $(window).outerHeight() - ($("nav").height())) } } });
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 100) {
+			$('#front_page .container').stop().animate({ opacity: 0 }, 200);
+		}
+		
+		if ($(this).scrollTop() < 100) {
+			$('#front_page .container').stop().animate({ opacity: 1 }, 200);
+		}
+	}); 
+
+	$('#quote').waypoint(function(direction) {
+		$('#quote h2').stop().animate({ opacity: 1 }, 200);
+	}, { offset: '60%' });
 
 });
