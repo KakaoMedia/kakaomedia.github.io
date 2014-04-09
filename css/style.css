@@ -63,7 +63,6 @@ header a, header a:visited {  color: #FFF;  }
     $MENU
 \*------------------------------------*/
 .navbar {	
-	background-color: #171717;
 	font-size: 14px;
 	line-height: 1px;
 	position: absolute;
@@ -81,6 +80,8 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 .navbar-collapse.in { overflow: hidden; }
+
+.navbar, .navbar .container { background-color: #171717; }
 
 .nav>li>a, .nav>li>a {	
 	color: #FFF;
@@ -102,6 +103,13 @@ header a, header a:visited {  color: #FFF;  }
 		display: inline-block;
 		float: none;
 		margin: 0;		
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.navbar>.container .navbar-brand, .navbar>.container-fluid {
+		color: #FFF;
+		display: block;
 	}
 }
 
