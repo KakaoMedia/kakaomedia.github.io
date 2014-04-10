@@ -83,4 +83,13 @@ $("document").ready(function() {
 
 	$(window).on("resize", methodToFixLayout);
 
+
+	//Tools
+	$('#tools .points_container span, #tools .media .media-object, #tools .media .media-body').waypoint(function(direction) {
+		if($(this).css("opacity") == 1)
+			$(this).css({ opacity: 0, visibility: "hidden" });
+		else
+			$(this).css({ opacity: 1, visibility: "visible" });
+	}, { offset: '80%' });
+
 });
