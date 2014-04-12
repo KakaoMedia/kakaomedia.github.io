@@ -25,9 +25,12 @@ $("document").ready(function() {
 		}
 	}); 
 
-	$('#quote').waypoint(function(direction) {
-		$('#quote h2').stop().animate({ opacity: 1 }, 200);
-	}, { offset: '60%' });
+	$('.main h2').waypoint(function(direction) {
+		if(direction == "up")
+			$(this).stop().animate({ opacity: 0 }, "medium");
+		else
+			$(this).stop().animate({ opacity: 1 }, "medium");
+	}, { offset: '80%' });
 
 	//WHAT WE DO - INFO
 	$("#what_we_do .title_info").click(function() {
