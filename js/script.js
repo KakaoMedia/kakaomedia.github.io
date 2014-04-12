@@ -86,10 +86,24 @@ $("document").ready(function() {
 
 	//Tools
 	$('#tools .points_container span, #tools .media .media-object, #tools .media .media-body').waypoint(function(direction) {
-		if($(this).css("opacity") == 1)
-			$(this).css({ opacity: 0, visibility: "hidden" });
+		if(direction == "up")
+			$(this).css({
+				opacity: 0,
+				transform: "matrix(0.5, 0, 0, 0.5, 0, 0)" ,
+				"-o-transform": "matrix(0.5, 0, 0, 0.5, 0, 0)" ,
+				"-ms-transform": "matrix(0.5, 0, 0, 0.5, 0, 0)" ,
+				"-mz-transform": "matrix(0.5, 0, 0, 0.5, 0, 0)" ,
+				"-webkit-transform": "matrix(0.5, 0, 0, 0.5, 0, 0)" ,
+			});
 		else
-			$(this).css({ opacity: 1, visibility: "visible" });
+			$(this).css({ 
+				opacity: 1, 
+				transform: "matrix(1, 0, 0, 1, 0, 0)" ,
+				"-o-transform": "matrix(1, 0, 0, 1, 0, 0)" ,
+				"-ms-transform": "matrix(1, 0, 0, 1, 0, 0)" ,
+				"-mz-transform": "matrix(1, 0, 0, 1, 0, 0)" ,
+				"-webkit-transform": "matrix(1, 0, 0, 1, 0, 0)" ,
+			});
 	}, { offset: '80%' });
 
 });

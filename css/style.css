@@ -436,12 +436,18 @@ header a, header a:visited {  color: #FFF;  }
 	margin: 0 5px;
 	opacity: 0;
 	padding: 0 5px;
-	visibility: hidden;
 	transition: opacity 1s ease-in-out;
+	transform: matrix(0.2, 0, 0, 0.2, 0, 0);
 
 	-o-transition: opacity 1s ease-in-out;
+	-ms-transition: opacity 1s ease-in-out;
   	-mz-transition: opacity 1s ease-in-out;
   	-webkit-transition: opacity 1s ease-in-out;
+
+  	-o-transform: matrix(0.2, 0, 0, 0.2, 0, 0);
+  	-ms-transform: matrix(0.2, 0, 0, 0.2, 0, 0);
+  	-mz-transform: matrix(0.2, 0, 0, 0.2, 0, 0);
+  	-webkit-transform: matrix(0.2, 0, 0, 0.2, 0, 0);
 }
 
 #tools .resume_tools { 
@@ -454,13 +460,19 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 #tools .media .media-object, #tools .media .media-body {
-	opacity: 0;
-	visibility: hidden;	
+	opacity: 0;	
 	transition: opacity 1s ease-in-out;
+	transform: matrix(0.2, 0, 0, 0.2, 0, 0);
 
 	-o-transition: opacity 1s ease-in-out;
+	-ms-transition: opacity 1s ease-in-out;
   	-mz-transition: opacity 1s ease-in-out;
   	-webkit-transition: opacity 1s ease-in-out;
+
+  	-o-transform: matrix(0.2, 0, 0, 0.2, 0, 0);
+  	-ms-transform: matrix(0.2, 0, 0, 0.2, 0, 0);
+  	-mz-transform: matrix(0.2, 0, 0, 0.2, 0, 0);
+  	-webkit-transform: matrix(0.2, 0, 0, 0.2, 0, 0);
 }
 
 #tools .resume_tools .media:last-child { margin-bottom: 150px; }
