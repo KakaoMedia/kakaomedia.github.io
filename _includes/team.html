@@ -8,7 +8,7 @@
 			{% for member in site.data.team %}
 				<div class="team_container col-xs-6 col-md-3">
 					<a href="https://twitter.com/{{ member.twitter }}" class="thumbnail">
-						<div>
+						<div class="flip hide-back">
 							<p>
 								<span class="team_title">{{ member.name }}</span>
 								<span>{{ member.job }}</span>
@@ -16,7 +16,7 @@
 								<span>{{ member.email }}</span>
 							</p>
 						</div>
-						<img src="img/{{ member.picture }}" alt="...">
+						<img src="img/{{ member.picture }}" class="flip" alt="...">
 					</a>
 				</div>
 			{% endfor %}

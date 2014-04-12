@@ -696,32 +696,37 @@ header a, header a:visited {  color: #FFF;  }
 	padding: 40% 0;
 	position: absolute;
 	top: 0;
-	transition: visibility 0s linear 0.2s, opacity 0.2s linear;
 	visibility: hidden;
 	width: 100%;
 	z-index: 1;
-
-	-mz-transition: visibility 0s linear 0.2s, opacity 0.2s linear;
-	-webkit-transition: visibility 0s linear 0.2s, opacity 0.2s linear;
 }
 
-#team .thumbnail:hover div { 
-	opacity: 1;
-	transition-delay: 0s;
-	visibility: visible;
+#team .thumbnail:hover { 
+	border: none;
+	transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
 
-	-mz-transition-delay: 0s;
-	-webkit-transition-delay: 0s;
+	-o-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
+	-ms-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
+	-moz-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
+	-webkit-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
+}
+
+#team .thumbnail:hover div {
+	opacity: 1;
+	visibility: visible;
+	z-index: 20;
 }
 
 #team .thumbnail p {
 	left: 10;
 	position: relative;
 	top: -5px;
-	transform: rotate(-45deg);
+	transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 45deg);
 
-	-mz-transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
+	-o-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 45deg);
+	-ms-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 45deg);
+	-mz-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 45deg);
+	-webkit-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 45deg);
 }
  
 #team .thumbnail span {
@@ -740,10 +745,23 @@ header a, header a:visited {  color: #FFF;  }
 	max-width: none;
 	position: relative;
 	top: -23%;
+	z-index: 10;
 	transform: rotate(-45deg);
 
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
 	-mz-transform: rotate(-45deg);
 	-webkit-transform: rotate(-45deg);
+}
+
+.flip {
+  -webkit-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+    
+  -webkit-backface-visibility: visible;
+  -moz-backface-visibility:    visible;
+  -ms-backface-visibility:     visible;
 }
 
 @media screen and (min-width: 1021px) and (max-width: 1199px) {

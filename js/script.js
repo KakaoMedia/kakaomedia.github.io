@@ -17,11 +17,11 @@ $("document").ready(function() {
 
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 100) {
-			$('#front_page .container').stop().animate({ opacity: 0 }, 200);
+			$('#front_page .container').stop().animate({ opacity: 0 }, "medium");
 		}
 		
 		if ($(this).scrollTop() < 100) {
-			$('#front_page .container').stop().animate({ opacity: 1 }, 200);
+			$('#front_page .container').stop().animate({ opacity: 1 }, "medium");
 		}
 	}); 
 
