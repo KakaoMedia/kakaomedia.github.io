@@ -1,0 +1,27 @@
+- name: 'Eskimo'
+  image: 'eskimo.jpg'
+  footer: 'WebSite'
+
+- name: 'Banpro'
+  image: 'banpro.jpg'
+  footer: 'WebSite'
+
+- name: 'Pia Bastro'
+  image: 'pia.jpg'
+  footer: 'WebSite'
+
+- name: 'Xhours'
+  image: 'xhour.jpg'
+  footer: 'WebSite'
+
+- name: 'Palcasa'
+  image: 'palcasa.jpg'
+  footer: 'WebSite'
+
+- name: 'Folkano'
+  image: 'folkano.jpg'
+  footer: 'WebSite'
+
+- name: 'Carphil S.A.'
+  image: 'carphil.jpg'
+  footer: 'WebSite'
