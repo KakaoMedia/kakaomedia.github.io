@@ -5,7 +5,9 @@
 	<div class="lead resume_tools">
 		<div class="first_img">
 			<img src="img/tools.jpg"/>
-			{% for i in (1..8) %} <p class="points_container"><span class="img-circle"></span></p> {% endfor %}
+			<div class="point_guide">
+				{% for i in (1..8) %} <p class="points_container"><span class="img-circle"></span></p> {% endfor %}
+			</div>
 		</div>
 		
 		<div class="media">
@@ -29,11 +31,10 @@
 		  	</div>
 		</div>
 
-		<div class="center_points no_media">
-			<p class="points_container"> {% for i in (1..29) %} <span class="img-circle"></span> {% endfor %} </p>
-		</div>
-
 		<div class="media">
+			<div class="center_points">
+				<p class="points_container"> {% for i in (1..29) %} <span class="img-circle"></span> {% endfor %} </p>
+			</div>
 	  		<div class="pull-right img_container">
 				<p class="points_container"><span class="img-circle"></span></p>
 				<p class="points_container"><span class="img-circle"></span></p>
@@ -51,11 +52,10 @@
 		  	</div>
 		</div>
 
-		<div class="center_points no_media">
-			<p class="points_container"> {% for i in (1..29) %} <span class="img-circle"></span> {% endfor %} </p>
-		</div>
-
 		<div class="media">
+			<div class="center_points">
+				<p class="points_container"> {% for i in (1..29) %} <span class="img-circle"></span> {% endfor %} </p>
+			</div>
 			<div class="pull-left img_container">
 				<p class="points_container"><span class="img-circle"></span></p>
 				<p class="points_container"><span class="img-circle"></span></p>

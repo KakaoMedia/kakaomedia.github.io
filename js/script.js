@@ -1,3 +1,5 @@
+$.fn.reverse = [].reverse;
+
 $.fn.scrollView = function (val) {
   return this.each(function () {
   	if(val == null)
@@ -7,7 +9,7 @@ $.fn.scrollView = function (val) {
   });
 }
 
-function methodToFixLayout( e ) {
+function methodToFixLayout(e) {
     var winWidth = $(window).outerWidth() + 17;
 
 	$("#what_we_do .first_group, #what_we_do .second_group").height("160px");
@@ -24,22 +26,48 @@ function methodToFixLayout( e ) {
 
 $("document").ready(function() {
 
+	$(window).on("resize", methodToFixLayout);
+
+	$(".main h2, .main p.lead, #what_we_do .title_info, #tools .point_guide .points_container, " + 
+		"#tools .media .media-object, #tools .media .media-body, #tools .media .center_points span, " +
+		"#tools .media .img_container .points_container").not("#front_page h2").addClass("animated bounceOut");
+
+	$("#portfolio #portfolio-gallery li").addClass("animated flipOutY");
+	$("#front_page .container").addClass("animated bounceIn");
+	$("#team .team_container").addClass("animated rotateOut");
+
 	$(window).scroll(function () {
-		if ($(this).scrollTop() > 100) {
-			$('#front_page .container').stop().animate({ opacity: 0 }, "slow");
+		if ($(this).scrollTop() > 150) {
+			$('#front_page .container').removeClass("animated bounceIn").addClass("animated bounceOut");
 		}
 		
-		if ($(this).scrollTop() < 100) {
-			$('#front_page .container').stop().animate({ opacity: 1 }, "slow");
+		if ($(this).scrollTop() < 150) {
+			$('#front_page .container').removeClass("animated bounceOut").addClass("animated bounceIn");
 		}
 	}); 
 
-	$('.main h2').waypoint(function(direction) {
+	$(".main h2, .main p.lead, #tools .media .media-body").not("#front_page h2").waypoint(function(direction) {
 		if(direction == "up")
-			$(this).stop().animate({ opacity: 0 }, "slow");
-		else
-			$(this).stop().animate({ opacity: 1 }, "slow");
-	}, { offset: '80%' });
+			$(this).removeClass("animated bounceIn").addClass("animated bounceOut");
+		if(direction == "down")
+			$(this).removeClass("animated bounceOut").addClass("animated bounceIn");
+	}, { offset: "80%" });
+
+	$("#what_we_do .row").waypoint(function(direction) {		
+		if(direction == "up") {
+			$(this).find(".title_info").reverse().each(function(index) {
+				var item = $(this);
+				setTimeout(function(){  item.removeClass("animated bounceIn").addClass("animated bounceOut"); }, index * 300);
+			});
+		}
+
+		if(direction == "down") {
+			$(this).find(".title_info").each(function(index) {
+				var item = $(this);
+				setTimeout(function(){  item.removeClass("animated bounceOut").addClass("animated bounceIn"); }, index * 300);
+			});
+		}
+	}, { offset: "80%" });
 
 	//WHAT WE DO - INFO
 	$("#what_we_do .title_info").click(function() {
@@ -93,33 +121,115 @@ $("document").ready(function() {
 
 	});
 
-	$(window).on("resize", methodToFixLayout);
-
-
 	//Tools
-	$('#tools .points_container span, #tools .media .media-object, #tools .media .media-body').waypoint(function(direction) {
-		if(direction == "up")
-			$(this).css({
-				opacity: 0,
-				transform: "matrix(0.5, 0, 0, 0.5, 0, 0)" ,
-				"-o-transform": "matrix(0.5, 0, 0, 0.5, 0, 0)" ,
-				"-ms-transform": "matrix(0.5, 0, 0, 0.5, 0, 0)" ,
-				"-mz-transform": "matrix(0.5, 0, 0, 0.5, 0, 0)" ,
-				"-webkit-transform": "matrix(0.5, 0, 0, 0.5, 0, 0)" ,
+	$("#tools .first_img .point_guide").waypoint(function(direction) {
+		if(direction == "up") {
+			$(this).find(".points_container").reverse().each(function(index) {
+				var item = $(this);
+				setTimeout(function() { item.removeClass("animated bounceIn").addClass("animated bounceOut"); }, index * 50);
 			});
-		else
-			$(this).css({ 
-				opacity: 1, 
-				transform: "matrix(1, 0, 0, 1, 0, 0)" ,
-				"-o-transform": "matrix(1, 0, 0, 1, 0, 0)" ,
-				"-ms-transform": "matrix(1, 0, 0, 1, 0, 0)" ,
-				"-mz-transform": "matrix(1, 0, 0, 1, 0, 0)" ,
-				"-webkit-transform": "matrix(1, 0, 0, 1, 0, 0)" ,
+		}
+
+		if(direction == "down") {
+			$(this).find(".points_container").each(function(index) {
+				var item = $(this);
+				setTimeout(function() { item.removeClass("animated bounceOut").addClass("animated bounceIn"); }, index * 50);
 			});
-	}, { offset: '80%' });
+		}
+	}, { offset: "80%" });
+
+	$("#tools .media:nth-child(2n+2)").waypoint(function(direction) {
+
+		if(direction == "up") {
+			var length = $(this).find(".img_container .points_container").length;
+
+			$(this).find(".media-object").each(function() {
+				var item = $(this);
+				setTimeout(function() { item.removeClass("animated bounceIn").addClass("animated bounceOut"); }, length * 50);				
+			});
+
+			$(this).find(".img_container .points_container").reverse().each(function(index) {
+				var item = $(this);
+				setTimeout(function() { item.removeClass("animated bounceIn").addClass("animated bounceOut"); }, index * 50);
+			});
+
+			$(this).find(".center_points span").each(function(index) {
+				var item = $(this);
+				setTimeout(function() { item.removeClass("animated bounceIn").addClass("animated bounceOut"); }, (index + length) * 50);
+			});
+		}
+
+		if(direction == "down") {
+			var length = $(this).find(".center_points span").length;
+
+			$(this).find(".center_points span").reverse().each(function(index) {
+				var item = $(this);
+				setTimeout(function() { item.removeClass("animated bounceOut").addClass("animated bounceIn"); }, index * 50);
+			});
+
+			$(this).find(".img_container .points_container").each(function(index) {
+				var item = $(this);
+				setTimeout(function() { item.removeClass("animated bounceOut").addClass("animated bounceIn"); }, (index + length) * 50);
+			});
+
+			$(this).find(".media-object").each(function() {
+				var item = $(this);
+				setTimeout(function() { item.removeClass("animated bounceOut").addClass("animated bounceIn"); }, length * 50);				
+			});
+		}
+
+	}, { offset: "80%" });
+
+	$("#tools .media:nth-child(2n+3)").waypoint(function(direction) {
+		if(direction == "up") {
+			var length = $(this).find(".img_container .points_container").length;
+
+			$(this).find(".media-object").each(function() {
+				var item = $(this);
+				setTimeout(function() { item.removeClass("animated bounceIn").addClass("animated bounceOut"); }, length * 50);				
+			});
+
+			$(this).find(".img_container .points_container").each(function(index) {
+				var item = $(this);
+				setTimeout(function() { item.removeClass("animated bounceIn").addClass("animated bounceOut"); }, index * 50);
+			});
+
+			$(this).find(".center_points span").reverse().each(function(index) {
+				var item = $(this);
+				setTimeout(function() { item.removeClass("animated bounceIn").addClass("animated bounceOut"); }, (index + length) * 50);
+			});
+		}
+
+		if(direction == "down") {
+			var length = $(this).find(".center_points span").length;
+
+			$(this).find(".center_points span").each(function(index) {
+				var item = $(this);
+				setTimeout(function() { item.removeClass("animated bounceOut").addClass("animated bounceIn"); }, index * 50);
+			});
+
+			$(this).find(".img_container .points_container").reverse().each(function(index) {
+				var item = $(this);
+				setTimeout(function() { item.removeClass("animated bounceOut").addClass("animated bounceIn"); }, (index + length) * 50);
+			});
+
+			$(this).find(".media-object").each(function() {
+				var item = $(this);
+				setTimeout(function() { item.removeClass("animated bounceOut").addClass("animated bounceIn"); }, length * 50);				
+			});
+		}
+
+	}, { offset: "80%" });
 
 	//PORTFOLIO
 	var item, overlay, clipPropFirst, clipPropLast;
+
+	$("#portfolio #portfolio-gallery li").waypoint(function(direction) {
+		if(direction == "up")
+			$(this).removeClass("animated flipInY").addClass("animated flipOutY");
+		if(direction == "down")
+			$(this).removeClass("animated flipOutY").addClass("animated flipInY");
+	}, { offset: "80%" });
 
 	$("#portfolio-gallery li").on("click", function() {
 
@@ -156,5 +266,13 @@ $("document").ready(function() {
 			}, 500)
 		}
 	});
+
+	//Team
+	$("#team .team_container").waypoint(function(direction) {
+		if(direction == "up")
+			$(this).removeClass("animated rotateIn").addClass("animated rotateOut");
+		if(direction == "down")
+			$(this).removeClass("animated rotateOut").addClass("animated rotateIn");
+	}, { offset: "80%" });
 
 });
