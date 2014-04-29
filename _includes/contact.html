@@ -7,23 +7,26 @@
 		<div class="row">
 
 			<div class="col-md-6 col-sm-6 col-xs-12 form_container">
+
+				<div id="form-messages"></div>
+
 				<form id="formulario_de_contacto" class="form-horizontal" role="form" method="POST" action="http://kakaomailer.herokuapp.com/user/5a5832d0-b180-0131-677b-1ad8e2d78281">
 					<div class="form-group">
 						<div class="col-sm-6">
-					  		<input name="name" type="text" class="form-control" placeholder="Your name">
+					  		<input name="name" id="name" type="text" class="form-control" placeholder="Your name">
 						</div>
 						<div class="col-sm-6">
-							<input name="email" type="email" class="form-control" placeholder="Email"> 
+							<input name="email" id="email" type="email" class="form-control" placeholder="Email"> 
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-12">
-							<input name="subject" type="text" class="form-control" placeholder="Email Subject">
+							<input name="subject" id="subject"type="text" class="form-control" placeholder="Email Subject">
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-12">
-							<textarea name="message" class="form-control" rows="3" placeholder="Your message"></textarea>
+							<textarea name="message" id="message" class="form-control" rows="3" placeholder="Your message"></textarea>
 						</div>
 					</div>
 					<div class="form-group">

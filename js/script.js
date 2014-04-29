@@ -1,3 +1,86 @@
+//Validaciones sobre formulario de contacto
+
+$("#formulario_de_contacto").validate({
+  rules: {
+    name: "required",
+    email: {
+      required: true,
+      email: true
+    },
+    subject: "required",
+    message: "required"
+  }
+});
+
+//Envio de petición desde formulario por medio de AJAX
+
+$(function() {
+    // obtener el formulario.
+    var form = $('#formulario_de_contacto');
+
+    // Obtener div para mensajes.
+    var formMessages = $('#form-messages');
+
+    console.log(form);
+    // Event listener para el formulario de contacto.
+	$(form).submit(function(event) {
+	    // Previene envio de formulario por defecto en el navegador.
+	    event.preventDefault();
+
+	    // Serializar los datos del formulario.
+		var formData = $(form).serialize();
+
+		// Envio  del formulario usando AJAX.
+		$.ajax({
+		    type: 'POST',
+		    url: $(form).attr('action'),
+		    crossDomain: true,
+		    contentType: 'text/plain',
+		    data: formData,
+		     xhrFields: {
+			    withCredentials: false
+			  },
+
+			  headers: {
+			    'Access-Control-Allow-Origin': '*'
+			  },
+
+			  success: function() {
+			    $(formMessages).removeClass('error');
+			    $(formMessages).addClass('success');
+
+			    // Imprimir lenguage en el div de mensajes.
+			    $(formMessages).text(response);
+
+			    // limpiar el formulario.
+			    $('#name').val('');
+			    $('#email').val('');
+			    $('#subject').val('');
+			    $('#message').val('');
+			  },
+			  error: function() {
+			    // Asegurarse que el formulario de mensajes tiene la clase 'error'
+			    $(formMessages).removeClass('success');
+			    $(formMessages).addClass('error');
+
+			    // Imprimir mensaje de error en el div.
+			    if (data.responseText !== '') {
+			        $(formMessages).text(data.responseText);
+			    } else {
+			        $(formMessages).text('Oops! An error occured and your message could not be sent.');
+			    }
+			  }
+		});
+	});
+
+
+});
+
+
+
+/*********************************************/
+
+
 $.fn.reverse = [].reverse;
 
 $.fn.scrollView = function (val) {
