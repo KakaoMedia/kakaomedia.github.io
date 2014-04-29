@@ -1,0 +1,48 @@
+<div id="portfolio-info" class="hide-info">
+	<span class="close">X</span>
+	<div id="portfolio-body">
+		<div class="row">
+			<div class="col-xs-12 col-md-8"><img src="../img/banpro.jpg"></div>
+			<div class="col-md-6 col-md-4">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit Lorem ipsum dolor sit met, 
+					consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div id="portfolio-footer">
+		<div class="row">
+			<div class="col-md-3">
+				<p>Made for</p>
+				<h3>ESKIMO</h3>
+			</div>
+			<div class="col-md-3">
+				<p>Launched in</p>
+				<h3>2013</h3>
+			</div>
+			<div class="col-md-3">
+				<p>How we did it</p>
+				<ul>
+					<li>CSS3</li>
+					<li>HTML5</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="lead"><h2>RECENT PROJECTS</h2></div>
+	<div class="row">
+		<ul id="portfolio-gallery">
+			{% for item in site.data.es-portfolio %}
+				<li>
+					<span class="item-name">{{ item.name }}</span>
+					<div class="darker"></div>
+					<div class="item-img" style="background-image: url('../img/{{ item.image }}')"></div>
+					<p><span></span>{{ item.footer }}</p>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

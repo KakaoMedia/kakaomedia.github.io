@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+        <!-- Animations CSS -->
+        <link rel="stylesheet" type="text/css" href="/css/animation.css">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="/css/Bootstrap3.1.1/bootstrap.min.css">
+
+        <!-- Style CSS -->
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+    </head>
+    <body data-spy="scroll" data-target=".navbar-scroll">
+        <header>
+            <div id="front_page" class="main">
+                {% include es-front_page.html %}
+            </div>
+        </header>
+
+        <div class="site content">
+          {{ content }}
+        </div>
+
+        <footer>
+            {% include footer.html %}
+        </footer>
+
+        <!-- Javascript Files -->
+        <script type="text/javascript" src="/js/plugins/jquery2.0.1.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/bootstrap3.1.1.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/waypoints2.0.4.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/jquery.animate.clip.js"></script>
+        <script type="text/javascript" src="/js/plugins/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="/js/script.js"></script>
+    </body>
+</html>

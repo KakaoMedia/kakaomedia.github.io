@@ -1,0 +1,58 @@
+<div class="darker"></div>
+<div class="container">
+	<div class="lead">
+		<h2>CONTACT</h2>
+	</div>
+	<div class="lead info_list">
+		<div class="row">
+
+			<div class="col-md-6 col-sm-6 col-xs-12 form_container">
+
+				<div id="form-messages"></div>
+
+				<form id="formulario_de_contacto" class="form-horizontal" role="form" method="POST" action="http://kakaomailer.herokuapp.com/user/5a5832d0-b180-0131-677b-1ad8e2d78281">
+					<div class="form-group">
+						<div class="col-sm-6">
+					  		<input name="name" id="name" type="text" class="form-control" placeholder="Su nombre">
+						</div>
+						<div class="col-sm-6">
+							<input name="email" id="email" type="email" class="form-control" placeholder="Correo"> 
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input name="subject" id="subject"type="text" class="form-control" placeholder="Motivo del mensaje">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<textarea name="message" id="message" class="form-control" rows="3" placeholder="Su mensaje"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<button class="btn">ENVIAR</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12 info_container">
+				{% for item in site.data.es-contact %}
+					{% if item.url == "" or item.url == nil %}
+						<div class="col-md-12 col-sm-6 col-xs-12">
+							<div class="col-md-2"><span class="glyphicon {{ item.icon }} img-circle"></span></div>
+							<div class="col-md-9 info_value"><p>{{ item.value }}</p></div>
+						</div>
+					{% else %}
+						<div class="col-md-12 col-sm-6 col-xs-12">
+							<a href="{{ item.url }}">
+								<div class="col-md-2"><span class="glyphicon {{ item.icon }} img-circle"></span></div>
+								<div class="col-md-9 info_value"><p>{{ item.value }}</p></div>
+							</a>
+						</div>
+					{% endif %}					
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>

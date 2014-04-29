@@ -1,0 +1,15 @@
+- value: '+(505)8880-2422'
+  icon:  'glyphicon-phone'
+  url:   ''
+
+- value: 'Embajada Republica Dominicana, 1 cuadra arriba. Las Colinas.'
+  icon:  'glyphicon-map-marker'
+  url:   ''
+
+- value: '@kakaomedia'
+  icon:  'glyphicon-cloud'
+  url:   'https://twitter.com/@kakaomedia'
+
+- value: 'facebook.com/KakaoMedia'
+  icon:  'glyphicon-thumbs-up'
+  url:   'https://facebook.com/kakaoMedia'
