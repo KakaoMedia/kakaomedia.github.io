@@ -41,13 +41,8 @@ body { overflow-x: hidden; }
 /*------------------------------------*\
     $HEADER
 \*------------------------------------*/
-header  {
-	background: url("../img/front_page.jpg"); 
-	background-repeat: no-repeat;
-	background-position: 0 -130px;
-	background-size: cover;
+header  {	
 	height: 675px;
-	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: 1;
@@ -108,13 +103,16 @@ header a, header a:visited {  color: #FFF;  }
     .es .navbar-header {
         float: none;
     }
+
     .es .navbar-toggle {
         display: block;
     }
+
     .es .navbar-collapse {
         border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
+
     .es .navbar-collapse.collapse {
         display: none !important;
     }
@@ -124,13 +122,16 @@ header a, header a:visited {  color: #FFF;  }
     }
 
     .es .navbar-nav {
-        float: none!important;
+    	display: block;
+        float: none !important;
         margin: 7.5px -15px;
     }
-    .es .navbar-nav>li {
+
+    .es .navbar-nav > li {
         float: none;
     }
-    .es .navbar-nav>li>a {
+
+    .es .navbar-nav > li > a {
         padding-top: 10px;
         padding-bottom: 10px;
     }
@@ -160,7 +161,6 @@ header a, header a:visited {  color: #FFF;  }
 \*------------------------------------*/
 .content {
 	position: relative;
-    top: 675px;
     z-index: 200;
 }
 
@@ -173,7 +173,7 @@ header a, header a:visited {  color: #FFF;  }
 \*------------------------------------*/
 
 #front_page {
-	background: url("../img/front_page.jpg") no-repeat center center;
+	background: url("../img/front_page.jpg") center center no-repeat fixed;
 	background-size: cover;
 	color: #F2F2F2;
 	padding: 30px 15px;
@@ -207,6 +207,11 @@ header a, header a:visited {  color: #FFF;  }
 
 #front_page .info_list { 
 	padding: 0 100px; 
+}
+
+.es #front_page .row div {
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .es #front_page .info_list { 
@@ -296,7 +301,7 @@ header a, header a:visited {  color: #FFF;  }
 	$WHAT-WE-DO
 \*------------------------------------*/
 #what_we_do {
-	background: url("../img/what_we_do.jpg") no-repeat center center;
+	background: url("../img/what_we_do.jpg") center center no-repeat fixed;
 	background-size: cover;
 	color: #FFF;
 	padding-bottom: 30px;	
@@ -768,7 +773,6 @@ header a, header a:visited {  color: #FFF;  }
 	color: #000;
 	height: 100%;
 	left: 0;
-	padding: 50px;
 	position: absolute;
 	right: 0;
 	top: 0px;
@@ -788,14 +792,15 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 #portfolio-info .close {
-	border: 1px solid #FFF;
+	border: 1px solid #333;
 	cursor: pointer;
 	font-size: 2em;
 	padding: 0 5px;
 	position: absolute;
 	right: 1%;
 	transition: border 0.4s linear;
-	top: 1%;
+	top: 2%;
+	z-index: 1;
 
 	-o-transition: border 0.4s linear;
 	transition: border 0.4s linear;
@@ -804,6 +809,8 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 #portfolio-info .close:hover { border-color: #000; }
+
+#portfolio-body { margin: 30px 30px; }
 
 #portfolio-body img { width: 100% }
 
@@ -814,31 +821,28 @@ header a, header a:visited {  color: #FFF;  }
 	text-align: justify;
 }
 
-#portfolio-footer { 
+#portfolio-header { 
 	background-color: #DDD;
-	bottom: 0;
-	left: 0;
 	padding: 5px 50px 5px 100px;
-	position: absolute;
 	width: 100%;
 }
 
-#portfolio-footer .row p, #portfolio-footer .row h3, #portfolio-footer .row li {
+#portfolio-header .row p, #portfolio-header .row h3, #portfolio-header .row li {
 	color: #000;
 	margin: 0;
 	text-align: left;
 	width: 100%;
 }
 
-#portfolio-footer .row p { color: #999; }
+#portfolio-header .row p { color: #999; }
 
-#portfolio-footer .row h3 { font-size: 2em; }
+#portfolio-header .row h3 { font-size: 2em; }
 
-#portfolio-footer ul {
+#portfolio-header ul {
 	list-style: none;
 }
 
-#portfolio-footer .row li {
+#portfolio-header .row li {
 	font-size: 0.7em;
 	font-weight: bold;
 	line-height: normal;

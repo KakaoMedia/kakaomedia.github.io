@@ -91,6 +91,45 @@ $.fn.scrollView = function (val) {
   });
 }
 
+//SpyScroll
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+  		var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+
+// Smooth Scrool with Mouse Wheel
+if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
+	window.onmousewheel = document.onmousewheel = wheel;
+ 
+function wheel(event) {
+    var delta = 0;
+    if (event.wheelDelta) delta = event.wheelDelta / 120;
+    else if (event.detail) delta = -event.detail / 3;
+ 
+    handle(delta);
+    if (event.preventDefault) event.preventDefault();
+    event.preventDefault();
+}
+ 
+function handle(delta) {
+    var time = 400; // delay time
+    var distance = 350; // delta point 
+    // Dom where it will apply 
+    $('html, body').stop().animate({
+        scrollTop: $(window).scrollTop() - (distance * delta)
+    }, time );
+}
+
 function methodToFixLayout(e) {
     var winWidth = $(window).outerWidth() + 17;
 
@@ -110,43 +149,50 @@ $("document").ready(function() {
 
 	$(window).on("resize", methodToFixLayout);
 
+	$('.navbar').affix({
+	    offset: { top: 625, bottom: function () {
+	        	return (this.bottom = $('.footer').outerHeight(true))
+      		}
+		}
+  	});
+
 	$(".main h2, .main p.lead, #what_we_do .title_info, #tools .point_guide .points_container, " + 
 		"#tools .media .media-object, #tools .media .media-body, #tools .media .center_points span, " +
-		"#tools .media .img_container .points_container").not("#front_page h2").addClass("animated fadeOutUp");
+		"#tools .media .img_container .points_container").not("#front_page h2").addClass("animated fadeOut");
 
-	$("#portfolio #portfolio-gallery li").addClass("animated-flip flipOutY");
-	$("#front_page .container").addClass("animated fadeInUp");
+	$("#portfolio #portfolio-gallery li").addClass("animated-flip fadeOutUp");
+	$("#front_page .container").addClass("animated fadeIn");
 	$("#team .team_container").addClass("animated rotateOut");
 
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 150) {
-			$('#front_page .container').removeClass("animated fadeInUp").addClass("animated fadeOutUp");
+			$('#front_page .container').removeClass("animated fadeIn").addClass("animated fadeOut");
 		}
 		
 		if ($(this).scrollTop() < 150) {
-			$('#front_page .container').removeClass("animated fadeOutUp").addClass("animated fadeInUp");
+			$('#front_page .container').removeClass("animated fadeOut").addClass("animated fadeIn");
 		}
 	}); 
 
 	$(".main h2, .main p.lead, #tools .media .media-body").not("#front_page h2").waypoint(function(direction) {
 		if(direction == "up")
-			$(this).removeClass("animated fadeInUp").addClass("animated fadeOutUp");
+			$(this).removeClass("animated fadeIn").addClass("animated fadeOut");
 		if(direction == "down")
-			$(this).removeClass("animated fadeOutUp").addClass("animated fadeInUp");
+			$(this).removeClass("animated fadeOut").addClass("animated fadeIn");
 	}, { offset: "80%" });
 
 	$("#what_we_do .row").waypoint(function(direction) {		
 		if(direction == "up") {
 			$(this).find(".title_info").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function(){  item.removeClass("animated fadeInUp").addClass("animated fadeOutUp"); }, index * 300);
+				setTimeout(function(){  item.removeClass("animated fadeIn").addClass("animated fadeOut"); }, index * 300);
 			});
 		}
 
 		if(direction == "down") {
 			$(this).find(".title_info").each(function(index) {
 				var item = $(this);
-				setTimeout(function(){  item.removeClass("animated fadeOutUp").addClass("animated fadeInUp"); }, index * 300);
+				setTimeout(function(){  item.removeClass("animated fadeOut").addClass("animated fadeIn"); }, index * 300);
 			});
 		}
 	}, { offset: "80%" });
@@ -208,14 +254,14 @@ $("document").ready(function() {
 		if(direction == "up") {
 			$(this).find(".points_container").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeInUp").addClass("animated fadeOutUp"); }, index * 50);
+				setTimeout(function() { item.removeClass("animated fadeIn").addClass("animated fadeOut"); }, index * 50);
 			});
 		}
 
 		if(direction == "down") {
 			$(this).find(".points_container").each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeOutUp").addClass("animated fadeInUp"); }, index * 50);
+				setTimeout(function() { item.removeClass("animated fadeOut").addClass("animated fadeIn"); }, index * 50);
 			});
 		}
 	}, { offset: "80%" });
@@ -227,17 +273,17 @@ $("document").ready(function() {
 
 			$(this).find(".media-object").each(function() {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeInUp").addClass("animated fadeOutUp"); }, length * 50);				
+				setTimeout(function() { item.removeClass("animated fadeIn").addClass("animated fadeOut"); }, length * 50);				
 			});
 
 			$(this).find(".img_container .points_container").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeInUp").addClass("animated fadeOutUp"); }, index * 50);
+				setTimeout(function() { item.removeClass("animated fadeIn").addClass("animated fadeOut"); }, index * 50);
 			});
 
 			$(this).find(".center_points span").each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeInUp").addClass("animated fadeOutUp"); }, (index + length) * 50);
+				setTimeout(function() { item.removeClass("animated fadeIn").addClass("animated fadeOut"); }, (index + length) * 50);
 			});
 		}
 
@@ -246,17 +292,17 @@ $("document").ready(function() {
 
 			$(this).find(".center_points span").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeOutUp").addClass("animated fadeInUp"); }, index * 50);
+				setTimeout(function() { item.removeClass("animated fadeOut").addClass("animated fadeIn"); }, index * 50);
 			});
 
 			$(this).find(".img_container .points_container").each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeOutUp").addClass("animated fadeInUp"); }, (index + length) * 50);
+				setTimeout(function() { item.removeClass("animated fadeOut").addClass("animated fadeIn"); }, (index + length) * 50);
 			});
 
 			$(this).find(".media-object").each(function() {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeOutUp").addClass("animated fadeInUp"); }, length * 50);				
+				setTimeout(function() { item.removeClass("animated fadeOut").addClass("animated fadeIn"); }, length * 50);				
 			});
 		}
 
@@ -268,17 +314,17 @@ $("document").ready(function() {
 
 			$(this).find(".media-object").each(function() {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeInUp").addClass("animated fadeOutUp"); }, length * 50);				
+				setTimeout(function() { item.removeClass("animated fadeIn").addClass("animated fadeOut"); }, length * 50);				
 			});
 
 			$(this).find(".img_container .points_container").each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeInUp").addClass("animated fadeOutUp"); }, index * 50);
+				setTimeout(function() { item.removeClass("animated fadeIn").addClass("animated fadeOut"); }, index * 50);
 			});
 
 			$(this).find(".center_points span").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeInUp").addClass("animated fadeOutUp"); }, (index + length) * 50);
+				setTimeout(function() { item.removeClass("animated fadeIn").addClass("animated fadeOut"); }, (index + length) * 50);
 			});
 		}
 
@@ -287,17 +333,17 @@ $("document").ready(function() {
 
 			$(this).find(".center_points span").each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeOutUp").addClass("animated fadeInUp"); }, index * 50);
+				setTimeout(function() { item.removeClass("animated fadeOut").addClass("animated fadeIn"); }, index * 50);
 			});
 
 			$(this).find(".img_container .points_container").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeOutUp").addClass("animated fadeInUp"); }, (index + length) * 50);
+				setTimeout(function() { item.removeClass("animated fadeOut").addClass("animated fadeIn"); }, (index + length) * 50);
 			});
 
 			$(this).find(".media-object").each(function() {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeOutUp").addClass("animated fadeInUp"); }, length * 50);				
+				setTimeout(function() { item.removeClass("animated fadeOut").addClass("animated fadeIn"); }, length * 50);				
 			});
 		}
 
@@ -308,9 +354,9 @@ $("document").ready(function() {
 
 	$("#portfolio #portfolio-gallery li").waypoint(function(direction) {
 		if(direction == "up")
-			$(this).removeClass("animated-flip flipInY").addClass("animated-flip flipOutY");
+			$(this).removeClass("animated-flip fadeInUp").addClass("animated-flip fadeOutUp");
 		if(direction == "down")
-			$(this).removeClass("animated-flip flipOutY").addClass("animated-flip flipInY");
+			$(this).removeClass("animated-flip fadeOutUp").addClass("animated-flip fadeInUp");
 	}, { offset: "80%" });
 
 	$("#portfolio-gallery li").on("click", function() {
