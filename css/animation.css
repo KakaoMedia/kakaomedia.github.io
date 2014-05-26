@@ -1,75 +1,21 @@
-@-webkit-keyframes bounceIn { 
-    0% { 
-        opacity: 0; 
-        -webkit-transform: scale(.3); 
-    } 
-
-    50% { 
-        opacity: 1; 
-        -webkit-transform: scale(1.05); 
-    } 
-
-    70% { 
-        -webkit-transform: scale(.9); 
-    } 
-
-    100% { 
-         -webkit-transform: scale(1); 
-    } 
+@-webkit-keyframes fadeInUp { 
+    0% { opacity: 0; } 
+    100% { opacity: 1; } 
 } 
 
-@keyframes bounceIn { 
-    0% { 
-        opacity: 0; 
-        transform: scale(.3); 
-    } 
-
-    50% { 
-        opacity: 1; 
-        transform: scale(1.05); 
-    } 
-
-    70% { 
-        transform: scale(.9); 
-    } 
-
-    100% { 
-        transform: scale(1); 
-    } 
+@keyframes fadeInUp { 
+    0% { opacity: 0; } 
+    100% { opacity: 1; } 
 } 
 
-@-webkit-keyframes bounceOut { 
-    0% { 
-        -webkit-transform: scale(1); 
-    } 
-    25% { 
-        -webkit-transform: scale(.95); 
-    } 
-    50% { 
-        opacity: 1; 
-        -webkit-transform: scale(1.1); 
-    } 
-    100% { 
-        opacity: 0; 
-        -webkit-transform: scale(.3); 
-    } 
-} 
+@-webkit-keyframes fadeOutUp { 
+    0% { opacity: 1; } 
+    100% { opacity: 0; } 
+}
 
-@keyframes bounceOut { 
-    0% { 
-        transform: scale(1); 
-    } 
-    25% { 
-        transform: scale(.95); 
-    } 
-    50% { 
-        opacity: 1; 
-        transform: scale(1.1); 
-    } 
-    100% { 
-        opacity: 0; 
-        transform: scale(.3); 
-    } 
+@keyframes fadeOutUp { 
+    0% { opacity: 1; }
+    100% { opacity: 0; } 
 }
 
 @-webkit-keyframes flipInY { 
@@ -180,23 +126,28 @@
     } 
 }
 
-.animated { 
+.animated, animated-flip{ 
     -webkit-animation-duration: 0.5s; 
     animation-duration: 0.5s; 
     -webkit-animation-fill-mode: both; 
     animation-fill-mode: both; 
     -webkit-animation-timing-function: ease-in-out; 
     animation-timing-function: ease-in-out; 
-} 
-
-.bounceIn { 
-    -webkit-animation-name: bounceIn; 
-    animation-name: bounceIn; 
 }
 
-.bounceOut { 
-    -webkit-animation-name: bounceOut; 
-    animation-name: bounceOut; 
+.animated-flip {
+    -webkit-animation-duration: 1s; 
+    animation-duration: 1s; 
+}
+
+.fadeInUp { 
+    -webkit-animation-name: fadeInUp; 
+    animation-name: fadeInUp; 
+}
+
+.fadeOutUp { 
+    -webkit-animation-name: fadeOutUp; 
+    animation-name: fadeOutUp; 
 }
 
 .flipInY { 

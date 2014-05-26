@@ -21,7 +21,6 @@ $(function() {
     // Obtener div para mensajes.
     var formMessages = $('#form-messages');
 
-    console.log(form);
     // Event listener para el formulario de contacto.
 	$(form).submit(function(event) {
 	    // Previene envio de formulario por defecto en el navegador.
@@ -113,41 +112,41 @@ $("document").ready(function() {
 
 	$(".main h2, .main p.lead, #what_we_do .title_info, #tools .point_guide .points_container, " + 
 		"#tools .media .media-object, #tools .media .media-body, #tools .media .center_points span, " +
-		"#tools .media .img_container .points_container").not("#front_page h2").addClass("animated bounceOut");
+		"#tools .media .img_container .points_container").not("#front_page h2").addClass("animated fadeOutUp");
 
-	$("#portfolio #portfolio-gallery li").addClass("animated flipOutY");
-	$("#front_page .container").addClass("animated bounceIn");
+	$("#portfolio #portfolio-gallery li").addClass("animated-flip flipOutY");
+	$("#front_page .container").addClass("animated fadeInUp");
 	$("#team .team_container").addClass("animated rotateOut");
 
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 150) {
-			$('#front_page .container').removeClass("animated bounceIn").addClass("animated bounceOut");
+			$('#front_page .container').removeClass("animated fadeInUp").addClass("animated fadeOutUp");
 		}
 		
 		if ($(this).scrollTop() < 150) {
-			$('#front_page .container').removeClass("animated bounceOut").addClass("animated bounceIn");
+			$('#front_page .container').removeClass("animated fadeOutUp").addClass("animated fadeInUp");
 		}
 	}); 
 
 	$(".main h2, .main p.lead, #tools .media .media-body").not("#front_page h2").waypoint(function(direction) {
 		if(direction == "up")
-			$(this).removeClass("animated bounceIn").addClass("animated bounceOut");
+			$(this).removeClass("animated fadeInUp").addClass("animated fadeOutUp");
 		if(direction == "down")
-			$(this).removeClass("animated bounceOut").addClass("animated bounceIn");
+			$(this).removeClass("animated fadeOutUp").addClass("animated fadeInUp");
 	}, { offset: "80%" });
 
 	$("#what_we_do .row").waypoint(function(direction) {		
 		if(direction == "up") {
 			$(this).find(".title_info").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function(){  item.removeClass("animated bounceIn").addClass("animated bounceOut"); }, index * 300);
+				setTimeout(function(){  item.removeClass("animated fadeInUp").addClass("animated fadeOutUp"); }, index * 300);
 			});
 		}
 
 		if(direction == "down") {
 			$(this).find(".title_info").each(function(index) {
 				var item = $(this);
-				setTimeout(function(){  item.removeClass("animated bounceOut").addClass("animated bounceIn"); }, index * 300);
+				setTimeout(function(){  item.removeClass("animated fadeOutUp").addClass("animated fadeInUp"); }, index * 300);
 			});
 		}
 	}, { offset: "80%" });
@@ -209,14 +208,14 @@ $("document").ready(function() {
 		if(direction == "up") {
 			$(this).find(".points_container").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated bounceIn").addClass("animated bounceOut"); }, index * 50);
+				setTimeout(function() { item.removeClass("animated fadeInUp").addClass("animated fadeOutUp"); }, index * 50);
 			});
 		}
 
 		if(direction == "down") {
 			$(this).find(".points_container").each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated bounceOut").addClass("animated bounceIn"); }, index * 50);
+				setTimeout(function() { item.removeClass("animated fadeOutUp").addClass("animated fadeInUp"); }, index * 50);
 			});
 		}
 	}, { offset: "80%" });
@@ -228,17 +227,17 @@ $("document").ready(function() {
 
 			$(this).find(".media-object").each(function() {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated bounceIn").addClass("animated bounceOut"); }, length * 50);				
+				setTimeout(function() { item.removeClass("animated fadeInUp").addClass("animated fadeOutUp"); }, length * 50);				
 			});
 
 			$(this).find(".img_container .points_container").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated bounceIn").addClass("animated bounceOut"); }, index * 50);
+				setTimeout(function() { item.removeClass("animated fadeInUp").addClass("animated fadeOutUp"); }, index * 50);
 			});
 
 			$(this).find(".center_points span").each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated bounceIn").addClass("animated bounceOut"); }, (index + length) * 50);
+				setTimeout(function() { item.removeClass("animated fadeInUp").addClass("animated fadeOutUp"); }, (index + length) * 50);
 			});
 		}
 
@@ -247,17 +246,17 @@ $("document").ready(function() {
 
 			$(this).find(".center_points span").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated bounceOut").addClass("animated bounceIn"); }, index * 50);
+				setTimeout(function() { item.removeClass("animated fadeOutUp").addClass("animated fadeInUp"); }, index * 50);
 			});
 
 			$(this).find(".img_container .points_container").each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated bounceOut").addClass("animated bounceIn"); }, (index + length) * 50);
+				setTimeout(function() { item.removeClass("animated fadeOutUp").addClass("animated fadeInUp"); }, (index + length) * 50);
 			});
 
 			$(this).find(".media-object").each(function() {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated bounceOut").addClass("animated bounceIn"); }, length * 50);				
+				setTimeout(function() { item.removeClass("animated fadeOutUp").addClass("animated fadeInUp"); }, length * 50);				
 			});
 		}
 
@@ -269,17 +268,17 @@ $("document").ready(function() {
 
 			$(this).find(".media-object").each(function() {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated bounceIn").addClass("animated bounceOut"); }, length * 50);				
+				setTimeout(function() { item.removeClass("animated fadeInUp").addClass("animated fadeOutUp"); }, length * 50);				
 			});
 
 			$(this).find(".img_container .points_container").each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated bounceIn").addClass("animated bounceOut"); }, index * 50);
+				setTimeout(function() { item.removeClass("animated fadeInUp").addClass("animated fadeOutUp"); }, index * 50);
 			});
 
 			$(this).find(".center_points span").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated bounceIn").addClass("animated bounceOut"); }, (index + length) * 50);
+				setTimeout(function() { item.removeClass("animated fadeInUp").addClass("animated fadeOutUp"); }, (index + length) * 50);
 			});
 		}
 
@@ -288,17 +287,17 @@ $("document").ready(function() {
 
 			$(this).find(".center_points span").each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated bounceOut").addClass("animated bounceIn"); }, index * 50);
+				setTimeout(function() { item.removeClass("animated fadeOutUp").addClass("animated fadeInUp"); }, index * 50);
 			});
 
 			$(this).find(".img_container .points_container").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated bounceOut").addClass("animated bounceIn"); }, (index + length) * 50);
+				setTimeout(function() { item.removeClass("animated fadeOutUp").addClass("animated fadeInUp"); }, (index + length) * 50);
 			});
 
 			$(this).find(".media-object").each(function() {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated bounceOut").addClass("animated bounceIn"); }, length * 50);				
+				setTimeout(function() { item.removeClass("animated fadeOutUp").addClass("animated fadeInUp"); }, length * 50);				
 			});
 		}
 
@@ -309,9 +308,9 @@ $("document").ready(function() {
 
 	$("#portfolio #portfolio-gallery li").waypoint(function(direction) {
 		if(direction == "up")
-			$(this).removeClass("animated flipInY").addClass("animated flipOutY");
+			$(this).removeClass("animated-flip flipInY").addClass("animated-flip flipOutY");
 		if(direction == "down")
-			$(this).removeClass("animated flipOutY").addClass("animated flipInY");
+			$(this).removeClass("animated-flip flipOutY").addClass("animated-flip flipInY");
 	}, { offset: "80%" });
 
 	$("#portfolio-gallery li").on("click", function() {
