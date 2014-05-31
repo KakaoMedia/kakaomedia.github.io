@@ -66,6 +66,19 @@ header a, header a:visited {  color: #FFF;  }
 	width: 100%;
 }
 
+.logo-kakao {
+	color: #FFF !important;
+	display: none !important;
+}
+
+.logo-kakao:hover, .logo-kakao:active {
+	color: #FFA500 !important;
+}
+
+.affix .logo-kakao {
+	display: block !important;
+}
+
 .navbar.affix {
 	height: 50px;
 	position: fixed;
@@ -93,13 +106,57 @@ header a, header a:visited {  color: #FFF;  }
 	display: none;
 }
 
+@media screen and (min-width: 768px) {
+	.navbar .container {
+		width: 95%;
+	}
+}
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
 	.es .navbar .container {
 		width: 99%;
 	}
 }
 
-@media (max-width: 934px) {
+@media (max-width: 902px) {
+    .en .navbar-header {
+        float: none;
+    }
+
+    .en .navbar-toggle {
+        display: block;
+    }
+
+    .en .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .en .navbar-collapse.collapse {
+        display: none !important;
+    }
+
+    .en .navbar-collapse.collapse.in {
+    	display: block !important;
+    }
+
+    .en .navbar-nav {
+    	display: block;
+        float: none !important;
+        margin: 7.5px -15px;
+    }
+
+    .en .navbar-nav > li {
+        float: none;
+    }
+
+    .en .navbar-nav > li > a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+@media (max-width: 1098px) {
     .es .navbar-header {
         float: none;
     }
@@ -434,7 +491,15 @@ header a, header a:visited {  color: #FFF;  }
 /*------------------------------------*\
 	$HOW-WE-WORK
 \*------------------------------------*/
-#how_we_work { background-color: #FFF; }
+#how_we_work { 
+	background-color: #FFF;
+	padding-top: 50px;
+}
+
+#how_we_work .sub_title:after {
+	background: -webkit-gradient(linear, 0 0, 100% 0, from(#FFF), to(#FFF), color-stop(50%, #F97E03));
+	width: 40%;
+}
 
 #how_we_work .row div {
 	padding: 0 10px;
@@ -884,6 +949,7 @@ header a, header a:visited {  color: #FFF;  }
 	overflow: hidden;
 	margin-bottom: 0;
 	transform: rotate(45deg);
+	transition: all 0.8s ease-in-out;
 	width: 260px;
 
 	-0-border-radius: 0;
@@ -900,7 +966,7 @@ header a, header a:visited {  color: #FFF;  }
 
 #team .thumbnail div {
 	background-color: #16C1A8;
-	border: none;
+	border: 3px solid #16C1A8;
 	height: 100%;
 	left: 0;
 	margin: 0;
@@ -908,13 +974,14 @@ header a, header a:visited {  color: #FFF;  }
 	padding: 40% 0;
 	position: absolute;
 	top: 0;
+	transition: all 0.4s ease-in-out;
 	visibility: hidden;
 	width: 100%;
 	z-index: 1;
 }
 
 #team .thumbnail:hover { 
-	border: none;
+	border: none;	
 	transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
 
 	-o-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
@@ -924,7 +991,7 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 #team .thumbnail:hover div {
-	opacity: 1;
+	opacity: 1;	
 	visibility: visible;
 	z-index: 20;
 }
@@ -967,17 +1034,15 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 .flip {
-  -o-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  -mz-transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-    
-  -o-backfaace-visibility: visible;
-  -ms-backface-visibility: visible;
-  -moz-backface-visibility: visible;
-  -webkit-backface-visibility: visible;
-  
-  
+	-o-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-mz-transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+
+	-o-backfaace-visibility: visible;
+	-ms-backface-visibility: visible;
+	-moz-backface-visibility: visible;
+	-webkit-backface-visibility: visible;
 }
 
 @media screen and (min-width: 1021px) and (max-width: 1199px) {
@@ -1103,7 +1168,7 @@ header a, header a:visited {  color: #FFF;  }
 #contact form input, #contact form textarea {
 	background-color: #E6E7E8;
 	border-radius: 3px;
-	color: #404041;
+	color: #333;
 
 	-o-border-radius: 3px;
 	-mz-border-radius: 3px;
@@ -1128,10 +1193,25 @@ header a, header a:visited {  color: #FFF;  }
 
 #contact form button:hover { border-color: #30BAA4; }
 
-input::-webkit-input-placeholder { color: #404041; }
-input::-moz-placeholder { color: #404041; }
-input:-moz-placeholder { color: #404041; }
-input:-ms-input-placeholder { color: #404041; }
+input::-webkit-input-placeholder, input::-webkit-textarea-placeholder { 
+	color: #333 !important; 
+	opacity: 1; 
+}
+
+input::-moz-placeholder { 
+	color: #333 !important; 
+	opacity: 1; 
+}
+
+input:-moz-placeholder { 
+	color: #333 !important; 
+	opacity: 1;  
+}
+
+input:-ms-input-placeholder { 
+	color: #333 !important; 
+	opacity: 1;  
+}
 
 #contact .info_container {
 	font-size: 0.8em;
