@@ -160,7 +160,7 @@ $("document").ready(function() {
 
 	$("#portfolio #portfolio-gallery li").addClass("animated-flip fadeOutUp");
 	$("#front_page .container").addClass("animated fadeIn");
-	$("#team .team_container").addClass("animated rotateOut");
+	$("#team .team_container").addClass("animated fadeOutUp");
 
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 150) {
@@ -408,9 +408,9 @@ $("document").ready(function() {
 	//Team
 	$("#team .team_container").waypoint(function(direction) {
 		if(direction == "up")
-			$(this).removeClass("animated rotateIn").addClass("animated rotateOut");
+			$(this).removeClass("animated fadeInUp").addClass("animated fadeOutUp");
 		if(direction == "down")
-			$(this).removeClass("animated rotateOut").addClass("animated rotateIn");
+			$(this).removeClass("animated fadeOutUp").addClass("animated fadeInUp");
 	}, { offset: "80%" });
 
 });

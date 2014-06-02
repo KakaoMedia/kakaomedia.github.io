@@ -66,6 +66,19 @@ header a, header a:visited {  color: #FFF;  }
 	width: 100%;
 }
 
+.logo-kakao {
+	color: #FFF !important;
+	display: none !important;
+}
+
+.logo-kakao:hover, .logo-kakao:active {
+	color: #FFA500 !important;
+}
+
+.affix .logo-kakao {
+	display: block !important;
+}
+
 .navbar.affix {
 	height: 50px;
 	position: fixed;
@@ -93,13 +106,19 @@ header a, header a:visited {  color: #FFF;  }
 	display: none;
 }
 
+@media screen and (min-width: 768px) {
+ 	.navbar .container {
+ 		width: 95%;
+	}
+}
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
 	.es .navbar .container {
 		width: 99%;
 	}
 }
 
-@media (max-width: 934px) {
+@media (max-width: 1098px) {
     .es .navbar-header {
         float: none;
     }
@@ -136,6 +155,44 @@ header a, header a:visited {  color: #FFF;  }
         padding-bottom: 10px;
     }
 }
+
+@media (max-width: 902px) {
+	.en .navbar-header {
+  		float: none;
+	}
+
+   .en .navbar-toggle {
+	   display: block;
+   }
+
+   .en .navbar-collapse {
+       border-top: 1px solid transparent;
+       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+   }
+
+   .en .navbar-collapse.collapse {
+       display: none !important;
+   }
+
+   .en .navbar-collapse.collapse.in {
+   	display: block !important;
+   }
+
+   .en .navbar-nav {
+   		display: block;
+		float: none !important;
+       	margin: 7.5px -15px;
+   }
+
+   .en .navbar-nav > li {
+       float: none;
+   }
+
+   .en .navbar-nav > li > a {
+       padding-top: 10px;
+       padding-bottom: 10px;
+ 	}
+ }
 
 @media screen and (min-width: 768px) {
 	.navbar-nav {
@@ -1161,10 +1218,25 @@ header a, header a:visited {  color: #FFF;  }
 
 #contact form button:hover { border-color: #30BAA4; }
 
-input::-webkit-input-placeholder { color: #404041; }
-input::-moz-placeholder { color: #404041; }
-input:-moz-placeholder { color: #404041; }
-input:-ms-input-placeholder { color: #404041; }
+input::-webkit-input-placeholder, input::-webkit-textarea-placeholder { 
+	color: #333 !important; 
+	opacity: 1; 
+}
+ 
+ input::-moz-placeholder { 
+ 	color: #333 !important; 
+ 	opacity: 1; 
+}
+ 
+ input:-moz-placeholder { 
+ 	color: #333 !important; 
+ 	opacity: 1;  
+}
+ 
+ input:-ms-input-placeholder { 
+ 	color: #333 !important; 
+ 	opacity: 1;  
+}
 
 #contact .info_container {
 	font-size: 0.8em;
