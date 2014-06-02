@@ -324,7 +324,7 @@ header a, header a:visited {  color: #FFF;  }
 #what_we_do .row { position: relative; }
 
 #what_we_do .row .first_group > div, #what_we_do .row .second_group > div { 
-	font-size: 17px;
+	font-size: 17px; 
 	margin-bottom: 20px; 
 	position: initial;
 }
@@ -903,6 +903,7 @@ header a, header a:visited {  color: #FFF;  }
 	overflow: hidden;
 	margin-bottom: 0;
 	transform: rotate(45deg);
+	transition-duration: 0.5s;
 	width: 260px;
 
 	-0-border-radius: 0;
@@ -919,7 +920,6 @@ header a, header a:visited {  color: #FFF;  }
 
 #team .thumbnail div {
 	background-color: #16C1A8;
-	border: none;
 	height: 100%;
 	left: 0;
 	margin: 0;
@@ -927,13 +927,20 @@ header a, header a:visited {  color: #FFF;  }
 	padding: 40% 0;
 	position: absolute;
 	top: 0;
+	transition: all 0.5s ease-in-out;
 	visibility: hidden;
 	width: 100%;
 	z-index: 1;
+
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-mz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
 }
 
 #team .thumbnail:hover { 
 	border: none;
+	transition-duration: 0.5s;
 	transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
 
 	-o-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
@@ -944,14 +951,21 @@ header a, header a:visited {  color: #FFF;  }
 
 #team .thumbnail:hover div {
 	opacity: 1;
+	transition: all 0.5s ease-in-out;
 	visibility: visible;
 	z-index: 20;
+
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-mz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
 }
 
 #team .thumbnail p {
 	left: 10;
 	position: relative;
 	top: -5px;
+	transition-duration: 0.5s;
 	transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
 
 	-o-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
