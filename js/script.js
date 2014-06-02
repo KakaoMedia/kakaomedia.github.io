@@ -156,13 +156,11 @@ $("document").ready(function() {
 		}
   	});
 
-	$(".main h2, .main p.lead, #what_we_do .title_info, #tools .point_guide .points_container, " + 
-		"#tools .media .media-object, #tools .media .media-body, #tools .media .center_points span, " +
-		"#tools .media .img_container .points_container").not("#front_page h2").addClass("animated fadeOut");
+	$(".main h2, .main p.lead, #what_we_do .title_info").not("#front_page h2").addClass("animated fadeOut");
 
 	$("#portfolio #portfolio-gallery li").addClass("animated-flip fadeOutUp");
 	$("#front_page .container").addClass("animated fadeIn");
-	$("#team .team_container").addClass("animated-flip fadeOutUp");
+	$("#team .team_container").addClass("animated rotateOut");
 
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 150) {
@@ -174,7 +172,7 @@ $("document").ready(function() {
 		}
 	}); 
 
-	$(".main h2, .main p.lead, #tools .media .media-body").not("#front_page h2").waypoint(function(direction) {
+	$(".main h2, .main p.lead").not("#front_page h2").waypoint(function(direction) {
 		if(direction == "up")
 			$(this).removeClass("animated fadeIn").addClass("animated fadeOut");
 		if(direction == "down")
@@ -185,14 +183,14 @@ $("document").ready(function() {
 		if(direction == "up") {
 			$(this).find(".title_info").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function(){  item.removeClass("animated fadeIn").addClass("animated fadeOut"); }, index * 300);
+				setTimeout(function(){  item.removeClass("animated fadeIn").addClass("animated fadeOut"); }, index * 100);
 			});
 		}
 
 		if(direction == "down") {
 			$(this).find(".title_info").each(function(index) {
 				var item = $(this);
-				setTimeout(function(){  item.removeClass("animated fadeOut").addClass("animated fadeIn"); }, index * 300);
+				setTimeout(function(){  item.removeClass("animated fadeOut").addClass("animated fadeIn"); }, index * 100);
 			});
 		}
 	}, { offset: "80%" });
@@ -254,15 +252,27 @@ $("document").ready(function() {
 		if(direction == "up") {
 			$(this).find(".points_container").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeIn").addClass("animated fadeOut"); }, index * 50);
+				setTimeout(function() { item.css("opacity", 0); }, index * 15);
 			});
 		}
 
 		if(direction == "down") {
 			$(this).find(".points_container").each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeOut").addClass("animated fadeIn"); }, index * 50);
+				setTimeout(function() { item.css("opacity", 1); }, index * 15);
 			});
+		}
+	}, { offset: "80%" });
+
+	$("#tools .resume_tools .media-body").waypoint(function(direction) {
+		var item = $(this);
+
+		if(direction == "up") {
+			setTimeout(function() { item.css("opacity", 0); }, 100);
+		}
+
+		if(direction == "down") {
+			setTimeout(function() { item.css("opacity", 1); }, 100);
 		}
 	}, { offset: "80%" });
 
@@ -273,17 +283,17 @@ $("document").ready(function() {
 
 			$(this).find(".media-object").each(function() {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeIn").addClass("animated fadeOut"); }, length * 50);				
+				setTimeout(function() { item.css("opacity", 0); }, length * 15);
 			});
 
 			$(this).find(".img_container .points_container").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeIn").addClass("animated fadeOut"); }, index * 50);
+				setTimeout(function() { item.css("opacity", 0); }, index * 15);
 			});
 
 			$(this).find(".center_points span").each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeIn").addClass("animated fadeOut"); }, (index + length) * 50);
+				setTimeout(function() { item.css("opacity", 0); }, (index + length) * 15);
 			});
 		}
 
@@ -292,17 +302,17 @@ $("document").ready(function() {
 
 			$(this).find(".center_points span").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeOut").addClass("animated fadeIn"); }, index * 50);
+				setTimeout(function() { item.css("opacity", 1); }, index * 15);
 			});
 
 			$(this).find(".img_container .points_container").each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeOut").addClass("animated fadeIn"); }, (index + length) * 50);
+				setTimeout(function() { item.css("opacity", 1); }, (index + length) * 15);
 			});
 
 			$(this).find(".media-object").each(function() {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeOut").addClass("animated fadeIn"); }, length * 50);				
+				setTimeout(function() { item.css("opacity", 1); }, length * 15);
 			});
 		}
 
@@ -314,17 +324,17 @@ $("document").ready(function() {
 
 			$(this).find(".media-object").each(function() {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeIn").addClass("animated fadeOut"); }, length * 50);				
+				setTimeout(function() { item.css("opacity", 0); }, length * 15);
 			});
 
 			$(this).find(".img_container .points_container").each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeIn").addClass("animated fadeOut"); }, index * 50);
+				setTimeout(function() { item.css("opacity", 0); }, index * 15);
 			});
 
 			$(this).find(".center_points span").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeIn").addClass("animated fadeOut"); }, (index + length) * 50);
+				setTimeout(function() { item.css("opacity", 0); }, (index + length) * 15);
 			});
 		}
 
@@ -333,17 +343,17 @@ $("document").ready(function() {
 
 			$(this).find(".center_points span").each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeOut").addClass("animated fadeIn"); }, index * 50);
+				setTimeout(function() { item.css("opacity", 1); }, index * 15);
 			});
 
 			$(this).find(".img_container .points_container").reverse().each(function(index) {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeOut").addClass("animated fadeIn"); }, (index + length) * 50);
+				setTimeout(function() { item.css("opacity", 1); }, (index + length) * 15);
 			});
 
 			$(this).find(".media-object").each(function() {
 				var item = $(this);
-				setTimeout(function() { item.removeClass("animated fadeOut").addClass("animated fadeIn"); }, length * 50);				
+				setTimeout(function() { item.css("opacity", 1); }, length * 15);
 			});
 		}
 
@@ -398,9 +408,9 @@ $("document").ready(function() {
 	//Team
 	$("#team .team_container").waypoint(function(direction) {
 		if(direction == "up")
-			$(this).removeClass("animated-flip fadeInUp").addClass("animated-flip fadeOutUp");
+			$(this).removeClass("animated rotateIn").addClass("animated rotateOut");
 		if(direction == "down")
-			$(this).removeClass("animated-flip fadeOutUp").addClass("animated-flip fadeInUp");
+			$(this).removeClass("animated rotateOut").addClass("animated rotateIn");
 	}, { offset: "80%" });
 
 });
