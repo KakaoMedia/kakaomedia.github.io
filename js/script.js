@@ -12,14 +12,91 @@ $("#formulario_de_contacto").validate({
   }
 });
 
+// Convertir parametros de formulario en objeto para envio mediante AJAX
+
+(function($){
+    $.fn.serializeObject = function(){
+
+        var self = this,
+            json = {},
+            push_counters = {},
+            patterns = {
+                "validate": /^[a-zA-Z][a-zA-Z0-9_]*(?:\[(?:\d*|[a-zA-Z0-9_]+)\])*$/,
+                "key":      /[a-zA-Z0-9_]+|(?=\[\])/g,
+                "push":     /^$/,
+                "fixed":    /^\d+$/,
+                "named":    /^[a-zA-Z0-9_]+$/
+            };
+
+
+        this.build = function(base, key, value){
+            base[key] = value;
+            return base;
+        };
+
+        this.push_counter = function(key){
+            if(push_counters[key] === undefined){
+                push_counters[key] = 0;
+            }
+            return push_counters[key]++;
+        };
+
+        $.each($(this).serializeArray(), function(){
+
+            // skip invalid keys
+            if(!patterns.validate.test(this.name)){
+                return;
+            }
+
+            var k,
+                keys = this.name.match(patterns.key),
+                merge = this.value,
+                reverse_key = this.name;
+
+            while((k = keys.pop()) !== undefined){
+
+                // adjust reverse_key
+                reverse_key = reverse_key.replace(new RegExp("\\[" + k + "\\]$"), '');
+
+                // push
+                if(k.match(patterns.push)){
+                    merge = self.build([], self.push_counter(reverse_key), merge);
+                }
+
+                // fixed
+                else if(k.match(patterns.fixed)){
+                    merge = self.build([], k, merge);
+                }
+
+                // named
+                else if(k.match(patterns.named)){
+                    merge = self.build({}, k, merge);
+                }
+            }
+
+            json = $.extend(true, json, merge);
+        });
+
+        return json;
+    };
+})(jQuery);
+
+
+
+
 //Envio de petición desde formulario por medio de AJAX
 
 $(function() {
+
+
     // obtener el formulario.
     var form = $('#formulario_de_contacto');
 
     // Obtener div para mensajes.
     var formMessages = $('#form-messages');
+
+    // Obtener boton de enviar
+    var botonEnviar = $('#boton-enviar');
 
     // Event listener para el formulario de contacto.
 	$(form).submit(function(event) {
@@ -27,7 +104,11 @@ $(function() {
 	    event.preventDefault();
 
 	    // Serializar los datos del formulario.
-		var formData = $(form).serialize();
+		var formData = $(form).serializeObject();
+
+		//Cambiar estado de boton enviar
+		$(botonEnviar).css( "background-color", "lightseagreen" );
+		$(botonEnviar).text("Sending...");
 
 		// Envio  del formulario usando AJAX.
 		$.ajax({
@@ -35,21 +116,25 @@ $(function() {
 		    url: $(form).attr('action'),
 		    crossDomain: true,
 		    contentType: 'text/plain',
-		    data: formData,
-		     xhrFields: {
-			    withCredentials: false
-			  },
-
+		     data: JSON.stringify({
+			        uuid: formData.uuid,
+			        name: formData.name,
+			        subject: formData.subject,
+			        email: formData.email,
+			        message: formData.message
+			    }),
 			  headers: {
-			    'Access-Control-Allow-Origin': '*'
+			    'Content-Type': 'application/json; charset=utf-8'
 			  },
-
-			  success: function() {
+			  success: function(data) {
+			  	console.log(data);
 			    $(formMessages).removeClass('error');
 			    $(formMessages).addClass('success');
+			    $('#boton-enviar').css( "background-color", "darkorange" );
+			    $(botonEnviar).text("Sent")
 
 			    // Imprimir lenguage en el div de mensajes.
-			    $(formMessages).text(response);
+			    $(formMessages).text(data.message);
 
 			    // limpiar el formulario.
 			    $('#name').val('');
@@ -57,7 +142,7 @@ $(function() {
 			    $('#subject').val('');
 			    $('#message').val('');
 			  },
-			  error: function() {
+			  error: function(data) {
 			    // Asegurarse que el formulario de mensajes tiene la clase 'error'
 			    $(formMessages).removeClass('success');
 			    $(formMessages).addClass('error');
