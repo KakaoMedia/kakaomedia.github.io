@@ -9,8 +9,12 @@ $("#formulario_de_contacto").validate({
     },
     subject: "required",
     message: "required"
-  }
+  },
+   submitHandler: function(form, event) { 
+      event.preventDefault();
+   }
 });
+
 
 // Convertir parametros de formulario en objeto para envio mediante AJAX
 
@@ -106,57 +110,71 @@ $(function() {
 	    // Serializar los datos del formulario.
 		var formData = $(form).serializeObject();
 
-		//Cambiar estado de boton enviar
-		$(botonEnviar).css( "background-color", "lightseagreen" );
-		$(botonEnviar).text("Sending...");
+		if(formData.uuid !== "" && formData.name !== "" && formData.subject !== "" && formData.menssage !== "") {
 
-		// Envio  del formulario usando AJAX.
-		$.ajax({
-		    type: 'POST',
-		    url: $(form).attr('action'),
-		    crossDomain: true,
-		    contentType: 'text/plain',
-		     data: JSON.stringify({
-			        uuid: formData.uuid,
-			        name: formData.name,
-			        subject: formData.subject,
-			        email: formData.email,
-			        message: formData.message
-			    }),
-			  headers: {
-			    'Content-Type': 'application/json; charset=utf-8'
-			  },
-			  success: function(data) {
-			  	console.log(data);
-			    $(formMessages).removeClass('error');
-			    $(formMessages).addClass('success');
-			    $('#boton-enviar').css( "background-color", "darkorange" );
-			    $(botonEnviar).text("Sent")
+			//Cambiar estado de boton enviar
 
-			    // Imprimir lenguage en el div de mensajes.
-			    $(formMessages).text(data.message);
+			$(botonEnviar).css( "background-color", "lightseagreen" );
+			$(botonEnviar).text("Sending...");
 
-			    // limpiar el formulario.
-			    $('#name').val('');
-			    $('#email').val('');
-			    $('#subject').val('');
-			    $('#message').val('');
-			  },
-			  error: function(data) {
-			    // Asegurarse que el formulario de mensajes tiene la clase 'error'
-			    $(formMessages).removeClass('success');
-			    $(formMessages).addClass('error');
+					// Envio  del formulario usando AJAX.
+			$.ajax({
+			    type: 'POST',
+			    url: $(form).attr('action'),
+			    crossDomain: true,
+			    contentType: 'text/plain',
+			     data: JSON.stringify({
+				        uuid: formData.uuid,
+				        name: formData.name,
+				        subject: formData.subject,
+				        email: formData.email,
+				        message: formData.message
+				    }),
+				  headers: {
+				    'Content-Type': 'application/json; charset=utf-8'
+				  },
+				  success: function(data) {
+				  	$(formMessages).text('Message Sent!');
+				  	console.log(data);
+				    $(formMessages).removeClass('form-message form-error');
+				    $(formMessages).addClass('form-message form-success');
+				    $('#boton-enviar').css( "background-color", "darkorange" );
+				    $(botonEnviar).text("Sent")
 
-			    // Imprimir mensaje de error en el div.
-			    if (data.responseText !== '') {
-			        $(formMessages).text(data.responseText);
-			    } else {
-			        $(formMessages).text('Oops! An error occured and your message could not be sent.');
-			    }
-			  }
-		});
+				    // Imprimir lenguage en el div de mensajes.
+				    $(formMessages).text(data.message);
+
+				    // limpiar el formulario.
+				    $('#name').val('');
+				    $('#email').val('');
+				    $('#subject').val('');
+				    $('#message').val('');
+				  },
+				  error: function(data) {
+
+				  	$(botonEnviar).text("Try Again");
+
+				    // Asegurarse que el formulario de mensajes tiene la clase 'error'
+				    $(formMessages).addClass('form-message form-error');
+				    $(formMessages).removeClass('form-message form-success');
+				    
+
+				    // Imprimir mensaje de error en el div.
+				    if (data.responseText !== '') {
+				        $(formMessages).text(data.responseText);
+				    } else {
+				        $(formMessages).text('Oops! An error occured and your message could not be sent.');
+				    }
+				  }
+			});
+
+		} else {
+			$(formMessages).removeClass('form-message form-success');
+			$(formMessages).addClass('form-message form-error');
+			$(formMessages).text('Please fill all the required parameters correctly');
+		}
+
 	});
-
 
 });
 
