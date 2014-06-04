@@ -86,8 +86,6 @@ $("#formulario_de_contacto").validate({
 })(jQuery);
 
 
-
-
 //Envio de petición desde formulario por medio de AJAX
 
 $(function() {
@@ -115,7 +113,7 @@ $(function() {
 			//Cambiar estado de boton enviar
 
 			$(botonEnviar).css( "background-color", "lightseagreen" );
-			$(botonEnviar).text("Sending...");
+			$(botonEnviar).text(form_messages.sending_button_text);
 
 					// Envio  del formulario usando AJAX.
 			$.ajax({
@@ -134,15 +132,13 @@ $(function() {
 				    'Content-Type': 'application/json; charset=utf-8'
 				  },
 				  success: function(data) {
-				  	$(formMessages).text('Message Sent!');
-				  	console.log(data);
-				    $(formMessages).removeClass('form-message form-error');
-				    $(formMessages).addClass('form-message form-success');
+				    $(formMessages).removeClass('alert alert-danger');
+				    $(formMessages).addClass('success');
 				    $('#boton-enviar').css( "background-color", "darkorange" );
-				    $(botonEnviar).text("Sent")
+				    $(botonEnviar).text(form_messages.sent_button_text)
 
 				    // Imprimir lenguage en el div de mensajes.
-				    $(formMessages).text(data.message);
+				    $(formMessages).text(form_messages.success_message);
 
 				    // limpiar el formulario.
 				    $('#name').val('');
@@ -151,32 +147,32 @@ $(function() {
 				    $('#message').val('');
 				  },
 				  error: function(data) {
-
-				  	$(botonEnviar).text("Try Again");
-
 				    // Asegurarse que el formulario de mensajes tiene la clase 'error'
-				    $(formMessages).addClass('form-message form-error');
-				    $(formMessages).removeClass('form-message form-success');
-				    
+				    $(formMessages).removeClass('alert alert-success');
+				    $(formMessages).addClass('alert alert-error');
 
 				    // Imprimir mensaje de error en el div.
 				    if (data.responseText !== '') {
-				        $(formMessages).text(data.responseText);
+				        $(formMessages).text(form_messages.error_message);
 				    } else {
-				        $(formMessages).text('Oops! An error occured and your message could not be sent.');
+				        $(formMessages).text(form_messages.error_message_complete);
 				    }
 				  }
 			});
 
 		} else {
-			$(formMessages).removeClass('form-message form-success');
-			$(formMessages).addClass('form-message form-error');
-			$(formMessages).text('Please fill all the required parameters correctly');
+			$(formMessages).removeClass('alert alert-info');
+			$(formMessages).text(form_messages.require_error_message);
 		}
+
+
+
 
 	});
 
+
 });
+
 
 
 
