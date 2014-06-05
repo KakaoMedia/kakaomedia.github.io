@@ -1,3 +1,6 @@
 name: Kakao Media
 markdown: redcarpet
 pygments: true
+collections:
+  portfolio:
+    output: true

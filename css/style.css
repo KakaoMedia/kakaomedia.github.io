@@ -745,15 +745,17 @@ header a, header a:visited {  color: #FFF;  }
 	width: 30%;
 }
 
-#portfolio #portfolio-gallery li:nth-child(-n+2), #portfolio #portfolio-gallery li:nth-last-child(-n+2) {
+
+#portfolio #portfolio-gallery li:nth-child(1), #portfolio #portfolio-gallery li:nth-child(2), #portfolio #portfolio-gallery li:nth-child(6), #portfolio #portfolio-gallery li:nth-child(7) {
 	height: 15em;
 	width: 46.5%;
 }
 
-#portfolio #portfolio-gallery li:nth-child(-n+2) .item-name, #portfolio #portfolio-gallery li:nth-last-child(-n+2) .item-name {
+#portfolio #portfolio-gallery li:nth-child(1) .item-name, #portfolio #portfolio-gallery li:nth-child(2) .item-name, #portfolio #portfolio-gallery li:nth-child(6) .item-name, #portfolio #portfolio-gallery li:nth-child(7) .item-name {
 	left: 38%;
 	top: 38%;
 }
+
 
 #portfolio #portfolio-gallery li .item-name {
 	border: 2px solid #FFF;
@@ -925,6 +927,93 @@ header a, header a:visited {  color: #FFF;  }
 	padding: 0;
 }
 
+#ptf_website {
+	text-decoration: none;
+	float:left;
+	font-size: 1.4em;
+	color: black;
+}
+
+#ptf_website:hover {
+	color: blue;
+}
+
+#portfolio-nav-proj-prev {
+	float:left;
+	margin-left: 1em;
+}
+
+#portfolio-nav-proj-next {
+	float:right;
+	margin-right: 1em;
+}
+
+#portfolio-nav-proj-prev, #portfolio-nav-proj-next {
+	color: black;
+	cursor: pointer;
+}
+
+#portfolio-nav-proj-prev:hover, #portfolio-nav-proj-next:hover {
+	color: blue;
+}
+
+#portfolio-nav-proj-prev p, #portfolio-nav-proj-next p {
+	font-size: 1.8em;
+	display: inline-block;
+}
+
+#portfolio-nav-proj-prev span, #portfolio-nav-proj-next span {
+	font-size: 1.6em;
+}
+
+.ptf_page li {
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+	background-color: white;
+}
+
+.ptf_page li:hover {
+	background-color: #dfdfdf;
+}
+
+.ptf_page_prev{
+	margin-left: 30%;
+	float:left;
+}
+
+.ptf_page_next{
+	margin-right: 47%;
+	float:right;
+}
+
+.ptf_page li span{
+	font-size: 1.6em;
+}
+
+@media screen and (max-width: 320px) {
+	.ptf_page_prev{
+		margin-left: 13%;
+		float:left;
+	}
+
+	.ptf_page_next{
+		margin-right: 30%;
+		float:right;
+	}
+}
+
+@media screen and (min-width: 321px) and (max-width: 720px) {
+	.ptf_page_prev{
+		margin-left: 30%;
+		float:left;
+	}
+
+	.ptf_page_next{
+		margin-right: 46%;
+		float:right;
+	}
+}
 
 /*------------------------------------*\
 	$TEAM

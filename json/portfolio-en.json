@@ -1,0 +1,36 @@
+---
+layout: nil
+---
+{
+  "portfolio" : [
+  {% for proj in site.portfolio %}
+  {% if proj.lang =="en" %}
+    {
+      "name": "{{ proj.name }}",
+      "image": "{{ proj.img_profile }}",
+      "gallery": [
+      {% for image in proj.gallery %}
+        {
+          "img":"{{image}}"
+        }
+        {%unless forloop.last%},{%endunless%}
+      {% endfor %}
+      ],
+      "footer": "{{ proj.footer }}",
+      "year": "{{ proj.year }}",
+      "works": [
+      {% for work in proj.works %}
+        {
+          "work":"{{work}}"
+        }
+        {%unless forloop.last%},{%endunless%}
+      {% endfor %}
+      ],
+      "rel_url": "{{ proj.relative_path | replace:'_','/' | replace:".md",".html"}}",
+      "website": "{{proj.website}}"
+    },
+    {% endif %}
+  {% endfor %}
+  {}
+  ]
+}

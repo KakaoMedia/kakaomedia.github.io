@@ -4,29 +4,54 @@
 		<div class="row">
 			<div class="col-md-3">
 				<p>Made for</p>
-				<h3>ESKIMO</h3>
+				<h3 id="ptf_brand"></h3>
 			</div>
 			<div class="col-md-3">
 				<p>Launched in</p>
-				<h3>2013</h3>
+				<h3 id="ptf_year"></h3>
+			</div>
+			<div class="col-md-3">
+				<p>Project Website</p>
+				<a id="ptf_website"></a>
 			</div>
 			<div class="col-md-3">
 				<p>How we did it</p>
-				<ul>
-					<li>CSS3</li>
-					<li>HTML5</li>
+				<ul id="ptf_work">
 				</ul>
 			</div>
 		</div>
 	</div>
+	<div id="portfolio-nav">
+		<div id="portfolio-nav-proj-prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+		<p>
+			Previous project
+		</p>
+		</div>
+		<div id="portfolio-nav-proj-next">
+		<p>
+			Next project
+		</p>
+		<span class="glyphicon glyphicon-chevron-right"></span>
+		</div>
+	</div>
+	<br />
 	<div id="portfolio-body">
 		<div class="row">
-			<div class="col-xs-12 col-md-8"><img src="img/banpro.jpg"></div>
-			<div class="col-md-6 col-md-4">
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit Lorem ipsum dolor sit met, 
-					consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				</p>
+			<div id="ptf_proj_gallery" class="col-xs-12 col-md-8"><!-- <img > -->
+				<div id="ptf_proj_gal" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#ptf_proj_gal" data-slide-to="0" class="active"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="item active"><img></div>
+					</div>
+					<a class="left carousel-control" href="#ptf_proj_gal" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+					<a class="right carousel-control" href="#ptf_proj_gal" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-4">
+				<div id="ptf_desc"></div>
 			</div>
 		</div>
 	</div>
@@ -34,15 +59,31 @@
 <div class="container">
 	<div class="lead"><h2>RECENT PROJECTS</h2></div>
 	<div class="row">
-		<ul id="portfolio-gallery">
-			{% for item in site.data.portfolio %}
-				<li>
-					<span class="item-name">{{ item.name }}</span>
-					<div class="darker"></div>
-					<div class="item-img" style="background-image: url('img/{{ item.image }}')"></div>
-					<p><span></span>{{ item.footer }}</p>
+		<div class="col-xs-10 col-sm-8 col-md-6 col-lg-4 col-xs-offset-2 col-sm-offset-4 col-md-offset-6 col-lg-offset-8">
+			<ul class="ptf_page">
+				<li class="ptf_page_prev">
+					<a><span class="glyphicon glyphicon-chevron-left" ></span></a>
 				</li>
-			{% endfor %}
+				<li class="ptf_page_next">
+					<a><span class="glyphicon glyphicon-chevron-right" ></span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<ul id="portfolio-gallery">
 		</ul>
+	</div>
+	<div class="row">
+		<div class="col-xs-10 col-sm-8 col-md-6 col-lg-4 col-xs-offset-2 col-sm-offset-4 col-md-offset-6 col-lg-offset-8">
+			<ul class="ptf_page">
+				<li class="ptf_page_prev">
+					<a href="#portfolio"><span class="glyphicon glyphicon-chevron-left" ></span></a>
+				</li>
+				<li class="ptf_page_next">
+					<a href="#portfolio"><span class="glyphicon glyphicon-chevron-right" ></span></a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </div>
