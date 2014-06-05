@@ -1438,7 +1438,21 @@ footer p {
 		$ERRORS
 ********************************************/
 
-.error {
-	font-size: 11px;
-	color: rgb(219, 94, 94);
+label.error {
+	font-size: 11px !important;
+	color: rgb(219, 94, 94) !important;
+}
+
+#form-messages {
+	font-size: 13px;
+	padding: 4px 4px 4px 4px;
+}
+
+.form-success {
+	/* TODO: add some styles */
+}
+
+.form-error {
+	/* TODO: add some styles */
+
 }

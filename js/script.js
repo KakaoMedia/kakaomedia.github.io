@@ -9,17 +9,96 @@ $("#formulario_de_contacto").validate({
     },
     subject: "required",
     message: "required"
-  }
+  },
+   submitHandler: function(form, event) { 
+      event.preventDefault();
+   }
 });
+
+
+// Convertir parametros de formulario en objeto para envio mediante AJAX
+
+(function($){
+    $.fn.serializeObject = function(){
+
+        var self = this,
+            json = {},
+            push_counters = {},
+            patterns = {
+                "validate": /^[a-zA-Z][a-zA-Z0-9_]*(?:\[(?:\d*|[a-zA-Z0-9_]+)\])*$/,
+                "key":      /[a-zA-Z0-9_]+|(?=\[\])/g,
+                "push":     /^$/,
+                "fixed":    /^\d+$/,
+                "named":    /^[a-zA-Z0-9_]+$/
+            };
+
+
+        this.build = function(base, key, value){
+            base[key] = value;
+            return base;
+        };
+
+        this.push_counter = function(key){
+            if(push_counters[key] === undefined){
+                push_counters[key] = 0;
+            }
+            return push_counters[key]++;
+        };
+
+        $.each($(this).serializeArray(), function(){
+
+            // skip invalid keys
+            if(!patterns.validate.test(this.name)){
+                return;
+            }
+
+            var k,
+                keys = this.name.match(patterns.key),
+                merge = this.value,
+                reverse_key = this.name;
+
+            while((k = keys.pop()) !== undefined){
+
+                // adjust reverse_key
+                reverse_key = reverse_key.replace(new RegExp("\\[" + k + "\\]$"), '');
+
+                // push
+                if(k.match(patterns.push)){
+                    merge = self.build([], self.push_counter(reverse_key), merge);
+                }
+
+                // fixed
+                else if(k.match(patterns.fixed)){
+                    merge = self.build([], k, merge);
+                }
+
+                // named
+                else if(k.match(patterns.named)){
+                    merge = self.build({}, k, merge);
+                }
+            }
+
+            json = $.extend(true, json, merge);
+        });
+
+        return json;
+    };
+})(jQuery);
+
 
 //Envio de petición desde formulario por medio de AJAX
 
 $(function() {
+
+
     // obtener el formulario.
     var form = $('#formulario_de_contacto');
 
     // Obtener div para mensajes.
     var formMessages = $('#form-messages');
+
+    // Obtener boton de enviar
+    var botonEnviar = $('#boton-enviar');
 
     // Event listener para el formulario de contacto.
 	$(form).submit(function(event) {
@@ -27,53 +106,73 @@ $(function() {
 	    event.preventDefault();
 
 	    // Serializar los datos del formulario.
-		var formData = $(form).serialize();
+		var formData = $(form).serializeObject();
 
-		// Envio  del formulario usando AJAX.
-		$.ajax({
-		    type: 'POST',
-		    url: $(form).attr('action'),
-		    crossDomain: true,
-		    contentType: 'text/plain',
-		    data: formData,
-		     xhrFields: {
-			    withCredentials: false
-			  },
+		if(formData.uuid !== "" && formData.name !== "" && formData.subject !== "" && formData.menssage !== "") {
 
-			  headers: {
-			    'Access-Control-Allow-Origin': '*'
-			  },
+			//Cambiar estado de boton enviar
 
-			  success: function() {
-			    $(formMessages).removeClass('error');
-			    $(formMessages).addClass('success');
+			$(botonEnviar).css( "background-color", "lightseagreen" );
+			$(botonEnviar).text(form_messages.sending_button_text);
 
-			    // Imprimir lenguage en el div de mensajes.
-			    $(formMessages).text(response);
+					// Envio  del formulario usando AJAX.
+			$.ajax({
+			    type: 'POST',
+			    url: $(form).attr('action'),
+			    crossDomain: true,
+			    contentType: 'text/plain',
+			     data: JSON.stringify({
+				        uuid: formData.uuid,
+				        name: formData.name,
+				        subject: formData.subject,
+				        email: formData.email,
+				        message: formData.message
+				    }),
+				  headers: {
+				    'Content-Type': 'application/json; charset=utf-8'
+				  },
+				  success: function(data) {
+				    $(formMessages).removeClass('alert alert-danger');
+				    $(formMessages).addClass('success');
+				    $('#boton-enviar').css( "background-color", "darkorange" );
+				    $(botonEnviar).text(form_messages.sent_button_text)
 
-			    // limpiar el formulario.
-			    $('#name').val('');
-			    $('#email').val('');
-			    $('#subject').val('');
-			    $('#message').val('');
-			  },
-			  error: function() {
-			    // Asegurarse que el formulario de mensajes tiene la clase 'error'
-			    $(formMessages).removeClass('success');
-			    $(formMessages).addClass('error');
+				    // Imprimir lenguage en el div de mensajes.
+				    $(formMessages).text(form_messages.success_message);
 
-			    // Imprimir mensaje de error en el div.
-			    if (data.responseText !== '') {
-			        $(formMessages).text(data.responseText);
-			    } else {
-			        $(formMessages).text('Oops! An error occured and your message could not be sent.');
-			    }
-			  }
-		});
+				    // limpiar el formulario.
+				    $('#name').val('');
+				    $('#email').val('');
+				    $('#subject').val('');
+				    $('#message').val('');
+				  },
+				  error: function(data) {
+				    // Asegurarse que el formulario de mensajes tiene la clase 'error'
+				    $(formMessages).removeClass('alert alert-success');
+				    $(formMessages).addClass('alert alert-error');
+
+				    // Imprimir mensaje de error en el div.
+				    if (data.responseText !== '') {
+				        $(formMessages).text(form_messages.error_message);
+				    } else {
+				        $(formMessages).text(form_messages.error_message_complete);
+				    }
+				  }
+			});
+
+		} else {
+			$(formMessages).removeClass('alert alert-info');
+			$(formMessages).text(form_messages.require_error_message);
+		}
+
+
+
+
 	});
 
 
 });
+
 
 
 
