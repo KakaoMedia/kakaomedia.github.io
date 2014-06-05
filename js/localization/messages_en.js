@@ -5,12 +5,12 @@
 
 
 form_messages = {
-      sending_button_text: "Enviando...",
-      sent_button_text: "Enviado",
-      success_message: "Mensaje Enviado!",
-      error_message: "Solicitud Erronea. Mensaje no enviado.",
-      error_message_complete: "Oops! Un error ha ocurrido y su mensaje no ha sido enviado.",
-      require_error_message: "Por favor llene todos los parámetros requeridos"
+      sending_button_text: "Sending...",
+      sent_button_text: "Sent",
+      success_message: "Messsage Sent!",
+      error_message: "Bad Request. Message not sent!",
+      error_message_complete: "Oops! An error has ocurred and your message has not been sent.",
+      require_error_message: "Please fill the required parameters correctly"
 
          }
 

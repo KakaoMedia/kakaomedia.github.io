@@ -1354,7 +1354,7 @@ label.error {
 	color: rgb(219, 94, 94) !important;
 }
 
-.form-message {
+#form-messages {
 	font-size: 13px;
 	padding: 4px 4px 4px 4px;
 }
