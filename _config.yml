@@ -1,6 +1,7 @@
-name: Kakao Media
+name: "Kakao Media"
 markdown: redcarpet
-pygments: true
+pygments: "true"
+permalink: "none"
 collections:
   portfolio:
-    output: true
+    output: "true"

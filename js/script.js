@@ -539,7 +539,6 @@ $("document").ready(function() {
 		{
 			$('#ptf_website').text(portfolio_prods[portfolio_item_index].website.substring(index+3, portfolio_prods[portfolio_item_index].website.length));
 		}
-
 		$.ajax({
 			url: portfolio_prods[portfolio_item_index].rel_url,
 			dataType: "html",
