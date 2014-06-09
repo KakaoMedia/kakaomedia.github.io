@@ -1340,6 +1340,13 @@ input::-webkit-input-placeholder, input::-webkit-textarea-placeholder {
 	padding: 10px;
 }
 
+#contact .info_container .fa {
+	border: 2px solid #FFF;
+	font-size: 1.7em;
+	margin-right: 10px;
+	padding: 10px;
+}
+
 #contact .info_container .info_value { 
 	margin-left: 15px;
 	padding: 16px 0;

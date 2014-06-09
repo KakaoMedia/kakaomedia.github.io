@@ -6,10 +6,10 @@
   icon:  'glyphicon-map-marker'
   url:   ''
 
-- value: '@kakaomedia'
-  icon:  'glyphicon-cloud'
+- value: 'Follow us!'
+  icon:  'fa fa-twitter'
   url:   'https://twitter.com/@kakaomedia'
 
-- value: 'KakaoMedia'
-  icon:  'glyphicon-thumbs-up'
+- value: 'Like our page!'
+  icon:  'fa fa-facebook'
   url:   'https://facebook.com/kakaoMedia'
