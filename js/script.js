@@ -221,8 +221,8 @@ function wheel(event) {
 }
  
 function handle(delta) {
-    var time = 400; // delay time
-    var distance = 350; // delta point 
+    var time = 50; // delay time
+    var distance = 50; // delta point was 350 
     // Dom where it will apply 
     $('html, body').stop().animate({
         scrollTop: $(window).scrollTop() - (distance * delta)
