@@ -221,8 +221,8 @@ function wheel(event) {
 }
  
 function handle(delta) {
-    var time = 20; // delay time
-    var distance = 50; // delta point was 350 
+    var time = 400; // delay time
+    var distance = 350; // delta point 
     // Dom where it will apply 
     $('html, body').stop().animate({
         scrollTop: $(window).scrollTop() - (distance * delta)
@@ -672,11 +672,51 @@ $("document").ready(function() {
 	});
 
 	//Team
+	(function thumbnail_mouseover() {
+		$("#team .thumbnail").on("mouseover", 
+			function(){
+				//console.log("MouseOver");
+				//setTimeout(thumbnail_mouseover, 1000);
+			}
+		);
+	}());
+
+	thumbnail_mouseenter();
+	thumbnail_mouseleave();
+
+	function thumbnail_mouseenter() {
+		$("#team .team_container .thumbnail").on("mouseenter",
+			function(){
+				$(this).css('-o-transform', 'rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg)');
+				$(this).css('-ms-transform', 'rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg)');
+				$(this).css('-moz-transform', 'rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg)');
+				$(this).css('-webkit-transform', 'rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg)');
+				$(this).css('transform', 'rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg)');
+				$(this).off("mouseenter");
+				$(this).off("mouseleave");
+				setTimeout(thumbnail_mouseleave, 320);
+			}
+		);
+	};
+
+	function thumbnail_mouseleave() {
+		$("#team .team_container .thumbnail").on("mouseleave",
+			function(){
+				$(this).css('-o-transform', 'rotate(45deg)');
+				$(this).css('-ms-transform', 'rotate(45deg)');
+				$(this).css('-moz-transform', 'rotate(45deg)');
+				$(this).css('-webkit-transform', 'rotate(45deg)');
+				$(this).css('transform', 'rotate(45deg)');
+				$(this).off("mouseleave");
+				setTimeout(thumbnail_mouseenter, 180);
+			}
+		);
+	};
+
 	$("#team .team_container").waypoint(function(direction) {
 		if(direction == "up")
 			$(this).removeClass("animated fadeInUp").addClass("animated fadeOutUp");
 		if(direction == "down")
 			$(this).removeClass("animated fadeOutUp").addClass("animated fadeInUp");
 	}, { offset: "80%" });
-
 });
