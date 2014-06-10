@@ -1,4 +1,8 @@
-body { overflow-x: hidden; }
+body {
+	overflow-x: hidden;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
 
 .main {
 	padding: 150px 15px;
@@ -263,7 +267,8 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 #front_page .info_list { 
-	padding: 0 100px; 
+	padding: 0 100px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .es #front_page .row div {
@@ -273,7 +278,7 @@ header a, header a:visited {  color: #FFF;  }
 
 .es #front_page .info_list { 
 	font-size: 	17px;
-	padding: 0 50px; 
+	padding: 0 50px;
 }
 
 #front_page .row {
@@ -334,6 +339,7 @@ header a, header a:visited {  color: #FFF;  }
 #quote h2 {	
 	font-size: 3em;
 	margin-bottom: 60px;
+	font-weight: 300;
 }
 
 
@@ -506,11 +512,13 @@ header a, header a:visited {  color: #FFF;  }
 	margin: 0 45px 20px;
 }
 
-#how_we_work h3 { color: #1A1A1A; }
+#how_we_work h3 { 
+	color: #1A1A1A;
+	font-weight: 700;
+}
 
 #how_we_work p { 
 	font-size: 0.9em;
-	font-weight: bold;
 	text-align: justify;
 }
 
@@ -608,7 +616,6 @@ header a, header a:visited {  color: #FFF;  }
 
 #tools .resume_tools h3 { 
 	color: #31BBA6;
-	font-weight: bold;
 	margin-bottom: 30px;
 	text-align: left;
 }
@@ -725,6 +732,10 @@ header a, header a:visited {  color: #FFF;  }
 	margin-bottom: 60px;
 }
 
+#portfolio p {
+	font-weight: 700;
+}
+
 #portfolio .row { color: #FFF; }
 
 #portfolio #portfolio-gallery {
@@ -760,7 +771,6 @@ header a, header a:visited {  color: #FFF;  }
 #portfolio #portfolio-gallery li .item-name {
 	border: 2px solid #FFF;
 	font-size: 1.3em;
-	font-weight: bold;
 	left: 28%;
 	padding: 5px 10px;
 	position: absolute;
@@ -810,7 +820,6 @@ header a, header a:visited {  color: #FFF;  }
 #portfolio #portfolio-gallery li p {
 	bottom: 0;
 	font-size: 0.65em;
-	font-weight: bold;
 	left: 0;
 	margin: 0;
 	padding: 8px 15px;
@@ -922,7 +931,6 @@ header a, header a:visited {  color: #FFF;  }
 
 #portfolio-header .row li {
 	font-size: 0.7em;
-	font-weight: bold;
 	line-height: normal;
 	padding: 0;
 }
@@ -1329,7 +1337,6 @@ input::-webkit-input-placeholder, input::-webkit-textarea-placeholder {
 
 #contact .info_container {
 	font-size: 0.8em;
-	font-weight: bold;
 	text-align: left;
 }
 
@@ -1462,4 +1469,12 @@ label.error {
 .form-error {
 	/* TODO: add some styles */
 
+}
+
+/*------------------------------------------*|
+		TEXT-FORMATTING
+********************************************/
+
+.lead h2, .lead h1, .lead h3 {
+	font-weight: 900;
 }
