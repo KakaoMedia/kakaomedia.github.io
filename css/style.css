@@ -267,7 +267,7 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 #front_page .info_list { 
-	padding: 0 100px;
+	padding: 0 86px;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -1130,13 +1130,15 @@ header a, header a:visited {  color: #FFF;  }
  
 #team .thumbnail span {
 	display: block;
-	font-size: 0.6em;
-	line-height: 17px;
+	font-size: 1.0em;
+	line-height: 25px;
+	color: #FFA500; 
 }
 
 #team .thumbnail .team_title { 
 	font-size: 1.6em;
 	margin-bottom: 10px;
+	color: white;
 }
 
 #team .thumbnail img {

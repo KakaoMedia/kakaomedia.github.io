@@ -1,10 +1,6 @@
-- value: '+(505)8880-2422'
-  icon:  'glyphicon-phone'
-  url:   ''
-
-- value: 'Embajada Republica Dominicana, 1 cuadra arriba. Las Colinas.'
-  icon:  'glyphicon-map-marker'
-  url:   ''
+- value: 'info@kakaomedia.com'
+  icon:  'fa fa-paper-plane'
+  url:   'mailto:info@kakaomedia.com'
 
 - value: 'Follow us!'
   icon:  'fa fa-twitter'
@@ -13,3 +9,11 @@
 - value: 'Like our page!'
   icon:  'fa fa-facebook'
   url:   'https://facebook.com/kakaoMedia'
+
+- value: '+(505) 8880-2422'
+  icon:  'glyphicon-phone'
+  url:   ''
+
+- value: 'Km. 7.7 C. Masaya, de la Virgen Jean Paul Genie 1 c. al sur 1/2 c. al Este. Casa #2021'
+  icon:  'glyphicon-map-marker'
+  url:   ''
