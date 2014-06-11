@@ -267,7 +267,7 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 #front_page .info_list { 
-	padding: 0 100px;
+	padding: 0 86px;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -637,7 +637,7 @@ header a, header a:visited {  color: #FFF;  }
 	
 	-o-transition: all 0.5s ease-in-out;
 	-ms-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
+	-mz-transition: all 0.5s ease-in-out;
 	-webkit-transition: all 0.5s ease-in-out;
 }
 
@@ -786,7 +786,7 @@ header a, header a:visited {  color: #FFF;  }
 
 	-o-transition: opacity 0.2s linear;
 	-ms-transition: opacity 0.2s linear;
-	-moz-transition: opacity 0.2s linear;
+	-mz-transition: opacity 0.2s linear;
 	-webkit-transition: opacity 0.2s linear;
 }
 
@@ -1091,17 +1091,6 @@ header a, header a:visited {  color: #FFF;  }
 	transition: all 0.5s ease-in-out;
 }
 
-#team .thumbnail:hover { 
-	border: none;
-	transition-duration: 0.5s;
-
-/*	-o-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
-	-ms-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
-	-moz-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
-	-webkit-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
-	transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);*/
-}
-
 #team .thumbnail:hover div {
 	opacity: 1;
 	visibility: visible;
@@ -1118,17 +1107,16 @@ header a, header a:visited {  color: #FFF;  }
 	left: 10;
 	position: relative;
 	top: -5px;
-	transition-duration: 0.5s;
+	transition-duration: 0.0s;
 
-	-o-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
-	-ms-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
-	-moz-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
-	-webkit-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 45deg);
-	transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
 }
  
 #team .thumbnail span {
-	display: block;
 	font-size: 0.6em;
 	line-height: 17px;
 }
@@ -1153,9 +1141,6 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 .flip {
-  -o-transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-    
   -o-backfaace-visibility: visible;
   -ms-backface-visibility: visible;
   -moz-backface-visibility: visible;
@@ -1288,7 +1273,7 @@ header a, header a:visited {  color: #FFF;  }
 	color: #404041;
 
 	-o-border-radius: 3px;
-	-moz-border-radius: 3px;
+	-mz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 }
 
@@ -1304,7 +1289,7 @@ header a, header a:visited {  color: #FFF;  }
 	padding: 0 30px;
 
 	-o-border-radius: 0;
-	-moz-border-radius: 0;
+	-mz-border-radius: 0;
 	-webkit-border-radius: 0;
 }
 
@@ -1421,8 +1406,6 @@ input::-webkit-input-placeholder, input::-webkit-textarea-placeholder {
 		font-size: 0.8em;
 	}
 }
-
-
 
 
 
