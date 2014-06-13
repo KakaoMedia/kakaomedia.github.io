@@ -422,6 +422,7 @@ header a, header a:visited {  color: #FFF;  }
 	opacity: 1 !important;
 	position: absolute;
 	vertical-align: middle;
+	padding-top:0.12em;
 
 	display: -moz-inline-box;
 
@@ -925,6 +926,10 @@ header a, header a:visited {  color: #FFF;  }
 	font-size: 0.7em;
 	line-height: normal;
 	padding: 0;
+}
+
+#ptf_desc {
+	color: black;
 }
 
 #ptf_website {

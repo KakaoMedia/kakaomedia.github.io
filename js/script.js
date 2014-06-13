@@ -325,7 +325,8 @@ $("document").ready(function() {
 		$yyye.text($(this).parent().find(".info").find("p").text());
 		$yyye.appendTo($desc);
 
-		$glyph = $('<span class="glyphicon glyphicon-eject"></span>');
+		//$glyph = $('<span class="glyphicon glyphicon-eject"></span>');
+		$glyph = $('<i class="glyphicon fa fa-sort-asc"></i>');
 		$glyph.appendTo($desc);
 
 		var winWidth = $(window).outerWidth() + 17;
