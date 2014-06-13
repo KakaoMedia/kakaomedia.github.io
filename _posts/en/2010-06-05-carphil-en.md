@@ -1,6 +1,6 @@
 ---
 name: Carphil S.A.
-lang: es
+lang: en
 img_profile: Carphil.jpg
 gallery: [Carphil.jpg, Carphil2.jpg]
 footer: Website

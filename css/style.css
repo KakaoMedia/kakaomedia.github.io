@@ -75,12 +75,17 @@ header a, header a:visited {  color: #FFF;  }
 	display: none !important;
 }
 
+.logo-kakao img {
+	width: auto;
+	height: 100%;
+}
+
 .logo-kakao:hover, .logo-kakao:active {
 	color: #FFA500 !important;
 }
 
 .affix .logo-kakao {
-	display: block !important;
+	display: inline-block !important;
 }
 
 .navbar.affix {
@@ -112,13 +117,13 @@ header a, header a:visited {  color: #FFF;  }
 
 @media screen and (min-width: 768px) {
  	.navbar .container {
- 		width: 95%;
+ 		width: 100%;
 	}
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
 	.es .navbar .container {
-		width: 99%;
+		width: 100%;
 	}
 }
 
@@ -128,7 +133,7 @@ header a, header a:visited {  color: #FFF;  }
     }
 
     .es .navbar-toggle {
-        display: block;
+        display: inline-block;
     }
 
     .es .navbar-collapse {
@@ -141,11 +146,11 @@ header a, header a:visited {  color: #FFF;  }
     }
 
     .es .navbar-collapse.collapse.in {
-    	display: block !important;
+    	display: inline-block !important;
     }
 
     .es .navbar-nav {
-    	display: block;
+    	display: inline-block;
         float: none !important;
         margin: 7.5px -15px;
     }
@@ -166,7 +171,7 @@ header a, header a:visited {  color: #FFF;  }
 	}
 
    .en .navbar-toggle {
-	   display: block;
+	   display: inline-block;
    }
 
    .en .navbar-collapse {
@@ -179,11 +184,11 @@ header a, header a:visited {  color: #FFF;  }
    }
 
    .en .navbar-collapse.collapse.in {
-   	display: block !important;
+   	display: inline-block !important;
    }
 
    .en .navbar-nav {
-   		display: block;
+   		display: inline-block;
 		float: none !important;
        	margin: 7.5px -15px;
    }
@@ -209,7 +214,7 @@ header a, header a:visited {  color: #FFF;  }
 @media screen and (max-width: 767px) {
 	.navbar>.container .navbar-brand, .navbar>.container-fluid {
 		color: #FFF;
-		display: block;
+		display: inline-block;
 	}
 }
 
@@ -404,35 +409,23 @@ header a, header a:visited {  color: #FFF;  }
 	left: 7%;
 	margin-top: 30px;
 	opacity: 0.8;
-	position: absolute;
+	position: relative;
 	text-align: justify;
 	width: 85%
 }
 
-#what_we_do .info > .arrow {
-  	border-color: transparent;
-	border-bottom-color: #17DDC5;
-	border-bottom-style: solid;
-  	border-width: 0.53em;
-	border-bottom-width: 0.60em;
-	border-style: dashed;
+#what_we_do .info .glyphicon{
+	color: #17DDC5;
+	font-size:2em;
 	display: inline-block;
-	font-size: 30px;
-	height: 0;
 	line-height: 0;
 	opacity: 1 !important;
 	position: absolute;
-	top: -30px;
 	vertical-align: middle;
-	width: 0;
 
 	display: -moz-inline-box;
-}
 
-#what_we_do .row .first_group > div:nth-child(1) .arrow { left: 5%; }
-#what_we_do .row .first_group > div:nth-child(2) .arrow { left: 34%; }
-#what_we_do .row .second_group > div:nth-child(1) .arrow { right: 33%; }
-#what_we_do .row .second_group > div:nth-child(2) .arrow { right: 4%; }
+}
 
 #what_we_do .info p {
 	background-color: #17DDC5;
@@ -756,6 +749,17 @@ header a, header a:visited {  color: #FFF;  }
 	width: 30%;
 }
 
+#portfolio #portfolio-gallery li .item-name {
+	border: 2px solid #FFF;
+	font-size: 1.3em;
+	left: 15%;
+	padding: 5px 10px;
+	position: absolute;
+	text-align: center;
+	top: 35%;
+	z-index: 10;
+	width: 70%;
+}
 
 #portfolio #portfolio-gallery li:nth-child(1), #portfolio #portfolio-gallery li:nth-child(2), #portfolio #portfolio-gallery li:nth-child(6), #portfolio #portfolio-gallery li:nth-child(7) {
 	height: 15em;
@@ -763,20 +767,9 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 #portfolio #portfolio-gallery li:nth-child(1) .item-name, #portfolio #portfolio-gallery li:nth-child(2) .item-name, #portfolio #portfolio-gallery li:nth-child(6) .item-name, #portfolio #portfolio-gallery li:nth-child(7) .item-name {
-	left: 38%;
 	top: 38%;
-}
-
-
-#portfolio #portfolio-gallery li .item-name {
-	border: 2px solid #FFF;
-	font-size: 1.3em;
-	left: 28%;
-	padding: 5px 10px;
-	position: absolute;
-	text-align: center;
-	top: 35%;
-	z-index: 10;
+	left: 25%;
+	width: 50%;
 }
 
 #portfolio #portfolio-gallery li .darker {
@@ -847,7 +840,6 @@ header a, header a:visited {  color: #FFF;  }
 	}
 
 	#portfolio #portfolio-gallery li .item-name {
-		left: 38% !important;
 		top: 38% !important;
 	}
 
@@ -1117,13 +1109,15 @@ header a, header a:visited {  color: #FFF;  }
 }
  
 #team .thumbnail span {
-	font-size: 0.6em;
+	font-size: 1em;
 	line-height: 17px;
+	color: #FFA500;
 }
 
 #team .thumbnail .team_title { 
 	font-size: 1.6em;
 	margin-bottom: 10px;
+	color: inherit;
 }
 
 #team .thumbnail img {
@@ -1231,6 +1225,11 @@ header a, header a:visited {  color: #FFF;  }
 /*------------------------------------*\
 	$CONTACT
 \*------------------------------------*/
+#contact .fa {
+	text-align: center;
+	width: 1.9em;
+}
+
 #contact {
 	background: url("../img/contact.jpg") no-repeat center center;
 	background-size: cover;
@@ -1275,6 +1274,51 @@ header a, header a:visited {  color: #FFF;  }
 	-o-border-radius: 3px;
 	-mz-border-radius: 3px;
 	-webkit-border-radius: 3px;
+}
+
+#contact form input[placeholder]:focus::-webkit-input-placeholder,
+#contact form textarea[placeholder]:focus::-webkit-input-placeholder{
+	color: transparent !important;
+}
+
+#contact form input[placeholder]::-webkit-input-placeholder,
+#contact form textarea[placeholder]::-webkit-input-placeholder {
+	opacity: 1;
+	color: #404041 !important;
+}
+
+#contact form input[placeholder]:focus::-moz-placeholder,
+#contact form textarea[placeholder]:focus::-moz-placeholder{
+	color: transparent !important;
+}
+
+#contact form input[placeholder]::-moz-placeholder,
+#contact form textarea[placeholder]::-moz-placeholder {
+	opacity: 1;
+	color: #404041 !important;
+}
+
+/* En el caso de :-moz- es para versiones anteriores (pre-19)*/
+#contact form input[placeholder]:focus:-moz-placeholder,
+#contact form textarea[placeholder]:focus:-moz-placeholder{
+	color: transparent !important;
+}
+
+#contact form input[placeholder]:-moz-placeholder,
+#contact form textarea[placeholder]:-moz-placeholder {
+	opacity: 1;
+	color: #404041 !important;
+}
+
+#contact form input[placeholder]:focus:-ms-input-placeholder,
+#contact form textarea[placeholder]:focus:-ms-input-placeholder{
+	color: transparent !important;
+}
+
+#contact form input[placeholder]:-ms-input-placeholder,
+#contact form textarea[placeholder]:-ms-input-placeholder {
+	opacity: 1;
+	color: #404041 !important;
 }
 
 #contact form textarea { resize: vertical; }
@@ -1338,8 +1382,6 @@ input::-webkit-input-placeholder, input::-webkit-textarea-placeholder {
 	margin-left: 15px;
 	padding: 16px 0;
 }
-
-#contact .info_container>div:nth-child(2) .info_value { padding: 7px 0; }
 
 #contact .info_container a {
 	color: #FFF;

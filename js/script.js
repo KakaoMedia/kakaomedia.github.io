@@ -229,23 +229,9 @@ function handle(delta) {
     }, time );
 }
 
-function methodToFixLayout(e) {
-    var winWidth = $(window).outerWidth() + 17;
 
-	$("#what_we_do .first_group, #what_we_do .second_group").height("160px");
-	$("#what_we_do").css("padding-bottom", "30px");
-
-	if(winWidth >= 768 && winWidth <= 991) {
-    	$("#what_we_do #first_group, #what_we_do #second_group").height(0);
-    	$("#what_we_do .info:visible").parent().parent().height(($("#what_we_do .info:visible").height() * 2) - 80);
-    } else if(winWidth > 991) {
-    	$("#what_we_do").css("padding-bottom", $("#what_we_do .info:visible").height() + 50);
-    	$("#what_we_do .first_group, #what_we_do .second_group").height("0");
-    }
-}
 
 $("document").ready(function() {
-
 	// Variable declaration
 	var item, overlay, clipPropFirst, clipPropLast, lang, desc_url;
 	var portfolio_prods = [];
@@ -254,6 +240,23 @@ $("document").ready(function() {
 	var portfolio_org_item_index = 0; //index of the item that was first clicked
 	var page_limit = 7;
 
+
+	function methodToFixLayout(e) {
+	    var winWidth = $(window).outerWidth() + 17;
+
+	    $('#descr-row').empty();
+
+		$("#what_we_do .first_group, #what_we_do .second_group").height("160px");
+		$("#what_we_do").css("padding-bottom", "30px");
+
+		if(winWidth >= 768 && winWidth <= 991) {
+	    	$("#what_we_do #first_group, #what_we_do #second_group").height(0);
+	    	$("#what_we_do .info:visible").parent().parent().height(($("#what_we_do .info:visible").height() * 2) - 80);
+	    } else if(winWidth > 991) {
+	    	$("#what_we_do").css("padding-bottom", $("#what_we_do .info:visible").height() + 50);
+	    	$("#what_we_do .first_group, #what_we_do .second_group").height("0");
+	    }
+	}
 
 	$(window).on("resize", methodToFixLayout);
 
@@ -310,55 +313,67 @@ $("document").ready(function() {
 	}, { offset: "80%" });
 
 	//WHAT WE DO - INFO
-	$("#what_we_do .title_info").click(function() {
+	$("#what_we_do .title_info").on('click', function() {
+		var $desc, $row, $cell, $yyye, $glyph;
+		$row = $('#descr-row');
+		$row.parent().css("position", "static");
+		$row.empty();
+
+		$desc = $('<div id="descr" class="info"></div>');
+		$desc.appendTo($row);
+		$yyye = $('<p id="yyye"></p>');
+		$yyye.text($(this).parent().find(".info").find("p").text());
+		$yyye.appendTo($desc);
+
+		$glyph = $('<span class="glyphicon glyphicon-eject"></span>');
+		$glyph.appendTo($desc);
+
 		var winWidth = $(window).outerWidth() + 17;
-		var height = $(this).parent().find(".info").height();
-
-		$("#what_we_do .active").removeClass("active");		
-
-		if($(this).parent().find(".info").is(":visible")) {
-			$(this).parent().find(".info").slideUp("medium");
-			$("#what_we_do").css("padding-bottom", "30px");
-
-			if(winWidth >= 768 && winWidth <= 991)
-				$("#what_we_do .first_group, #what_we_do .second_group").animate({ height: "160px" });
-		}
-		else {
-
-			$(this).addClass("active");
-
-			if($("#what_we_do .info:visible").length == 0) {
-				$(this).parent().find(".info").slideDown("medium");
-
-				if(winWidth >= 768 && winWidth <= 991)
-					$(this).parent().parent().animate({ "height": ((height * 2) - 80) + "px" });
-			}
-			else {
-				if(winWidth <=  767) {
-					$("#what_we_do .info:visible").slideUp("medium");
-					$(this).parent().find(".info").slideDown("medium");
-				} else if(winWidth >= 768 && winWidth <= 991) {
-					if($("#what_we_do .info:visible").parent().parent().attr("class") != $(this).parent().parent().attr("class")) {
-						$("#what_we_do .info:visible").parent().parent().animate({ height: "160px" });
-						$("#what_we_do .info:visible").slideUp("medium");
-												
-						$(this).parent().parent().animate({ "height": ((height * 2) - 80) + "px" });
-						$(this).parent().find(".info").slideDown("medium");
-					} else {
-						$("#what_we_do .info:visible").fadeOut("medium");
-						$(this).parent().find(".info").fadeIn("medium");
-					}
-				} else if(winWidth >= 992) {
-					$("#what_we_do .info:visible").fadeOut("medium");
-					$(this).parent().find(".info").fadeIn("medium");
+		var height = parseInt($yyye.height(), 10);
+		switch(true)
+		{
+			case $(this).attr("data-nth") === "1":
+				if(winWidth > 768){
+					$glyph.css("left", "5%");
+				} else {
+					$glyph.css("left", "49%");
 				}
-			}
-
-			if(winWidth > 991)
-				$("#what_we_do").css("padding-bottom", height + 50);
-
+				break;
+			case $(this).attr("data-nth") === "2":
+				if(winWidth > 1000){
+					$glyph.css("left", "33%");
+				} else if (winWidth > 768){
+					$glyph.css("right", "5%");
+				} else {
+					$glyph.css("left", "49%");
+				}
+				break;
+			case $(this).attr("data-nth") === "3":
+				if(winWidth > 1000){
+					$glyph.css("right", "33%");
+				} else if (winWidth > 768){
+					$glyph.css("left", "10%");
+				} else {
+					$glyph.css("left", "49%");
+				}
+				break;
+			case $(this).attr("data-nth") === "4":
+				if(winWidth > 1000){
+					$glyph.css("right", "4%");
+				} else if (winWidth > 768){
+					$glyph.css("right", "10%");
+				} else {
+					$glyph.css("left", "49%");
+				}
+				break;
+			default:
+				$glyph.css("left", "49%");
 		}
 
+		
+		$('#descr').slideUp("medium");
+		$('#descr').slideDown("medium");
+		$("#what_we_do").css("padding-bottom", "30px");
 	});
 
 	//Tools
@@ -548,7 +563,7 @@ $("document").ready(function() {
 			success: function(data){$('#ptf_desc').html(data)}
 		});
 		$('#ptf_proj_gal').carousel('pause').removeData();
-		$('#ptf_proj_gal').carousel({interval:2500});
+		$('#ptf_proj_gal').carousel({interval:1250});
 		$ptf_car_ind = $('#ptf_proj_gal .carousel-indicators');
 		$ptf_car_ind.empty();
 		$ptf_li_ind = $("<li data-target='#ptf_proj_gal' data-slide-to='0' class='active' ></li>");
