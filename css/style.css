@@ -439,6 +439,10 @@ header a, header a:visited {  color: #FFF;  }
 	padding: 20px;
 }
 
+#what_we_do #yyye {
+	font-size: 16px;
+}
+
 #what_we_do .row .title_info p { margin-top: 20px; }
 
 #what_we_do .row .title_info p span {
