@@ -374,6 +374,7 @@ header a, header a:visited {  color: #FFF;  }
 	color: #FFF;
 	padding-bottom: 30px;	
 	padding-top: 50px;
+	min-height: 597px;
 	transition: all .2s ease-in-out;
 
 	-o-background-size: cover;
@@ -414,7 +415,23 @@ header a, header a:visited {  color: #FFF;  }
 	width: 85%
 }
 
-#what_we_do .info .glyphicon{
+#what_we_do .first_group .fontello, #what_we_do .second_group .fontello{
+	position:relative;
+	top: 1px;
+	font-size:2.5em;
+	padding: 0.2em !important;
+	opacity: 1 !important;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 50%;
+	width: 2em;
+	height: 2em;
+	font-size: 3em; 
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#what_we_do #descr-row .glyphicon, #what_we_do #descr-row .fontello {
 	color: #17DDC5;
 	font-size:2em;
 	display: inline-block;
@@ -423,9 +440,10 @@ header a, header a:visited {  color: #FFF;  }
 	position: absolute;
 	vertical-align: middle;
 	padding-top:0.12em;
+	top:0;
+	margin-top: -0.8em;
 
 	display: -moz-inline-box;
-
 }
 
 #what_we_do .info p {
@@ -433,11 +451,15 @@ header a, header a:visited {  color: #FFF;  }
 	padding: 30px;
 }
 
-#what_we_do .row .title_info span { 
+#what_we_do .row .title_info span{ 
 	border: 3px solid #FFF;
-	font-size: 2em;
 	padding: 20px;
 }
+
+#what_we_do .row .title_info span p{ 
+	font-size: 2em;
+}
+
 
 #what_we_do #yyye {
 	font-size: 16px;
@@ -516,7 +538,7 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 #how_we_work p { 
-	font-size: 0.9em;
+	font-size: 1em;
 	text-align: justify;
 }
 
@@ -757,6 +779,7 @@ header a, header a:visited {  color: #FFF;  }
 #portfolio #portfolio-gallery li .item-name {
 	border: 2px solid #FFF;
 	font-size: 1.3em;
+	font-weight: 700;
 	left: 15%;
 	padding: 5px 10px;
 	position: absolute;
@@ -926,6 +949,10 @@ header a, header a:visited {  color: #FFF;  }
 	list-style: none;
 }
 
+#portfolio-header ul li {
+	display: block;
+}
+
 #portfolio-header .row li {
 	font-size: 0.7em;
 	line-height: normal;
@@ -941,10 +968,19 @@ header a, header a:visited {  color: #FFF;  }
 	float:left;
 	font-size: 1.4em;
 	color: black;
+	display: block;
 }
 
 #ptf_website:hover {
 	color: blue;
+}
+
+#ptf_work {
+	display: block;
+}
+
+#portfolio-nav {
+	background-color: #232;
 }
 
 #portfolio-nav-proj-prev {
@@ -963,16 +999,19 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 #portfolio-nav-proj-prev:hover, #portfolio-nav-proj-next:hover {
-	color: blue;
+	color: #30BAA4;
 }
 
 #portfolio-nav-proj-prev p, #portfolio-nav-proj-next p {
 	font-size: 1.8em;
 	display: inline-block;
+	margin-right: 0.5em;
 }
 
 #portfolio-nav-proj-prev span, #portfolio-nav-proj-next span {
-	font-size: 1.6em;
+	font-size: 2.5em;
+	margin-left: -0.5em;
+	color: #30BAA4;
 }
 
 .ptf_page li {
@@ -986,15 +1025,24 @@ header a, header a:visited {  color: #FFF;  }
 	background-color: #dfdfdf;
 }
 
+.ptf_page a {
+	text-decoration: none;
+	color: #30BAA4;
+}
+
 .ptf_page_prev{
 	margin-left: 30%;
 	float:left;
+	color:black;
 }
 
 .ptf_page_next{
 	margin-right: 47%;
 	float:right;
+	color:black;
 }
+
+
 
 .ptf_page li span{
 	font-size: 1.6em;
@@ -1239,6 +1287,22 @@ header a, header a:visited {  color: #FFF;  }
 	width: 1.9em;
 }
 
+#contact .info_container .fontello{
+	position:relative;
+	top: 1px;
+	display: inline-block;
+	border-radius: 50%;
+	width: 2em;
+	height: 2em;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	border: 2px solid #FFF;
+	font-size: 1.7em;
+	margin-right: 10px;
+	padding-top: 0.25em;
+}
+
 #contact {
 	background: url("../img/contact.jpg") no-repeat center center;
 	background-size: cover;
@@ -1373,13 +1437,6 @@ input::-webkit-input-placeholder, input::-webkit-textarea-placeholder {
 	text-align: left;
 }
 
-#contact .info_container .glyphicon {
-	border: 2px solid #FFF;
-	font-size: 1.7em;
-	margin-right: 10px;
-	padding: 10px;
-}
-
 #contact .info_container .fa {
 	border: 2px solid #FFF;
 	font-size: 1.7em;
@@ -1396,7 +1453,7 @@ input::-webkit-input-placeholder, input::-webkit-textarea-placeholder {
 	color: #FFF;
 }
 
-#contact .info_container a:hover, #contact .info_container a:hover .glyphicon {
+#contact .info_container a:hover, #contact .info_container a:hover .glyphicon, #contact .info_container a:hover .fontello {
 	border-color: #30BAA4;
 	color: #30BAA4;
 	text-decoration: none;
@@ -1476,6 +1533,14 @@ footer p {
 	margin: 0;
 	padding: 0;
 }
+
+footer a.return_to_title {
+	float: right;
+	text-decoration: none;
+	margin-right: 1em;
+	color: #FFF;
+}
+
 
 /*------------------------------------------*|
 		$ERRORS

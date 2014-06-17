@@ -1,15 +1,19 @@
-- value: '+(505)8880-2422'
-  icon:  'glyphicon-phone'
-  url:   ''
+- value: 'info@kakaomedia.com'
+  icon:  'icon-mail fontello'
+  url:   'mailto:info@kakaomedia.com'
 
-- value: 'Embajada Republica Dominicana, 1 cuadra arriba. Las Colinas.'
-  icon:  'glyphicon-map-marker'
-  url:   ''
-
-- value: '@kakaomedia'
-  icon:  'glyphicon-cloud'
+- value: 'Follow us!'
+  icon:  'icon-twitter fontello'
   url:   'https://twitter.com/@kakaomedia'
 
-- value: 'facebook.com/KakaoMedia'
-  icon:  'glyphicon-thumbs-up'
+- value: 'Like our page!'
+  icon:  'icon-facebook fontello'
   url:   'https://facebook.com/kakaoMedia'
+
+- value: '+(505) 8880-2422'
+  icon:  'icon-mobile fontello'
+  url:   ''
+
+- value: 'Km. 7.7 C. Masaya, de la Virgen Jean Paul Genie 1 c. al sur 1/2 c. al Este. Casa #2021'
+  icon:  'icon-location fontello'
+  url:   ''

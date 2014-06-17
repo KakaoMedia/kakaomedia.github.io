@@ -1,19 +1,19 @@
 - value: 'info@kakaomedia.com'
-  icon:  'fa fa-paper-plane'
+  icon:  'icon-mail fontello'
   url:   'mailto:info@kakaomedia.com'
 
 - value: 'Follow us!'
-  icon:  'fa fa-twitter'
+  icon:  'icon-twitter fontello'
   url:   'https://twitter.com/@kakaomedia'
 
 - value: 'Like our page!'
-  icon:  'fa fa-facebook'
+  icon:  'icon-facebook fontello'
   url:   'https://facebook.com/kakaoMedia'
 
 - value: '+(505) 8880-2422'
-  icon:  'glyphicon-phone'
+  icon:  'icon-mobile fontello'
   url:   ''
 
 - value: 'Km. 7.7 C. Masaya, de la Virgen Jean Paul Genie 1 c. al sur 1/2 c. al Este. Casa #2021'
-  icon:  'glyphicon-map-marker'
+  icon:  'icon-location fontello'
   url:   ''

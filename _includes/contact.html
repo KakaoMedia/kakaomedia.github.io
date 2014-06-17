@@ -42,13 +42,13 @@
 				{% for item in site.data.contact %}
 					{% if item.url == "" or item.url == nil %}
 						<div class="col-md-12 col-sm-6 col-xs-12">
-							<div class="col-md-2"><span class="glyphicon {{ item.icon }} img-circle"></span></div>
+							<div class="col-md-2"><span class="{{ item.icon }}"></span></div>
 							<div class="col-md-9 info_value"><p>{{ item.value }}</p></div>
 						</div>
 					{% else %}
 						<div class="col-md-12 col-sm-6 col-xs-12">
 							<a href="{{ item.url }}">
-								<div class="col-md-2"><span class="{{ item.icon }} img-circle"></span></div>
+								<div class="col-md-2"><span class="{{ item.icon }}"></span></div>
 								<div class="col-md-9 info_value"><p>{{ item.value }}</p></div>
 							</a>
 						</div>

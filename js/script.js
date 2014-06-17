@@ -234,6 +234,7 @@ function handle(delta) {
 $("document").ready(function() {
 	// Variable declaration
 	var item, overlay, clipPropFirst, clipPropLast, lang, desc_url;
+	var what_we_do_curr_item_with_focus = "-1";
 	var portfolio_prods = [];
 	var pagination_index = 0;
 	var portfolio_item_index = 0;
@@ -316,18 +317,18 @@ $("document").ready(function() {
 	$("#what_we_do .title_info").on('click', function() {
 		var $desc, $row, $cell, $yyye, $glyph;
 		$row = $('#descr-row');
-		$row.parent().css("position", "static");
+		// $row.parent().css("position", "static");
 		$row.empty();
 
 		$desc = $('<div id="descr" class="info"></div>');
 		$desc.appendTo($row);
+		
+		$glyph = $('<span class="icon-up-dir fontello"></span>');
+		$glyph.appendTo($desc);
+
 		$yyye = $('<p id="yyye"></p>');
 		$yyye.text($(this).parent().find(".info").find("p").text());
 		$yyye.appendTo($desc);
-
-		//$glyph = $('<span class="glyphicon glyphicon-eject"></span>');
-		$glyph = $('<i class="glyphicon fa fa-sort-asc"></i>');
-		$glyph.appendTo($desc);
 
 		var winWidth = $(window).outerWidth() + 17;
 		var height = parseInt($yyye.height(), 10);
@@ -370,11 +371,15 @@ $("document").ready(function() {
 			default:
 				$glyph.css("left", "49%");
 		}
-
-		
-		$('#descr').slideUp("medium");
-		$('#descr').slideDown("medium");
-		$("#what_we_do").css("padding-bottom", "30px");
+		if(what_we_do_curr_item_with_focus === $(this).attr("data-nth")){
+			$('#descr').slideUp("slow");
+			what_we_do_curr_item_with_focus = "-1";
+		} else {
+			$('#descr').slideUp("slow");
+			$('#descr').slideDown("medium");
+			$("#what_we_do").css("padding-bottom", "30px");
+			what_we_do_curr_item_with_focus = $(this).attr("data-nth");
+		}
 	});
 
 	//Tools
