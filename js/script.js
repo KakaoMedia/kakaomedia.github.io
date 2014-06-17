@@ -245,6 +245,8 @@ $("document").ready(function() {
 	function methodToFixLayout(e) {
 	    var winWidth = $(window).outerWidth() + 17;
 
+	    $("#portfolio-info .close").triggerHandler("click");
+
 	    $('#descr-row').empty();
 
 		$("#what_we_do .first_group, #what_we_do .second_group").height("160px");
