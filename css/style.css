@@ -74,11 +74,11 @@ header a, header a:visited {  color: #FFF;  }
 	color: #FFF !important;
 	display: none !important;
 	padding: 5px 10px 10px 0;
+	margin-left: 7px;
 }
 
 .logo-kakao img {
-	width: auto;
-	height: 2.4em;
+
 }
 
 .logo-kakao:hover, .logo-kakao:active {
