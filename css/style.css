@@ -875,6 +875,19 @@ header a, header a:visited {  color: #FFF;  }
 	#portfolio-body .row p { margin-right: 0; }
 }
 
+@media screen and (max-width: 991px) and (min-width: 621px) {
+	#portfolio #portfolio-gallery li {
+		height: 12em !important;
+		width: 46% !important;
+	}
+}
+@media screen and (max-width: 620px){
+	#portfolio #portfolio-gallery li {
+		height: 12em !important;
+		width: 100% !important;
+	}
+}
+
 #portfolio-info {
 	background: #FFF;
 	bottom: 0;
@@ -1023,6 +1036,7 @@ header a, header a:visited {  color: #FFF;  }
 	display: inline-block;
 	cursor: pointer;
 	background-color: white;
+	font-size: 1.5em;
 }
 
 .ptf_page a {
@@ -1051,12 +1065,12 @@ header a, header a:visited {  color: #FFF;  }
 
 @media screen and (max-width: 320px) {
 	.ptf_page_prev{
-		margin-left: 13%;
+		margin-left: 18%;
 		float:left;
 	}
 
 	.ptf_page_next{
-		margin-right: 30%;
+		margin-right: 28%;
 		float:right;
 	}
 }
@@ -1068,7 +1082,7 @@ header a, header a:visited {  color: #FFF;  }
 	}
 
 	.ptf_page_next{
-		margin-right: 46%;
+		margin-right: 40%;
 		float:right;
 	}
 }
