@@ -989,7 +989,8 @@ header a, header a:visited {  color: #FFF;  }
 	margin-left: 1em;
 }
 
-#portfolio-nav-proj-prev span, #portfolio-nav-proj-prev i {
+#portfolio-nav-proj-prev span, #portfolio-nav-proj-prev i,
+#portfolio-nav-proj-next span, #portfolio-nav-proj-next i {
 	margin-left: -0.8em;
 }
 
@@ -1022,10 +1023,6 @@ header a, header a:visited {  color: #FFF;  }
 	display: inline-block;
 	cursor: pointer;
 	background-color: white;
-}
-
-.ptf_page li:hover {
-	background-color: #dfdfdf;
 }
 
 .ptf_page a {
