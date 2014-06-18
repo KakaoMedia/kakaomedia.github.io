@@ -989,9 +989,12 @@ header a, header a:visited {  color: #FFF;  }
 	margin-left: 1em;
 }
 
+#portfolio-nav-proj-prev span, #portfolio-nav-proj-prev i {
+	margin-left: -0.8em;
+}
+
 #portfolio-nav-proj-next {
 	float:right;
-	margin-right: 1em;
 }
 
 #portfolio-nav-proj-prev, #portfolio-nav-proj-next {
@@ -1011,7 +1014,6 @@ header a, header a:visited {  color: #FFF;  }
 
 #portfolio-nav-proj-prev span, #portfolio-nav-proj-next span {
 	font-size: 2.5em;
-	margin-left: -0.5em;
 	color: #30BAA4;
 }
 
@@ -1032,13 +1034,13 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 .ptf_page_prev{
-	margin-left: 30%;
+	margin-left: 20%;
 	float:left;
 	color:black;
 }
 
 .ptf_page_next{
-	margin-right: 39%;
+	margin-right: 30%;
 	float:right;
 	color:black;
 }
@@ -1047,6 +1049,7 @@ header a, header a:visited {  color: #FFF;  }
 
 .ptf_page li span{
 	font-size: 1.6em;
+	margin-left: -0.8em;
 }
 
 @media screen and (max-width: 320px) {
@@ -1169,7 +1172,7 @@ header a, header a:visited {  color: #FFF;  }
 #team .thumbnail span {
 	font-size: 1em;
 	line-height: 17px;
-	color: #FFA500;
+	color: #EEFC0D;
 }
 
 #team .thumbnail .team_title { 
