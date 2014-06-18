@@ -77,16 +77,12 @@ header a, header a:visited {  color: #FFF;  }
 	margin-left: 0.5em !important;
 }
 
-.logo-kakao img {
-
-}
-
 .logo-kakao:hover, .logo-kakao:active {
 	color: #FFA500 !important;
 }
 
 .affix .logo-kakao {
-	display: inline-block !important;
+	display: block !important;
 }
 
 .navbar.affix {
@@ -151,7 +147,7 @@ header a, header a:visited {  color: #FFF;  }
     }
 
     .es .navbar-nav {
-    	display: inline-block;
+    	display: block;
         float: none !important;
         margin: 7.5px -15px;
     }
@@ -189,7 +185,7 @@ header a, header a:visited {  color: #FFF;  }
    }
 
    .en .navbar-nav {
-   		display: inline-block;
+   		display: block;
 		float: none !important;
        	margin: 7.5px -15px;
    }
