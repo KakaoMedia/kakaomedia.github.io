@@ -786,15 +786,42 @@ header a, header a:visited {  color: #FFF;  }
 	width: 50%;
 }
 
+
 #portfolio #portfolio-gallery li:nth-child(1), #portfolio #portfolio-gallery li:nth-child(2), #portfolio #portfolio-gallery li:nth-child(6), #portfolio #portfolio-gallery li:nth-child(7) {
 	height: 15em;
 	width: 46.5%;
 }
 
 #portfolio #portfolio-gallery li:nth-child(1) .item-name, #portfolio #portfolio-gallery li:nth-child(2) .item-name, #portfolio #portfolio-gallery li:nth-child(6) .item-name, #portfolio #portfolio-gallery li:nth-child(7) .item-name {
-	top: 30%;
+	top: 38%;
 	left: 28%;
 	width: 44%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	#portfolio #portfolio-gallery li .item-name {
+		left:15%;
+		width: 70%;
+		font-size: 1.1em;
+	}
+	#portfolio #portfolio-gallery li:nth-child(1) .item-name, #portfolio #portfolio-gallery li:nth-child(2) .item-name, #portfolio #portfolio-gallery li:nth-child(6) .item-name, #portfolio #portfolio-gallery li:nth-child(7) .item-name {
+		left:15%;
+		width: 70%;
+		font-size: 1.1em;
+	}
+}
+
+@media screen and (min-width: 621px) and (max-width: 767px) {
+	#portfolio #portfolio-gallery li .item-name {
+		left:10%;
+		width: 80%;
+		font-size: 0.8em;
+	}
+	#portfolio #portfolio-gallery li:nth-child(1) .item-name, #portfolio #portfolio-gallery li:nth-child(2) .item-name, #portfolio #portfolio-gallery li:nth-child(6) .item-name, #portfolio #portfolio-gallery li:nth-child(7) .item-name {
+		left:10%;
+		width: 80%;
+		font-size: 0.8em;
+	}
 }
 
 #portfolio #portfolio-gallery li .darker {
@@ -865,7 +892,7 @@ header a, header a:visited {  color: #FFF;  }
 	}
 
 	#portfolio #portfolio-gallery li .item-name {
-		top: 38% !important;
+		top: 30% !important;
 	}
 
 	#portfolio-body .row p { margin-right: 0; }

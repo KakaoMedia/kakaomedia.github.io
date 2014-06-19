@@ -234,6 +234,7 @@ function handle(delta) {
 $("document").ready(function() {
 	// Variable declaration
 	var item, overlay, clipPropFirst, clipPropLast, lang, desc_url;
+	var winWidth = $(window).outerWidth() + 17;
 	var what_we_do_curr_item_with_focus = "-1";
 	var portfolio_prods = [];
 	var pagination_index = 0;
@@ -243,7 +244,8 @@ $("document").ready(function() {
 
 
 	function methodToFixLayout(e) {
-	    var winWidth = $(window).outerWidth() + 17;
+		var res;
+	    winWidth = $(window).outerWidth() + 17;
 
 	    $("#portfolio-info .close").triggerHandler("click");
 
@@ -259,6 +261,7 @@ $("document").ready(function() {
 	    	$("#what_we_do").css("padding-bottom", $("#what_we_do .info:visible").height() + 50);
 	    	$("#what_we_do .first_group, #what_we_do .second_group").height("0");
 	    }
+	    fillPortfolio();
 	}
 
 	$(window).on("resize", methodToFixLayout);
@@ -319,7 +322,6 @@ $("document").ready(function() {
 	$("#what_we_do .title_info").on('click', function() {
 		var $desc, $row, $cell, $yyye, $glyph;
 		$row = $('#descr-row');
-		// $row.parent().css("position", "static");
 		$row.empty();
 
 		$desc = $('<div id="descr" class="info"></div>');
@@ -332,7 +334,6 @@ $("document").ready(function() {
 		$yyye.text($(this).parent().find(".info").find("p").text());
 		$yyye.appendTo($desc);
 
-		var winWidth = $(window).outerWidth() + 17;
 		var height = parseInt($yyye.height(), 10);
 		switch(true)
 		{
@@ -518,9 +519,18 @@ $("document").ready(function() {
 	);
 
 	function fillPortfolio(){
-		var $ptf_li, $ptf_name, $ptf_div, $ptf_img, $ptf_foot;
-		var last_index = Math.min(portfolio_prods.length, pagination_index + page_limit);
-		
+		var $ptf_li, $ptf_name, $ptf_div, $ptf_img, $ptf_foot, last_index;
+	    if(winWidth <= 991)
+	    {
+	    	page_limit = 6;
+	    }
+	    else {
+	    	page_limit = 7;
+	    }
+	    //pagination_index = Math.floor(portfolio_prods.length / page_limit);
+	    pagination_index = Math.floor(portfolio_item_index / page_limit) * page_limit;
+
+		last_index = Math.min(portfolio_prods.length, pagination_index + page_limit);
 		$("#portfolio-gallery").empty();
 
 		for(var index = pagination_index; index < last_index; index++) {
@@ -685,8 +695,6 @@ $("document").ready(function() {
 			overlay.animate({ "clip": clipPropFirst }, "fast", "swing");
 			item.scrollView(item.offset().top - 100);			
 			$("#portfolio").css("padding-bottom", "150px");
-
-			
 
 			setTimeout(function() {
 				overlay.animate({ "opacity": 0, "z-index": -10000 }, "fast", "swing", function() { 
