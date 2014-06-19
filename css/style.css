@@ -73,7 +73,8 @@ header a, header a:visited {  color: #FFF;  }
 .logo-kakao {
 	color: #FFF !important;
 	display: none !important;
-	padding: 4px 0 3px 0;
+	padding: 4px 10px 3px 0;
+	margin-left: 1em !important;
 }
 
 .logo-kakao:hover, .logo-kakao:active {
