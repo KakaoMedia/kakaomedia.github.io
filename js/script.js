@@ -261,6 +261,14 @@ $("document").ready(function() {
 	    	$("#what_we_do").css("padding-bottom", $("#what_we_do .info:visible").height() + 50);
 	    	$("#what_we_do .first_group, #what_we_do .second_group").height("0");
 	    }
+	    if(winWidth <= 991)
+	    {
+	    	page_limit = 6;
+	    }
+	    else {
+	    	page_limit = 7;
+	    }
+	    pagination_index = Math.floor(portfolio_item_index / page_limit) * page_limit;
 	    fillPortfolio();
 	}
 
@@ -520,15 +528,6 @@ $("document").ready(function() {
 
 	function fillPortfolio(){
 		var $ptf_li, $ptf_name, $ptf_div, $ptf_img, $ptf_foot, last_index;
-	    if(winWidth <= 991)
-	    {
-	    	page_limit = 6;
-	    }
-	    else {
-	    	page_limit = 7;
-	    }
-	    //pagination_index = Math.floor(portfolio_prods.length / page_limit);
-	    pagination_index = Math.floor(portfolio_item_index / page_limit) * page_limit;
 
 		last_index = Math.min(portfolio_prods.length, pagination_index + page_limit);
 		$("#portfolio-gallery").empty();
