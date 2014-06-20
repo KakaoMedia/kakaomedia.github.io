@@ -522,6 +522,14 @@ $("document").ready(function() {
 			for(var index = 0; index < data.portfolio.length - 1; index++) {
 				portfolio_prods.push(data.portfolio[index]);
 			}
+			if(winWidth <= 991)
+		    {
+		    	page_limit = 6;
+		    }
+		    else {
+		    	page_limit = 7;
+		    }
+		    pagination_index = Math.floor(portfolio_item_index / page_limit) * page_limit;
 			fillPortfolio();
 		}
 	);
