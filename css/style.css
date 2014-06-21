@@ -273,6 +273,12 @@ header a, header a:visited {  color: #FFF;  }
 	font-family: 'Open Sans', sans-serif;
 }
 
+@media (max-width: 768px) {
+	#front_page .info_list { 
+		padding: 0 10px;
+	}
+}
+
 .es #front_page .row div {
 	padding-left: 10px;
 	padding-right: 10px;
