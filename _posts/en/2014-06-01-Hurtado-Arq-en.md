@@ -6,14 +6,14 @@ gallery: [Hurtado(1).jpg, Hurtado(2).jpg, Hurtado(3).jpg]
 footer: Website
 year: 2013
 works: [HTML, CSS3]
-website: http://abc
+website: http://www.hurtadoarq.com
 categories: [portfolio,en]
 ---
 <!-- Esto es un comentario en texto que no sale en la pagina -->
 <!-- p: parrafo.
 br: fuerza el cursor a ir a la parte inicial de la siguiente linea.
 h1,h2,h3,h4,h5,h6: Para titulos, estan de mayor a menor; entre mas grande el numero, mas chico el titulo. -->
-<p style="text-align: justify;font-size: 1em;"> 
+<p style="text-align: justify;font-size: 1em;">
 We enjoyed working at this proyect with nice people at Hurtado Arquitectos.
 We worked at their website just before they launched their idea ........
 <br/><br/>
