@@ -235,6 +235,7 @@ $("document").ready(function() {
 	// Variable declaration
 	var item, overlay, clipPropFirst, clipPropLast, lang, desc_url;
 	var winWidth = $(window).outerWidth() + 17;
+	var carousel_interval = 2750;
 	var what_we_do_curr_item_with_focus = "-1";
 	var portfolio_prods = [];
 	var pagination_index = 0;
@@ -598,7 +599,7 @@ $("document").ready(function() {
 			success: function(data){$('#ptf_desc').html(data)}
 		});
 		$('#ptf_proj_gal').carousel('pause').removeData();
-		$('#ptf_proj_gal').carousel({interval:1250});
+		$('#ptf_proj_gal').carousel({interval:carousel_interval});
 		$ptf_car_ind = $('#ptf_proj_gal .carousel-indicators');
 		$ptf_car_ind.empty();
 		$ptf_li_ind = $("<li data-target='#ptf_proj_gal' data-slide-to='0' class='active' ></li>");

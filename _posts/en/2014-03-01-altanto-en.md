@@ -9,5 +9,3 @@ works: [HTML, CSS3]
 website: http://www.altanto.com.ni
 categories: [portfolio,en]
 ---
-<strong>Para negrita :)</strong><br />Yo no!<br />
-<em>Para cursiva ;)</em><i> cursiva tambien</i>
