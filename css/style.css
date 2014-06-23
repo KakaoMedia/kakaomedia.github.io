@@ -17,6 +17,18 @@ body {
 	margin-bottom: 60px;
 }
 
+.main .sub_title:after { 
+	width: 45%;
+}
+
+
+@media screen and (max-width: 480px) { 
+	.main .sub_title { 
+		font-size: 1.9em;
+		margin-bottom: 40px;
+	}
+}
+
 .main .sub_title:after {	
 	background: #F97E03;
 	height: 2px;
@@ -37,26 +49,16 @@ body {
 	width: 100%;
 }
 
-
-
-
-
-
 /*------------------------------------*\
     $HEADER
 \*------------------------------------*/
 header  {	
-	height: 675px;
 	top: 0;
 	width: 100%;
 	z-index: 1;
 }
 
 header a, header a:visited {  color: #FFF;  }
-
-
-
-
 
 /*------------------------------------*\
     $MENU
@@ -66,7 +68,6 @@ header a, header a:visited {  color: #FFF;  }
 	line-height: 1px;
 	position: absolute;
 	text-align: center;
-	top: -50px;
 	width: 100%;
 }
 
@@ -118,7 +119,7 @@ header a, header a:visited {  color: #FFF;  }
 	}
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
 	.es .navbar .container {
 		width: 100%;
 	}
@@ -215,10 +216,6 @@ header a, header a:visited {  color: #FFF;  }
 	}
 }
 
-
-
-
-
 /*------------------------------------*\
     $CONTENT
 \*------------------------------------*/
@@ -226,10 +223,6 @@ header a, header a:visited {  color: #FFF;  }
 	position: relative;
     z-index: 200;
 }
-
-
-
-
 
 /*------------------------------------*\
     $FRONT-PAGE
@@ -273,7 +266,7 @@ header a, header a:visited {  color: #FFF;  }
 	font-family: 'Open Sans', sans-serif;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 	#front_page .info_list { 
 		padding: 0 10px;
 	}
@@ -335,10 +328,6 @@ header a, header a:visited {  color: #FFF;  }
 	}
 }
 
-
-
-
-
 /*------------------------------------*\
     $QUOTE
 \*------------------------------------*/
@@ -350,9 +339,18 @@ header a, header a:visited {  color: #FFF;  }
 	font-weight: 300;
 }
 
+@media screen and (min-width: 600px) and (max-width: 1000px) { 
+	#quote h2 {	
+		font-size: 2.5em;
+	}
+}
 
-
-
+@media screen and (max-width: 599px) { 
+	#quote h2 {	
+		font-size: 1.8em;
+		margin-bottom: 0;
+	}
+}
 
 /*------------------------------------*\
 	$WHO-WE-ARE
@@ -364,9 +362,12 @@ header a, header a:visited {  color: #FFF;  }
 
 #who_we_are .sub_title:after { width: 25%; }
 
-
-
-
+@media screen and (min-width: 768px) and (max-width: 840px) { 
+	#who_we_are p {	
+		font-size: 1em;
+		margin: auto;
+	}
+}
 
 /*------------------------------------*\
 	$WHAT-WE-DO
@@ -418,7 +419,13 @@ header a, header a:visited {  color: #FFF;  }
 	width: 85%
 }
 
-#what_we_do .first_group .fontello, #what_we_do .second_group .fontello{
+@media screen and (max-width: 321px){
+	#what_we_do .info {
+		text-align: center;
+	}
+}
+
+#what_we_do .first_group .title_info .fontello, #what_we_do .second_group .title_info .fontello{
 	position:relative;
 	top: 1px;
 	font-size:2.5em;
@@ -434,7 +441,7 @@ header a, header a:visited {  color: #FFF;  }
 	-moz-osx-font-smoothing: grayscale;
 }
 
-#what_we_do #descr-row .glyphicon, #what_we_do #descr-row .fontello {
+#what_we_do #descr-row .fontello, #what_we_do .first_group .info .fontello, #what_we_do .second_group .info .fontello {
 	color: #17DDC5;
 	font-size:2em;
 	display: inline-block;
@@ -522,7 +529,9 @@ header a, header a:visited {  color: #FFF;  }
 	$HOW-WE-WORK
 \*------------------------------------*/
 #how_we_work { 
-	background-color: #FFF;
+	color: #FFF;
+	background: url("../img/how_we_work.jpg") center center no-repeat fixed;
+	background-size: cover;
 	padding-top: 50px;
 }
 
@@ -536,7 +545,6 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 #how_we_work h3 { 
-	color: #1A1A1A;
 	font-weight: 700;
 }
 
@@ -613,6 +621,13 @@ header a, header a:visited {  color: #FFF;  }
 	height: 250px;
 	margin-bottom: 10px;
 	width: 250px;
+}
+
+@media screen and (max-width: 330px){
+	#tools .resume_tools .media-object {
+		height: 240px;
+		width: 240px;
+	}
 }
 
 #tools .resume_tools .media-object img {
@@ -750,11 +765,6 @@ header a, header a:visited {  color: #FFF;  }
 \*------------------------------------*/
 #portfolio { background-color: #FFF; }
 
-#portfolio h2 {
-	font-size: 3em;
-	margin-bottom: 60px;
-}
-
 #portfolio p {
 	font-weight: 700;
 }
@@ -817,7 +827,7 @@ header a, header a:visited {  color: #FFF;  }
 	}
 }
 
-@media screen and (min-width: 621px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
 	#portfolio #portfolio-gallery li .item-name {
 		left:10%;
 		width: 80%;
@@ -977,6 +987,18 @@ header a, header a:visited {  color: #FFF;  }
 	width: 100%;
 }
 
+@media screen and (max-width: 767px) {
+	#portfolio-header { 
+		padding: 5px 1em 5px 1em;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+	#portfolio-header { 
+		padding: 5px 1em 5px 2.5em;
+	}
+}
+
 #portfolio-header .row p, #portfolio-header .row h3, #portfolio-header .row li {
 	color: #000;
 	margin: 0;
@@ -986,7 +1008,7 @@ header a, header a:visited {  color: #FFF;  }
 
 #portfolio-header .row p { color: #999; }
 
-#portfolio-header .row h3 { font-size: 2em; }
+#portfolio-header .row h3 { font-size: 1.3em; }
 
 #portfolio-header ul {
 	list-style: none;
@@ -1062,6 +1084,13 @@ header a, header a:visited {  color: #FFF;  }
 
 .ptf_page #ptf_return_top {
 	float: left;
+}
+
+@media screen and (max-width: 767px){
+	.ptf_page #ptf_return_top {
+		float: left;
+		font-size: 1.4em;
+	}
 }
 
 .ptf_page .ptf_page_prev {
@@ -1358,11 +1387,6 @@ header a, header a:visited {  color: #FFF;  }
 	-webkit-background-size: cover;	
 }
 
-#contact h2 { 
-	font-size: 3em;
-	margin-bottom: 60px;
-}
-
 #contact .form_container { 
 	padding-left: 50px;
 	padding-right: 50px;
@@ -1479,7 +1503,7 @@ input::-webkit-input-placeholder, input::-webkit-textarea-placeholder {
 
 #contact .info_container {
 	font-size: 0.8em;
-	text-align: left;
+	text-align: justify;
 }
 
 #contact .info_container .fa {
@@ -1492,6 +1516,12 @@ input::-webkit-input-placeholder, input::-webkit-textarea-placeholder {
 #contact .info_container .info_value { 
 	margin-left: 15px;
 	padding: 16px 0;
+}
+
+@media screen and (min-width: 750px) and (max-width: 800px) {
+	#contact .info_container .info_value { 
+		margin-right: 2em;
+	}	
 }
 
 #contact .info_container a {
@@ -1527,10 +1557,6 @@ input::-webkit-input-placeholder, input::-webkit-textarea-placeholder {
 	#contact .info_container div div:first-child {
 		float: left;
 	}
-
-	#contact .info_container>div:nth-child(2) .info_value {
-		padding: 20px 0;
-	}
 }
 
 @media screen and (max-width: 767px) {
@@ -1548,15 +1574,9 @@ input::-webkit-input-placeholder, input::-webkit-textarea-placeholder {
 	}
 }
 
-@media screen and (max-width: 671px) {
-	#contact .info_container>div:nth-child(2) .info_value {
-		padding: 8px 0;
-	}
-}
-
 @media screen and (max-width: 451px) {
 	#contact .row>div {
-		font-size: 0.8em;
+		font-size: 0.75em;
 	}
 }
 

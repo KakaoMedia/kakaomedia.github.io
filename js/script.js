@@ -247,10 +247,9 @@ $("document").ready(function() {
 		var res;
 	    winWidth = $(window).outerWidth() + 17;
 
-	    $("#portfolio-info .close").triggerHandler("click");
-
 	    $('#descr-row').empty();
 
+		$("#what_we_do #second-lead .info").hide();
 		$("#what_we_do .first_group, #what_we_do .second_group").height("160px");
 		$("#what_we_do").css("padding-bottom", "30px");
 
@@ -269,7 +268,7 @@ $("document").ready(function() {
 	    	page_limit = 7;
 	    }
 	    pagination_index = Math.floor(portfolio_item_index / page_limit) * page_limit;
-	    fillPortfolio();
+		$("#portfolio-info .close").triggerHandler("click");
 	}
 
 	$(window).on("resize", methodToFixLayout);
@@ -329,6 +328,17 @@ $("document").ready(function() {
 	//WHAT WE DO - INFO
 	$("#what_we_do .title_info").on('click', function() {
 		var $desc, $row, $cell, $yyye, $glyph;
+		//$("#what_we_do #second-lead .info").hide();
+		if(winWidth < 768)
+		{
+			$cell = $(this).parent().find(".info");
+			$glyph = $('<span class="icon-up-dir fontello"></span>');
+			$glyph.css("left", "40%");
+			$glyph.appendTo($cell);
+			$cell.toggle("slow");
+			return;
+		}
+		
 		$row = $('#descr-row');
 		$row.empty();
 
@@ -349,7 +359,7 @@ $("document").ready(function() {
 				if(winWidth > 768){
 					$glyph.css("left", "5%");
 				} else {
-					$glyph.css("left", "49%");
+					$glyph.css("left", "40%");
 				}
 				break;
 			case $(this).attr("data-nth") === "2":
@@ -358,7 +368,7 @@ $("document").ready(function() {
 				} else if (winWidth > 768){
 					$glyph.css("right", "5%");
 				} else {
-					$glyph.css("left", "49%");
+					$glyph.css("left", "40%");
 				}
 				break;
 			case $(this).attr("data-nth") === "3":
@@ -367,7 +377,7 @@ $("document").ready(function() {
 				} else if (winWidth > 768){
 					$glyph.css("left", "10%");
 				} else {
-					$glyph.css("left", "49%");
+					$glyph.css("left", "40%");
 				}
 				break;
 			case $(this).attr("data-nth") === "4":
@@ -376,11 +386,11 @@ $("document").ready(function() {
 				} else if (winWidth > 768){
 					$glyph.css("right", "10%");
 				} else {
-					$glyph.css("left", "49%");
+					$glyph.css("left", "40%");
 				}
 				break;
 			default:
-				$glyph.css("left", "49%");
+				$glyph.css("left", "40%");
 		}
 		if(what_we_do_curr_item_with_focus === $(this).attr("data-nth")){
 			$('#descr').slideUp("slow");
@@ -692,8 +702,8 @@ $("document").ready(function() {
 		});
 
 	$("#portfolio-info .close").on("click", function() {
+		fillPortfolio(); //Llena el portfolio en la pagina correcta y si hay algun proyecto abierto lo cierra.
 		if(typeof item !== "undefined") {
-			fillPortfolio();
 			var curr_index = (portfolio_item_index % page_limit) + 1; //nth-child is based 1
 			item = $('#portfolio-gallery li:nth-child(' + curr_index.toString() + ')');
 

@@ -6,6 +6,6 @@ gallery: [Sonrident.jpg, Sonrident2.jpg]
 footer: Website
 year: 2013
 works: [HTML, CSS3]
-website: http://abc
+website:
 categories: [portfolio,es]
 ---
