@@ -251,6 +251,7 @@ $("document").ready(function() {
 	    $('#descr-row').empty();
 
 		$("#what_we_do #second-lead .info").hide();
+		$("#what_we_do #second-lead .title_info").css("color", "#FFF");
 		what_we_do_curr_item_with_focus = "-1";
 		$("#what_we_do .first_group, #what_we_do .second_group").height("160px");
 		$("#what_we_do").css("padding-bottom", "30px");
@@ -330,7 +331,7 @@ $("document").ready(function() {
 
 	//WHAT WE DO - INFO
 	$("#what_we_do .title_info").on('click', function() {
-		var $desc, $row, $cell, $yyye, $glyph;
+		var $desc, $row, $cell, $info_desc, $glyph;
 		//$("#what_we_do #second-lead .info").hide();
 		if(winWidth < 768) {
 			$cell = $(this).parent().find(".info");
@@ -352,6 +353,11 @@ $("document").ready(function() {
 			$cell.toggle("slow");
 			return;
 		}
+		else if(winWidth < 992)
+		{
+			$("#what_we_do #second-lead .title_info").css("color", "#FFF");
+			$(this).css("color", "#30BAA4");
+		} 
 		
 		$row = $('#descr-row');
 		$row.empty();
@@ -362,11 +368,10 @@ $("document").ready(function() {
 		$glyph = $('<span class="icon-up-dir fontello"></span>');
 		$glyph.appendTo($desc);
 
-		$yyye = $('<p id="yyye"></p>');
-		$yyye.text($(this).parent().find(".info").find("p").text());
-		$yyye.appendTo($desc);
+		$info_desc = $('<p id="info_desc"></p>');
+		$info_desc.text($(this).parent().find(".info").find("p").text());
+		$info_desc.appendTo($desc);
 
-		var height = parseInt($yyye.height(), 10);
 		switch(true) { // the else (default) is winWidth > 768
 			case $(this).attr("data-nth") === "1":
 				switch(true) {
@@ -658,6 +663,12 @@ $("document").ready(function() {
 	}, { offset: "80%" });
 
 	$("#portfolio-gallery").on('click', 'li', function() {
+		var img_load = $("#ptf_footer_load_graph");
+		img_load.css("position", "relative");
+		img_load.css("right", "-10%");
+		img_load.css("display", "inline-block");
+		img_load.appendTo($(this).find("p"));
+
 		portfolio_org_item_index = parseInt( $(this).attr('data-index') );
 		portfolio_item_index = portfolio_org_item_index; 
 
@@ -672,6 +683,8 @@ $("document").ready(function() {
 			overlay.css({ opacity: 1, "z-index": 10000 }).removeClass("hide-info");
 			overlay.animate({ "clip": clipPropLast }, "fast", "swing", function() {
 				$("#portfolio").scrollView().css("padding-bottom", 0);
+			img_load.css("display", "none");
+			img_load.appendTo($("#portfolio-gallery").parent());
 			});			
 		}, 500);
 

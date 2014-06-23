@@ -471,7 +471,7 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 
-#what_we_do #yyye {
+#what_we_do #info_desc {
 	font-size: 16px;
 }
 
@@ -1026,6 +1026,12 @@ header a, header a:visited {  color: #FFF;  }
 	font-size: 0.7em;
 	line-height: normal;
 	padding: 0;
+}
+
+#portfolio #ptf_footer_load_graph {
+	height: 100%;
+	width: auto;
+	display: none;
 }
 
 #ptf_desc {
