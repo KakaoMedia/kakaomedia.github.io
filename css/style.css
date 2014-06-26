@@ -1283,7 +1283,7 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 #team .thumbnail img {
-	left: -24%;
+	left: -25%;
 	max-width: none;
 	position: relative;
 	top: -23%;
@@ -1294,6 +1294,13 @@ header a, header a:visited {  color: #FFF;  }
 	-moz-transform: rotate(-45deg);
 	-webkit-transform: rotate(-45deg);
 	transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 480px) {
+	#team .thumbnail img {
+		left:-44%;
+		top: -41%;
+	}
 }
 
 .flip {
