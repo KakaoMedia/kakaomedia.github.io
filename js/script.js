@@ -231,6 +231,7 @@ function handle(delta) {
 
 
 
+//$("document").on("ready pagechange", function() {
 $("document").ready(function() {
 	// Variable declaration
 	var item, overlay, clipPropFirst, clipPropLast, lang, desc_url;
@@ -251,6 +252,8 @@ $("document").ready(function() {
 	    $('#descr-row').empty();
 
 		$("#what_we_do #second-lead .info").hide();
+		$("#what_we_do #second-lead .title_info").css("color", "#FFF");
+		what_we_do_curr_item_with_focus = "-1";
 		$("#what_we_do .first_group, #what_we_do .second_group").height("160px");
 		$("#what_we_do").css("padding-bottom", "30px");
 
@@ -261,6 +264,7 @@ $("document").ready(function() {
 	    	$("#what_we_do").css("padding-bottom", $("#what_we_do .info:visible").height() + 50);
 	    	$("#what_we_do .first_group, #what_we_do .second_group").height("0");
 	    }
+
 	    if(winWidth <= 991)
 	    {
 	    	page_limit = 6;
@@ -328,17 +332,33 @@ $("document").ready(function() {
 
 	//WHAT WE DO - INFO
 	$("#what_we_do .title_info").on('click', function() {
-		var $desc, $row, $cell, $yyye, $glyph;
+		var $desc, $row, $cell, $info_desc, $glyph;
 		//$("#what_we_do #second-lead .info").hide();
-		if(winWidth < 768)
-		{
+		if(winWidth < 768) {
 			$cell = $(this).parent().find(".info");
 			$glyph = $('<span class="icon-up-dir fontello"></span>');
-			$glyph.css("left", "40%");
+			switch(true){
+				case winWidth > 560:
+					$glyph.css("left", "45.5%");
+					break;
+				case winWidth > 450:
+					$glyph.css("left", "45%");
+					break;
+				case winWidth > 400:
+					$glyph.css("left", "44%");
+					break;
+				default:
+					$glyph.css("left", "42%");
+			}
 			$glyph.appendTo($cell);
 			$cell.toggle("slow");
 			return;
 		}
+		else if(winWidth < 992)
+		{
+			$("#what_we_do #second-lead .title_info").css("color", "#FFF");
+			$(this).css("color", "#30BAA4");
+		} 
 		
 		$row = $('#descr-row');
 		$row.empty();
@@ -349,49 +369,58 @@ $("document").ready(function() {
 		$glyph = $('<span class="icon-up-dir fontello"></span>');
 		$glyph.appendTo($desc);
 
-		$yyye = $('<p id="yyye"></p>');
-		$yyye.text($(this).parent().find(".info").find("p").text());
-		$yyye.appendTo($desc);
+		$info_desc = $('<p id="info_desc"></p>');
+		$info_desc.text($(this).parent().find(".info").find("p").text());
+		$info_desc.appendTo($desc);
 
-		var height = parseInt($yyye.height(), 10);
-		switch(true)
-		{
+		switch(true) { // the else (default) is winWidth > 768
 			case $(this).attr("data-nth") === "1":
-				if(winWidth > 768){
-					$glyph.css("left", "5%");
-				} else {
-					$glyph.css("left", "40%");
+				switch(true) {
+					case winWidth > 1200:
+						$glyph.css("left", "4.4%");
+						break;
+					default:
+						$glyph.css("left", "4.4%");
 				}
 				break;
 			case $(this).attr("data-nth") === "2":
-				if(winWidth > 1000){
-					$glyph.css("left", "33%");
-				} else if (winWidth > 768){
-					$glyph.css("right", "5%");
-				} else {
-					$glyph.css("left", "40%");
+				switch(true) {
+					case winWidth > 1200:
+						$glyph.css("left", "32.6%");
+						break;
+					case winWidth > 991:
+						$glyph.css("left", "31.5%");
+						break;
+					default:
+						$glyph.css("right", "10%");
 				}
 				break;
 			case $(this).attr("data-nth") === "3":
-				if(winWidth > 1000){
-					$glyph.css("right", "33%");
-				} else if (winWidth > 768){
-					$glyph.css("left", "10%");
-				} else {
-					$glyph.css("left", "40%");
+				switch(true) {
+					case winWidth > 1200:
+						$glyph.css("right", "33.5%");
+						break;
+					case winWidth > 991:
+						$glyph.css("right", "32.25%");
+						break;
+					default:
+						$glyph.css("left", "5.5%");
 				}
 				break;
 			case $(this).attr("data-nth") === "4":
-				if(winWidth > 1000){
-					$glyph.css("right", "4%");
-				} else if (winWidth > 768){
-					$glyph.css("right", "10%");
-				} else {
-					$glyph.css("left", "40%");
+				switch(true) {
+					case winWidth > 1200:
+						$glyph.css("right", "5%");
+						break;
+					case winWidth > 991:
+						$glyph.css("right", "3.5%");
+						break;
+					default:
+						$glyph.css("right", "10%");
 				}
 				break;
 			default:
-				$glyph.css("left", "40%");
+				$glyph.css("display", "none");
 		}
 		if(what_we_do_curr_item_with_focus === $(this).attr("data-nth")){
 			$('#descr').slideUp("slow");
@@ -635,6 +664,12 @@ $("document").ready(function() {
 	}, { offset: "80%" });
 
 	$("#portfolio-gallery").on('click', 'li', function() {
+		var img_load = $("#ptf_footer_load_graph");
+		img_load.css("position", "relative");
+		img_load.css("right", "-10%");
+		img_load.css("display", "inline-block");
+		img_load.appendTo($(this).find("p"));
+
 		portfolio_org_item_index = parseInt( $(this).attr('data-index') );
 		portfolio_item_index = portfolio_org_item_index; 
 
@@ -649,6 +684,8 @@ $("document").ready(function() {
 			overlay.css({ opacity: 1, "z-index": 10000 }).removeClass("hide-info");
 			overlay.animate({ "clip": clipPropLast }, "fast", "swing", function() {
 				$("#portfolio").scrollView().css("padding-bottom", 0);
+			img_load.css("display", "none");
+			img_load.appendTo($("#portfolio-gallery").parent());
 			});			
 		}, 500);
 
