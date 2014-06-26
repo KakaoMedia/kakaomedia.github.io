@@ -99,26 +99,29 @@ $(function() {
 
     // Obtener boton de enviar
     var botonEnviar = $('#boton-enviar');
+    var botonEnviar_text = botonEnviar.text();
 
     // Event listener para el formulario de contacto.
-	$(form).submit(function(event) {
+	form.submit(function(event) {
 	    // Previene envio de formulario por defecto en el navegador.
 	    event.preventDefault();
 
+	    formMessages.text('');
+
 	    // Serializar los datos del formulario.
-		var formData = $(form).serializeObject();
+		var formData = form.serializeObject();
 
 		if(formData.uuid !== "" && formData.name !== "" && formData.subject !== "" && formData.menssage !== "") {
 
 			//Cambiar estado de boton enviar
 
-			$(botonEnviar).css( "background-color", "lightseagreen" );
-			$(botonEnviar).text(form_messages.sending_button_text);
+			botonEnviar.css( "background-color", "lightseagreen" );
+			botonEnviar.text(form_messages.sending_button_text);
 
 					// Envio  del formulario usando AJAX.
 			$.ajax({
 			    type: 'POST',
-			    url: $(form).attr('action'),
+			    url: form.attr('action'),
 			    crossDomain: true,
 			    contentType: 'text/plain',
 			     data: JSON.stringify({
@@ -132,13 +135,12 @@ $(function() {
 				    'Content-Type': 'application/json; charset=utf-8'
 				  },
 				  success: function(data) {
-				    $(formMessages).removeClass('alert alert-danger');
-				    $(formMessages).addClass('success');
-				    $('#boton-enviar').css( "background-color", "darkorange" );
-				    $(botonEnviar).text(form_messages.sent_button_text)
-
+				    formMessages.removeClass('alert alert-danger');
+				    formMessages.addClass('success');
+				    botonEnviar.css( "background-color", "darkorange" );
+				    botonEnviar.text(form_messages.sent_button_text);
 				    // Imprimir lenguage en el div de mensajes.
-				    $(formMessages).text(form_messages.success_message);
+				    formMessages.text(form_messages.success_message);
 
 				    // limpiar el formulario.
 				    $('#name').val('');
@@ -148,15 +150,18 @@ $(function() {
 				  },
 				  error: function(data) {
 				    // Asegurarse que el formulario de mensajes tiene la clase 'error'
-				    $(formMessages).removeClass('alert alert-success');
-				    $(formMessages).addClass('alert alert-error');
+				    formMessages.removeClass('alert alert-success');
+				    formMessages.addClass('alert alert-error');
 
 				    // Imprimir mensaje de error en el div.
 				    if (data.responseText !== '') {
-				        $(formMessages).text(form_messages.error_message);
+				        formMessages.text(form_messages.error_message);
 				    } else {
-				        $(formMessages).text(form_messages.error_message_complete);
+				        formMessages.text(form_messages.error_message_complete);
 				    }
+
+				    botonEnviar.text(botonEnviar_text);
+				    botonEnviar.css( "background", "none" );
 				  }
 			});
 

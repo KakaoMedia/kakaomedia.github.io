@@ -8,8 +8,6 @@
 
 			<div class="col-md-6 col-sm-6 col-xs-12 form_container">
 
-				<div id="form-messages"></div>
-
 				<form id="formulario_de_contacto" class="form-horizontal" role="form" method="POST" action="http://kakaomailer.herokuapp.com/user">
 					<div class="form-group">
 						<div class="col-sm-6">
@@ -32,7 +30,8 @@
 					</div>
 					<div class="form-group">
 						<div class="col-sm-12">
-							<button class="btn">ENVIAR</button>
+							<div id="form-messages"></div>
+							<button id="boton-enviar" class="btn">ENVIAR</button>
 						</div>
 					</div>
 				</form>
