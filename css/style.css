@@ -4,6 +4,12 @@ body {
 	font-weight: 300;
 }
 
+@media screen and (max-width: 767px) {
+	body {
+		overflow-y: hidden;
+	}
+}
+
 .main {
 	padding: 150px 15px;
 	position: relative;
@@ -530,7 +536,8 @@ header a, header a:visited {  color: #FFF;  }
 \*------------------------------------*/
 #how_we_work { 
 	color: #FFF;
-	background: url("../img/how_we_work.jpg") center center no-repeat fixed;
+	/*background: url("../img/how_we_work.jpg") center center no-repeat fixed;*/
+	background-color: #30BAA4;
 	background-size: cover;
 	padding-top: 50px;
 }
@@ -677,6 +684,13 @@ header a, header a:visited {  color: #FFF;  }
 	-ms-transition: all 0.5s ease-in-out;
 	-mz-transition: all 0.5s ease-in-out;
 	-webkit-transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 480px) {
+	#tools .first_img {
+		width: 100%;
+		height: auto;
+	}
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
@@ -1224,6 +1238,13 @@ header a, header a:visited {  color: #FFF;  }
 	transition: all 0.5s ease-in-out;
 }
 
+@media screen and (max-width: 480px) {
+	#team .thumbnail{
+		width: 200px;
+		height: 200px;
+	} 	
+}
+
 #team .thumbnail:hover div {
 	opacity: 1;
 	visibility: visible;
@@ -1631,8 +1652,10 @@ label.error {
 }
 
 #form-messages {
-	font-size: 13px;
+	font-size: 16px;
 	padding: 4px 4px 4px 4px;
+	font-weight: 700;
+	color: rgb(255, 140, 0);
 }
 
 .form-success {

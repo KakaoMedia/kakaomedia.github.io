@@ -231,6 +231,7 @@ function handle(delta) {
 
 
 
+//$("document").on("ready pagechange", function() {
 $("document").ready(function() {
 	// Variable declaration
 	var item, overlay, clipPropFirst, clipPropLast, lang, desc_url;
