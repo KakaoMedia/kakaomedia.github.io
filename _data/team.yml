@@ -47,13 +47,6 @@
   phone: 85164727
   email: silvio@kakaomedia.com
 
-- name: Roger Gaitan
-  twitter: 
-  picture: TeamComing.jpg
-  job: Web Developer
-  phone: 85164727
-  email: Roger@kakaomedia.com
-
 - name: Dennis Gallo
   twitter: 
   picture: DennisGallo.jpg
@@ -67,6 +60,13 @@
   job: Brand Identity Designer
   phone: 85164727
   email: Maritza@kakaomedia.com
+
+- name: Roger Gaitan
+  twitter: 
+  picture: TeamComing.jpg
+  job: Web Developer
+  phone: 85164727
+  email: Roger@kakaomedia.com
 
 - name: Jeans Real
   twitter: 
