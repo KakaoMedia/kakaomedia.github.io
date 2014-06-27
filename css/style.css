@@ -536,7 +536,9 @@ header a, header a:visited {  color: #FFF;  }
 \*------------------------------------*/
 #how_we_work { 
 	color: #FFF;
-	background: url("../img/how_we_work.jpg") center center no-repeat fixed;
+	/*background: url("../img/how_we_work.jpg") center center no-repeat fixed;*/
+	background-color: #FFF;
+	color: #000;
 	background-size: cover;
 	padding-top: 50px;
 }
