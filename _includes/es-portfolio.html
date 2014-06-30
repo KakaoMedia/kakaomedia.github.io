@@ -58,31 +58,34 @@
 <div class="container">
 	<div class="lead"><h2 class="sub_title animated fadeIn">PROYECTOS RECIENTES</h2></div>
 	<div class="row">
-		<div class="col-xs-10 col-sm-8 col-md-6 col-lg-4">
+		<div id="ptf_showcase" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#ptf_showcase" data-slide-to="0" class="active"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="item active"><ul id="portfolio-gallery"></ul></div>
+			</div>
+			<a class="left carousel-control" href="#ptf_showcase" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#ptf_showcase" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+			
+			<img id='ptf_footer_load_graph' src='/img/ajax-loader.gif'>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<ul class="ptf_page">
 				<li class="ptf_page_prev">
-					<a>
+					<a href="#portfolio">
 						<span class="icon-left-open"></span>
 					</a>
 				</li>
 				<li class="ptf_page_next">
-					<a>
-						<span class="icon-right-open"></span>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class="row">
-		<ul id="portfolio-gallery"></ul>
-		<img id='ptf_footer_load_graph' src='/img/ajax-loader.gif'>
-	</div>
-	<div class="row">
-		<div class="col-xs-10 col-sm-8 col-md-6 col-lg-4">
-			<ul class="ptf_page">
-				<li>
 					<a href="#portfolio">
-						<span id="ptf_return_top">Regresa</span>
+						<span class="icon-right-open"></span>
 					</a>
 				</li>
 			</ul>
