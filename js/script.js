@@ -249,6 +249,10 @@ $("document").ready(function() {
 	var portfolio_org_item_index = 0; //index of the item that was first clicked
 	var page_limit = 7;
 
+	//Change the elements dependent to act as expected with javascript enabled
+	$('.noscript').css('display', 'none');
+	$('#quote .rotate').css('display', 'block');
+
 
 	function methodToFixLayout(e) {
 		var res;
@@ -771,4 +775,6 @@ $("document").ready(function() {
 		if(direction == "down")
 			$(this).removeClass("animated fadeOutUp").addClass("animated fadeInUp");
 	}, { offset: "80%" });
+
+	
 });
