@@ -244,14 +244,19 @@ $("document").ready(function() {
 	var carousel_interval = 2750;
 	var what_we_do_curr_item_with_focus = "-1";
 	var portfolio_prods = [];
+	var itemOnDisplay = false;
 	var pagination_index = 0;
 	var portfolio_item_index = 0;
-	var portfolio_org_item_index = 0; //index of the item that was first clicked
 	var page_limit = 7;
 
 	//Change the elements to act as expected with javascript enabled
 	$('.noscript').css('display', 'none');
+	$('#navbar').css('display', 'block');
+	$('#tools').css('display', 'block');
+	$('#portfolio').css('display', 'block');
+	$('#contact .form_container').css('display', 'block');
 	$('#quote .rotate').css('display', 'block');
+	$('#portfolio #ptf_showcase .left').css('display', 'none');
 
 
 	function methodToFixLayout(e) {
@@ -281,8 +286,28 @@ $("document").ready(function() {
 	    else {
 	    	page_limit = 7;
 	    }
-	    pagination_index = Math.floor(portfolio_item_index / page_limit) * page_limit;
+
+	    if(itemOnDisplay) {
+	    	pagination_index = page_limit * Math.floor(portfolio_item_index / page_limit);
+	    }
+	    else {
+	    	pagination_index = page_limit * Math.floor(pagination_index / page_limit);
+	    }
+	    
 		$("#portfolio-info .close").triggerHandler("click");
+
+		if(pagination_index + page_limit < portfolio_prods.length) {
+			$('#portfolio #ptf_showcase .right').css('display', 'block');	
+		}
+		else {
+			$('#portfolio #ptf_showcase .right').css('display', 'none');
+		}
+		if(pagination_index - page_limit >= 0) {
+			$('#portfolio #ptf_showcase .left').css('display', 'block');	
+		}
+		else {
+			$('#portfolio #ptf_showcase .left').css('display', 'none');
+		}
 	}
 
 	$(window).on("resize", methodToFixLayout);
@@ -664,6 +689,7 @@ $("document").ready(function() {
 			$ptf_car_inner.append($ptf_li_inner);
 		}
 		pagination_index = portfolio_item_index - (portfolio_item_index % page_limit);
+		itemOnDisplay = true;
 	}
 
 	function setClipDimensions(item, overlay) {
@@ -686,11 +712,9 @@ $("document").ready(function() {
 		img_load.css("display", "inline-block");
 		img_load.appendTo($(this).find("p"));
 
-		portfolio_org_item_index = parseInt( $(this).attr('data-index') );
-		portfolio_item_index = portfolio_org_item_index; 
+		portfolio_item_index = parseInt( $(this).attr('data-index') );
 
 		overlay = $("#portfolio-info");
-		//overlay.find("img").attr("src", "/img/"+portfolio_prods[index].gallery[0].img+"");
 		fillProjectData();
 
 		item = $(this);
@@ -710,6 +734,12 @@ $("document").ready(function() {
 	var ptf_page_next_on_click = function(){ //it does not cycle
 			if(pagination_index + page_limit < portfolio_prods.length) {
 				pagination_index += page_limit
+				if(pagination_index + page_limit < portfolio_prods.length) {
+					$('#portfolio #ptf_showcase .left').css('display', 'block');	
+				}
+				else {
+					$('#portfolio #ptf_showcase .right').css('display', 'none');
+				}
 				fillPortfolio();
 			}
 		};
@@ -717,6 +747,12 @@ $("document").ready(function() {
 	var ptf_page_prev_on_click = function(){ //it does not cycle
 			if(pagination_index - page_limit >= 0) {
 				pagination_index -= page_limit;
+				if(pagination_index - page_limit >= 0) {
+					$('#portfolio #ptf_showcase .right').css('display', 'block');	
+				}
+				else {
+					$('#portfolio #ptf_showcase .left').css('display', 'none');
+				}
 				fillPortfolio();
 			}
 		};
@@ -762,6 +798,7 @@ $("document").ready(function() {
 
 	$("#portfolio-info .close").on("click", function() {
 		fillPortfolio(); //Llena el portfolio en la pagina correcta y si hay algun proyecto abierto lo cierra.
+		itemOnDisplay = false;
 		if(typeof item !== "undefined") {
 			var curr_index = (portfolio_item_index % page_limit) + 1; //nth-child is based 1
 			item = $('#portfolio-gallery li:nth-child(' + curr_index.toString() + ')');

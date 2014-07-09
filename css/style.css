@@ -75,6 +75,7 @@ header a, header a:visited {  color: #FFF;  }
 	position: absolute;
 	text-align: center;
 	width: 100%;
+	display: none;
 }
 
 .logo-kakao {
@@ -345,13 +346,12 @@ header a, header a:visited {  color: #FFF;  }
 	font-weight: 300;
 }
 
-#quote h2 span {
-	font-size: 0.6em;
+#quote .rotate {
+	font-size: 1em;
 }
 
-#quote .rotate {
+#quote .rotate span {
 	display: none;
-	font-size: 1em;
 }
 
 @media screen and (min-width: 600px) and (max-width: 1000px) { 
@@ -599,6 +599,7 @@ header a, header a:visited {  color: #FFF;  }
 	background-color: #232323;
 	color: #FFF;
 	padding: 150px 15px 0;
+	display: none;
 }
 
 #tools .sub_title:after {
@@ -787,7 +788,7 @@ header a, header a:visited {  color: #FFF;  }
 /*------------------------------------*\
 	$PORTFOLIO
 \*------------------------------------*/
-#portfolio { background-color: #FFF; }
+#portfolio { background-color: #FFF; display: none; }
 
 #portfolio .sub_title:after {
 	width: 57%;
@@ -1536,6 +1537,7 @@ header a, header a:visited {  color: #FFF;  }
 #contact .form_container { 
 	padding-left: 50px;
 	padding-right: 50px;
+	display: none;
 }
 
 #contact form {
