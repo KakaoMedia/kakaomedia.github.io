@@ -251,7 +251,7 @@ $("document").ready(function() {
 
 	//Change the elements to act as expected with javascript enabled
 	$('.noscript').css('display', 'none');
-	$('#navbar').css('display', 'block');
+	$('.navbar').css('display', 'block');
 	$('#tools').css('display', 'block');
 	$('#portfolio').css('display', 'block');
 	$('#contact .form_container').css('display', 'block');
