@@ -85,6 +85,11 @@ header a, header a:visited {  color: #FFF;  }
 	margin-left: 1em !important;
 }
 
+.logo-kakao img {
+	width: 87px;
+	height: 43px;
+}
+
 .logo-kakao:hover, .logo-kakao:active {
 	color: #FFA500 !important;
 }
@@ -260,6 +265,8 @@ header a, header a:visited {  color: #FFF;  }
 
 #front_page .main_title img {
 	max-width: 100%;
+	width:650px;
+	height: 317px;
 }
 
 #front_page h2 { 
@@ -690,6 +697,11 @@ header a, header a:visited {  color: #FFF;  }
 #tools .center_points .points_container {
 	margin-left: 119px;
 	text-align: left;    
+}
+
+#tools .media .first_img img {
+	width: 274px;
+	height: 265px;
 }
 
 #tools .first_img .points_container, #tools .media .center_points .points_container span,
@@ -1149,8 +1161,8 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 #portfolio #ptf_footer_load_graph {
-	height: 100%;
-	width: auto;
+	height: 16px;
+	width: 16px;
 	display: none;
 }
 
@@ -1323,6 +1335,11 @@ header a, header a:visited {  color: #FFF;  }
 	-webkit-transform: rotate(45deg);
 	transform: rotate(45deg);
 	transition-duration: 0.5s;
+}
+
+#team .thumbnail img {
+	width: 370px;
+	height: 370px;
 }
 
 #team .thumbnail div {
