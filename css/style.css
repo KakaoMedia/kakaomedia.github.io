@@ -246,6 +246,12 @@ header a, header a:visited {  color: #FFF;  }
 	-webkit-background-size: cover;	
 }
 
+@media screen and (min-width: 1200px) {
+	#front_page { 
+		min-height: 700px;
+	}
+}
+
 #front_page .main_title {
 	font-size: 10em;
 	margin: 0 0 40px;
