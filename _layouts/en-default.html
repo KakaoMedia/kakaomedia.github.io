@@ -98,5 +98,24 @@
         <script type="text/javascript" src="/js/plugins/jquery.simple-text-rotator.min.js"></script>
         <script type="text/javascript" src="/js/localization/messages_en.js"></script>
         <script type="text/javascript" src="/js/script-min.js"></script>
+        <script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
+
+
+<!-- Zendesk Intregration -->
+<style type="text/css" media="screen, projection">
+  @import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);
+</style>
+<script type="text/javascript">
+  if (typeof(Zenbox) !== "undefined") {
+    Zenbox.init({
+      dropboxID:   "20124005",
+      url:         "https://kakaomedia.zendesk.com",
+      tabTooltip:  "Soporte",
+      tabImageURL: "https://p4.zdassets.com/external/zenbox/images/tab_es_support.png",
+      tabColor:    "#FE7C17",
+      tabPosition: "Left"
+    });
+  }
+</script>
     </body>
 </html>
