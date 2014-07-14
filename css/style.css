@@ -2,6 +2,7 @@ body {
 	overflow-x: hidden;
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
+	height: 100%;
 }
 
 @media screen and (max-width: 899px) {
@@ -62,6 +63,7 @@ header  {
 	top: 0;
 	width: 100%;
 	z-index: 1;
+	height: 100%;
 }
 
 header a, header a:visited {  color: #FFF;  }
@@ -240,16 +242,11 @@ header a, header a:visited {  color: #FFF;  }
 	background-size: cover;
 	color: #F2F2F2;
 	padding: 30px 15px;
+	height: 100%;
 
 	-o-background-size: cover;
 	-moz-background-size: cover;
 	-webkit-background-size: cover;	
-}
-
-@media screen and (min-width: 1200px) {
-	#front_page { 
-		min-height: 700px;
-	}
 }
 
 #front_page .main_title {
