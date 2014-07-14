@@ -1,9 +1,9 @@
-- name: Josue Flores
-  twitter: elnacatamal
-  picture: JosueFlores2.jpg
-  job: Productivity Manager
+- name: Johannus Vogel
+  twitter: jagovel
+  picture: johannus1.jpg
+  job: Co-Founder / CEO
   phone: 85164727
-  email: josue@kakaomedia.com
+  email: johannus@kakaomedia.com
 
 - name: Erick Vanegas
   twitter: eveevans
@@ -12,12 +12,12 @@
   phone: 85164727
   email: erick@kakaomedia.com
 
-- name: Johannus Vogel
-  twitter: jagovel
-  picture: johannus1.jpg
-  job: Co-Founder / CEO
+- name: Josue Flores
+  twitter: elnacatamal
+  picture: JosueFlores2.jpg
+  job: Productivity Manager
   phone: 85164727
-  email: johannus@kakaomedia.com
+  email: josue@kakaomedia.com
 
 - name: Andrea Flores
   twitter: ffregina
