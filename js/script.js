@@ -295,21 +295,17 @@ $("document").ready(function() {
 	    
 		$("#portfolio-info .close").triggerHandler("click");
 
+		$('#portfolio #ptf_showcase .right').css('display', 'none');
+		$('#portfolio #ptf_showcase .left').css('display', 'none');
 		if(pagination_index + page_limit < portfolio_prods.length) {
 			if(winWidth > 603) {
 				$('#portfolio #ptf_showcase .right').css('display', 'block');	
 			}
 		}
-		else {
-			$('#portfolio #ptf_showcase .right').css('display', 'none');
-		}
 		if(pagination_index - page_limit >= 0) {
 			if(winWidth > 603) {
 				$('#portfolio #ptf_showcase .left').css('display', 'block');
 			}
-		}
-		else {
-			$('#portfolio #ptf_showcase .left').css('display', 'none');
 		}
 	}
 
