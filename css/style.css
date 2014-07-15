@@ -249,6 +249,12 @@ header a, header a:visited {  color: #FFF;  }
 	-webkit-background-size: cover;	
 }
 
+@media screen and (max-width: 899px) {
+	#front_page img {
+		height: auto;
+	}
+}
+
 #front_page .main_title {
 	font-size: 10em;
 	margin: 0 0 40px;
