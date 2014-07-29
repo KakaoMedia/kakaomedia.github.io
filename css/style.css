@@ -294,7 +294,7 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 .es #front_page .info_list {
-	font-size: 	17px;
+	font-size: 	23px;
 	padding: 0 50px;
 }
 
@@ -302,7 +302,7 @@ header a, header a:visited {  color: #FFF;  }
 	border: 3px solid #FFF;
 	padding: 5px 0;
 }
-
+.
 @media (min-width: 768px) {
 	#front_page {
 		padding-top: 100px;
@@ -503,8 +503,8 @@ header a, header a:visited {  color: #FFF;  }
 
 #what_we_do .row .title_info p span {
 	font-size: 1em;
-	padding: 5px 10px;
-	margin: 15px 15px 0;
+	padding: 5px 5px;
+	margin: 15px 0px 0;
 }
 
 @media screen (min-width: 992px) {
