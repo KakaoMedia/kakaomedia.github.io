@@ -1,6 +1,6 @@
 name: "Kakao Media"
 markdown: redcarpet
-pygments: "rouge"
+pygments: "true"
 permalink: "none"
 collections:
   portfolio:
