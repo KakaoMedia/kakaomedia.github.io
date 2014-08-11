@@ -238,7 +238,7 @@ header a, header a:visited {  color: #FFF;  }
 \*------------------------------------*/
 
 #front_page {
-	background: url("../img/front_page.jpg") center center no-repeat fixed;
+	background: url("/img/front_page.jpg") center center no-repeat fixed;
 	background-size: cover;
 	color: #F2F2F2;
 	padding: 30px 15px;
@@ -302,7 +302,7 @@ header a, header a:visited {  color: #FFF;  }
 	border: 3px solid #FFF;
 	padding: 5px 0;
 }
-.
+
 @media (min-width: 768px) {
 	#front_page {
 		padding-top: 100px;
