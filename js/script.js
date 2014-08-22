@@ -142,6 +142,9 @@ $(function() {
 				    // Imprimir lenguage en el div de mensajes.
 				    formMessages.text(form_messages.success_message);
 
+            // tracking del evento a Google Analytics
+            ga('send','event','Contact','Formlulario de contacto');
+
 				    // limpiar el formulario.
 				    $('#name').val('');
 				    $('#email').val('');
