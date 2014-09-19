@@ -261,13 +261,13 @@ $("document").ready(function() {
 	$('#quote .rotate').css('display', 'block');
 	$('#portfolio #ptf_showcase .left').css('display', 'none');
 
-  $('#front_page > .container').css( 'top', (parseInt(($('body > header').height() - $('#front_page > .container > div').height()) / 2) - 150).toString() + "px");  // "-150" is cause of padding to every section in the webpage
+  $('#front_page > .container > div').css( 'top', (parseInt(($('body > header').height() - $('#front_page > .container > div').height()) / 2) - 150).toString() + "px");  // "-150" is cause of padding to every section in the webpage
 
 	function methodToFixLayout(e) {
 		var res;
     winWidth = $(window).outerWidth() + 17;
 
-    $('#front_page > .container').css( 'top', (parseInt(($('body > header').height() - $('#front_page > .container > div').height()) / 2) - 150).toString() + "px");  // "-150" is cause of padding to every section in the webpage
+    $('#front_page > .container > div').css( 'top', (parseInt(($('body > header').height() - $('#front_page > .container > div').height()) / 2) - 150).toString() + "px");  // "-150" is cause of padding to every section in the webpage
 
     $('#descr-row').empty();
 
