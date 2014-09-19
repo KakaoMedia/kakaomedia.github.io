@@ -261,16 +261,14 @@ $("document").ready(function() {
 	$('#quote .rotate').css('display', 'block');
 	$('#portfolio #ptf_showcase .left').css('display', 'none');
 
-  $('body > header').css( 'overflow-y', 'hidden' );
-  $('body > header').css( 'position', 'relative' );
-  $('body > header').css( 'max-height', parseInt($(window).height(), 10) + "px" );
-  $('#front_page > .container').css( 'top', (parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10) - 150).toString() + "px");  // "-150" is cause of padding to every section in the webpage
+  var t_top = parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10) - 150;
+  var t_top_default = parseInt($(window).height() * 0.33, 10) - 150;
+  $('#front_page > .container').css( 'top', Math.min(t_top, t_top_default).toString() + "px");  // "-150" is cause of padding to every section in the webpage
 
 	function methodToFixLayout(e) {
 		var res;
     winWidth = $(window).outerWidth() + 17;
 
-    $('body > header').css( 'max-height', parseInt($(window).height(), 10) );
     $('#front_page > .container').css( 'top', (parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10) - 150).toString() + "px");  // "-150" is cause of padding to every section in the webpage
 
     $('#descr-row').empty();
