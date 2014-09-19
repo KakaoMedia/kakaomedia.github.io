@@ -261,6 +261,8 @@ $("document").ready(function() {
 	$('#quote .rotate').css('display', 'block');
 	$('#portfolio #ptf_showcase .left').css('display', 'none');
 
+  $('body > header').css( 'overflow-y', 'hidden' );
+  $('body > header').css( 'position', 'relative' );
   $('body > header').css( 'max-height', parseInt($(window).height(), 10) + "px" );
   $('#front_page > .container').css( 'top', (parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10) - 150).toString() + "px");  // "-150" is cause of padding to every section in the webpage
 
