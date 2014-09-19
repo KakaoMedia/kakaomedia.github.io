@@ -261,9 +261,8 @@ $("document").ready(function() {
 	$('#quote .rotate').css('display', 'block');
 	$('#portfolio #ptf_showcase .left').css('display', 'none');
 
-  var t_top = parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10) - 150;
-  var t_top_default = parseInt($(window).height() * 0.33, 10) - 150;
-  $('#front_page > .container').css( 'top', Math.min(t_top, t_top_default).toString() + "px");  // "-150" is cause of padding to every section in the webpage
+  var t_top = parseInt(($(window).height() - Math.max(317, $('#front_page > .container > div').height())) / 2, 10) - 150;
+  $('#front_page > .container').css( 'top', t_top.toString() + "px");  // "-150" is cause of padding to every section in the webpage
 
 	function methodToFixLayout(e) {
 		var res;
