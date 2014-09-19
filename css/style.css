@@ -241,7 +241,6 @@ header a, header a:visited {  color: #FFF;  }
 	background: url("/img/front_page.jpg") center center no-repeat fixed;
 	background-size: cover;
 	color: #F2F2F2;
-	padding: 30px 15px;
 	height: 100%;
 
 	-o-background-size: cover;
@@ -255,14 +254,22 @@ header a, header a:visited {  color: #FFF;  }
 	}
 }
 
+#front_page > .container > div {
+	max-width: 100%;
+	max-height: 100%;
+}
+
 #front_page .main_title {
 	font-size: 10em;
-	margin: 0 0 40px;
+	margin: 0 0 10px;
 	padding: 0;
 }
 
 #front_page .main_title img {
+	width:auto;
+	height:auto;
 	max-width: 100%;
+	max-height: 100%;
 }
 
 #front_page h2 { 
@@ -279,6 +286,7 @@ header a, header a:visited {  color: #FFF;  }
 
 #front_page .info_list { 
 	padding: 0 86px;
+	margin: 10px 0 0;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -303,26 +311,16 @@ header a, header a:visited {  color: #FFF;  }
 	padding: 5px 0;
 }
 
-@media (min-width: 768px) {
-	#front_page {
-		padding-top: 100px;
-		padding-bottom: 140px;
-	}
-}
-
 @media (max-width: 767px) {
-	#front_page { padding-bottom: 145px; }
 
 	#front_page h2 {
 		right: -150px;
 		top: -30px;
 	}
 
-	#front_page .container { margin-top: 80px; }
 }
 
 @media (max-width: 498px) {
-	#front_page { padding-bottom: 215px; }
 	
 	#front_page .main_title { font-size: 7em; }
 
@@ -334,13 +332,25 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) { 
-	#front_page { padding-bottom: 150px; }
 
 	#front_page .row div { font-size: 0.7em; }
 
 	.es #front_page .row div { 
 		font-size: 0.8em; 
 		padding: 0;
+	}
+}
+
+@media screen and (max-height: 400px) {
+	#front_page .main_title {
+		margin-top: -6%;
+	}
+	#front_page .info_list {
+		margin-top: -2%;
+	}
+	#front_page .main_title img {
+		width: auto;
+		height: 160px;
 	}
 }
 

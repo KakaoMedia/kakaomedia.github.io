@@ -239,7 +239,7 @@ function handle(delta) {
 
 
 
-//$("document").on("ready pagechange", function() {
+//$("document").on("ready page:change", function() {
 $("document").ready(function() {
 	// Variable declaration
 	var item, overlay, clipPropFirst, clipPropLast, lang, desc_url;
@@ -261,11 +261,15 @@ $("document").ready(function() {
 	$('#quote .rotate').css('display', 'block');
 	$('#portfolio #ptf_showcase .left').css('display', 'none');
 
+  $('#front_page > .container').css( 'top', (parseInt(($('body > header').height() - $('#front_page > .container').height()) / 2) - 150).toString() + "px");  // "-150" is cause of padding to every section in the webpage
+
 	function methodToFixLayout(e) {
 		var res;
-	    winWidth = $(window).outerWidth() + 17;
+    winWidth = $(window).outerWidth() + 17;
 
-	    $('#descr-row').empty();
+    $('#front_page > .container').css( 'top', (parseInt(($('body > header').height() - $('#front_page > .container').height()) / 2) - 150).toString() + "px");  // "-150" is cause of padding to every section in the webpage
+
+    $('#descr-row').empty();
 
 		$("#what_we_do #second-lead .info").hide();
 		$("#what_we_do #second-lead .title_info").css("color", "#FFF");
