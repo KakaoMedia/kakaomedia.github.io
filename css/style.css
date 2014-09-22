@@ -820,18 +820,26 @@ header a, header a:visited {  color: #FFF;  }
 #portfolio .row { color: #FFF; }
 
 #portfolio #ptf_showcase .carousel-control {
-	background-color: #50DAC4;
+	background-color: white;
 	width: 2%;
 	opacity: 1
 }
 
 #portfolio #ptf_showcase .left {
-	background-image: linear-gradient(to left, rgba(48, 186, 164, 0.5) 0px, transparent 100%);
+	background-image: linear-gradient(to left, rgba(255, 255, 255, 0.5) 0px, transparent 100%);
 	margin-left: -0.8%;
 }
 
 #portfolio #ptf_showcase .right {
-	background-image: linear-gradient(to right, rgba(48, 186, 164, 0.5) 0px, transparent 100%);
+	background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0px, transparent 100%);
+}
+
+#portfolio #ptf_showcase .carousel-control span {
+	color: #50DAC4;
+}
+#portfolio #ptf_showcase .carousel-control span:hover {
+	color: #20AAC4;
+	font-size: 1.7em;
 }
 
 #portfolio #ptf_showcase .left span {

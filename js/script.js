@@ -261,6 +261,8 @@ $("document").ready(function() {
 	$('#quote .rotate').css('display', 'block');
 	$('#portfolio #ptf_showcase .left').css('display', 'none');
 
+  //var t_top = (parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10) - 150)
+  //$('#front_page > .container').css( 'margin-top', .toString() + "px");  // "-150" is cause of padding to every section in the webpage
   $('#front_page > .container').css( 'margin-top', (parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10) - 150).toString() + "px");  // "-150" is cause of padding to every section in the webpage
 
 	function methodToFixLayout(e) {
