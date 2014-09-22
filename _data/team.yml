@@ -26,12 +26,12 @@
   phone: 85164727
   email: andrea@kakaomedia.com
 
-- name: Lucia Gaitán
-  twitter: sassy_lulu25
-  picture: Lucia.jpg
-  job: UX/UI Designer
+- name: Silvio Duarte
+  twitter: 
+  picture: Silvio1.jpg
+  job: Project Manager
   phone: 85164727
-  email: lucia@kakaomedia.com
+  email: silvio@kakaomedia.com
 
 - name: Gerardo Ortega
   twitter: gortega
@@ -40,26 +40,19 @@
   phone: 85164727
   email: gerardo@kakaomedia.com
 
-- name: Silvio Duarte
-  twitter: 
-  picture: Silvio1.jpg
-  job: Project Manager
+- name: Lucia Gaitán
+  twitter: sassy_lulu25
+  picture: Lucia.jpg
+  job: UX/UI Designer
   phone: 85164727
-  email: silvio@kakaomedia.com
+  email: lucia@kakaomedia.com
 
-- name: Dennis Gallo
-  twitter: dgallo_
-  picture: DennisGallo.jpg
-  job: Intern Developer
-  phone: 85164727
-  email: dennis@kakaomedia.com
-
-- name: Maritza Flores
-  twitter: 
-  picture: maritza.jpg
-  job: Brand Identity Designer
-  phone: 85164727
-  email: Maritza@kakaomedia.com
+# - name: Dennis Gallo
+#   twitter: dgallo_
+#   picture: DennisGallo.jpg
+#   job: Intern Developer
+#   phone: 85164727
+#   email: dennis@kakaomedia.com
 
 - name: Oswald Lopez
   twitter: 

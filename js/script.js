@@ -237,6 +237,13 @@ function handle(delta) {
     }, time );
 }
 
+(function(){
+  var container_original_top =  $('#front_page > .container').css( 'top')
+  $('#front_page > .container').css( 'top', (parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10) - 150).toString() + "px");  // "-150" is cause of padding to every section in the webpage
+  if( $('#front_page > .container').offset().top >= $(window).height() ) {
+    $('#front_page > .container').css( 'top', 0 );
+  }
+})();
 
 
 //$("document").on("ready page:change", function() {
@@ -261,15 +268,11 @@ $("document").ready(function() {
 	$('#quote .rotate').css('display', 'block');
 	$('#portfolio #ptf_showcase .left').css('display', 'none');
 
-  //var t_top = (parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10) - 150)
-  //$('#front_page > .container').css( 'margin-top', .toString() + "px");  // "-150" is cause of padding to every section in the webpage
-  $('#front_page > .container').css( 'margin-top', (parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10) - 150).toString() + "px");  // "-150" is cause of padding to every section in the webpage
-
 	function methodToFixLayout(e) {
 		var res;
     winWidth = $(window).outerWidth() + 17;
 
-    $('#front_page > .container').css( 'margin-top', (parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10) - 150).toString() + "px");  // "-150" is cause of padding to every section in the webpage
+    $('#front_page > .container').css( 'top', (parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10) - 150).toString() + "px");  // "-150" is cause of padding to every section in the webpage
 
     $('#descr-row').empty();
 
