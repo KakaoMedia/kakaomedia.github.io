@@ -673,6 +673,9 @@ $("document").ready(function() {
 		if(index > -1) {
 			$('#ptf_website').text(portfolio_prods[portfolio_item_index].website.substring(index+3, portfolio_prods[portfolio_item_index].website.length));
 		}
+    else {
+      $('#ptf_website').text('');
+    }
 		$.ajax({
 			url: portfolio_prods[portfolio_item_index].rel_url,
 			dataType: "html",
