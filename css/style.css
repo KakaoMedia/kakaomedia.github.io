@@ -242,19 +242,14 @@ header a, header a:visited {  color: #FFF;  }
 	background-size: cover;
 	color: #F2F2F2;
 	height: 100%;
+	padding: 0;
 
 	-o-background-size: cover;
 	-moz-background-size: cover;
 	-webkit-background-size: cover;	
 }
 
-@media screen and (max-width: 899px) {
-	#front_page img {
-		height: auto;
-	}
-}
-
-#front_page > .container > div {
+#front_page > .container {
 	max-width: 100%;
 	max-height: 100%;
 }
@@ -342,12 +337,6 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 @media screen and (max-height: 400px) {
-	#front_page .main_title {
-		margin-top: -6%;
-	}
-	#front_page .info_list {
-		margin-top: -2%;
-	}
 	#front_page .main_title img {
 		width: auto;
 		height: 160px;
