@@ -242,6 +242,7 @@ header a, header a:visited {  color: #FFF;  }
 	background-size: cover;
 	color: #F2F2F2;
 	height: 100%;
+	padding: 0 15px;
 
 	-o-background-size: cover;
 	-moz-background-size: cover;

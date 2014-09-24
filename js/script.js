@@ -239,7 +239,7 @@ function handle(delta) {
 
 (function(){
   var container_original_top =  $('#front_page > .container').css( 'top')
-  $('#front_page > .container').css( 'top', (parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10) - 150).toString() + "px");  // "-150" is cause of padding to every section in the webpage
+  $('#front_page > .container').css( 'top', parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10).toString() + "px");
   if( $('#front_page > .container').offset().top >= $(window).height() ) {
     $('#front_page > .container').css( 'top', 0 );
   }
@@ -272,7 +272,7 @@ $("document").ready(function() {
 		var res;
     winWidth = $(window).outerWidth() + 17;
 
-    $('#front_page > .container').css( 'top', (parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10) - 150).toString() + "px");  // "-150" is cause of padding to every section in the webpage
+    $('#front_page > .container').css( 'top', parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10).toString() + "px");
 
     $('#descr-row').empty();
 
