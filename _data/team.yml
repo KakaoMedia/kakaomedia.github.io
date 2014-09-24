@@ -40,27 +40,6 @@
   phone: 85164727
   email: gerardo@kakaomedia.com
 
-- name: Lucia Gaitán
-  twitter: sassy_lulu25
-  picture: Lucia.jpg
-  job: UX/UI Designer
-  phone: 85164727
-  email: lucia@kakaomedia.com
-
-- name: Dexter Sequeira
-  twitter:
-  picture: Dexter.jpg
-  job: Graphic Designer
-  phone: 85164727
-  email: dexter@folkano.com
-
-- name: Dennis Gallo
-  twitter: dgallo_
-  picture: DennisGallo.jpg
-  job: Intern Developer
-  phone: 85164727
-  email: dennis@kakaomedia.com
-
 - name: Oswald Lopez
   twitter: 
   picture: OswaldLopez1.png
@@ -74,6 +53,27 @@
   job: Mobile and Web Developer
   phone: 85164727
   email: Jeans@kakaomedia.com
+
+- name: Lucia Gaitán
+  twitter: sassy_lulu25
+  picture: Lucia.jpg
+  job: UX/UI Designer
+  phone: 85164727
+  email: lucia@kakaomedia.com
+
+- name: Dennis Gallo
+  twitter: dgallo_
+  picture: DennisGallo.jpg
+  job: Intern Developer
+  phone: 85164727
+  email: dennis@kakaomedia.com
+
+- name: Dexter Sequeira
+  twitter:
+  picture: Dexter.jpg
+  job: Graphic Designer
+  phone: 85164727
+  email: dexter@folkano.com
 
 - name: Jose Baltodano
   twitter: 
