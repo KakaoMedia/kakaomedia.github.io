@@ -57,18 +57,6 @@ body {
 }
 
 /*------------------------------------*\
-    $HEADER
-\*------------------------------------*/
-header  {	
-	top: 0;
-	width: 100%;
-	z-index: 1;
-	height: 100%;
-}
-
-header a, header a:visited {  color: #FFF;  }
-
-/*------------------------------------*\
     $MENU
 \*------------------------------------*/
 .navbar {
@@ -234,6 +222,17 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 /*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
+header  {	
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+header a, header a:visited {  color: #FFF;  }
+
+/*------------------------------------*\
     $FRONT-PAGE
 \*------------------------------------*/
 
@@ -241,12 +240,20 @@ header a, header a:visited {  color: #FFF;  }
 	background: url("/img/front_page.jpg") center center no-repeat fixed;
 	background-size: cover;
 	color: #F2F2F2;
-	height: 100%;
 	padding: 0 15px;
 
 	-o-background-size: cover;
 	-moz-background-size: cover;
 	-webkit-background-size: cover;	
+}
+
+@media screen and (min-width: 480px) {
+	header {
+		height: 100%;
+	}
+	#front_page {
+		height: 100%;
+	}
 }
 
 @media screen and (max-width: 899px) {

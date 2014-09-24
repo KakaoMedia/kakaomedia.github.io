@@ -239,10 +239,12 @@ function handle(delta) {
 
 (function(){
   var container_original_top =  $('#front_page > .container').css( 'top')
+  $('#front_page, header').css('min-height', $(window).height() + 'px');
+  $('#front_page, header').css('max-height', $(window).height() + 'px');
   $('#front_page > .container').css( 'top', parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10).toString() + "px");
-  if( $('#front_page > .container').offset().top >= $(window).height() ) {
-    $('#front_page > .container').css( 'top', 0 );
-  }
+  // if( $('#front_page > .container').offset().top >= $(window).height() ) {
+  //   $('#front_page > .container').css( 'top', 0 );
+  // }
 })();
 
 
