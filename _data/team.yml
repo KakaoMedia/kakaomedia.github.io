@@ -47,12 +47,19 @@
   phone: 85164727
   email: lucia@kakaomedia.com
 
-# - name: Dennis Gallo
-#   twitter: dgallo_
-#   picture: DennisGallo.jpg
-#   job: Intern Developer
-#   phone: 85164727
-#   email: dennis@kakaomedia.com
+- name: Dexter Sequeira
+  twitter:
+  picture: Dexter.jpg
+  job: Graphic Designer
+  phone: 85164727
+  email: dexter@folkano.com
+
+- name: Dennis Gallo
+  twitter: dgallo_
+  picture: DennisGallo.jpg
+  job: Intern Developer
+  phone: 85164727
+  email: dennis@kakaomedia.com
 
 - name: Oswald Lopez
   twitter: 
