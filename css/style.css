@@ -242,13 +242,17 @@ header a, header a:visited {  color: #FFF;  }
 	background-size: cover;
 	color: #F2F2F2;
 	height: 100%;
-	padding: 0 15px;
 
 	-o-background-size: cover;
 	-moz-background-size: cover;
 	-webkit-background-size: cover;	
 }
 
+@media screen and (max-width: 400px) {
+	#front_page > .container {
+		padding: 0 15px;
+	}
+}
 @media screen and (max-width: 899px) {
 	#front_page img {
 		height: auto;
