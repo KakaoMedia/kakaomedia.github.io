@@ -239,9 +239,8 @@ function handle(delta) {
 
 (function(){
   //var container_original_top =  $('#front_page > .container').css( 'top')
-  //$('#front_page, header').css('min-height', $(window).height() + 'px');
-  //$('#front_page, header').css('max-height', $(window).height() + 'px');
-  $('#front_page > .container').css( 'top', (parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10) - 150).toString() + "px"); // 150 because it has that as padding
+  var units = $('#front_page > .container .main_title img').height() + $('#front_page > .container .info_list').height() + 20; //padding: 20
+  $('#front_page > .container').css( 'top', (parseInt(($(window).height() - units) / 2, 10)).toString() + "px");
   // if( $('#front_page > .container').offset().top >= $(window).height() ) {
   //   $('#front_page > .container').css( 'top', 0 );
   // }
@@ -274,7 +273,8 @@ $("document").ready(function() {
 		var res;
     winWidth = $(window).outerWidth() + 17;
 
-    $('#front_page > .container').css( 'top', (parseInt(($(window).height() - $('#front_page > .container > div').height()) / 2, 10) - 150).toString() + "px"); // 150 because it has that as padding
+    var units = $('#front_page > .container .main_title img').height() + $('#front_page > .container .info_list').height() + 20; //padding: 20
+    $('#front_page > .container').css( 'top', (parseInt(($(window).height() - units) / 2, 10)).toString() + "px");
 
     $('#descr-row').empty();
 
