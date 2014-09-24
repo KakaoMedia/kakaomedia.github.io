@@ -254,7 +254,7 @@ header a, header a:visited {  color: #FFF;  }
 	}
 }
 
-#front_page > .container > div {
+#front_page > .container {
 	max-width: 100%;
 	max-height: 100%;
 }
