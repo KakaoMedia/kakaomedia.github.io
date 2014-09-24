@@ -248,11 +248,6 @@ header a, header a:visited {  color: #FFF;  }
 	-webkit-background-size: cover;	
 }
 
-@media screen and (max-width: 400px) {
-	#front_page > .container {
-		padding: 0 15px;
-	}
-}
 @media screen and (max-width: 899px) {
 	#front_page img {
 		height: auto;
