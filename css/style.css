@@ -249,10 +249,10 @@ header a, header a:visited {  color: #FFF;  }
 	-webkit-background-size: cover;	
 }
 
-#front_page, #front_page > .container {
+/*#front_page, #front_page > .container {
 	max-width: 100%;
 	max-height: 100%;
-}
+}*/
 
 #front_page .main_title {
 	font-size: 10em;
