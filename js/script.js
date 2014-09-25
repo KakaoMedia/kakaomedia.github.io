@@ -1,3 +1,9 @@
+//Colocar centrado la imágen de Kakao Media en el header para desktops y macs
+(function(){
+  var units = $('#front_page > .container .main_title img').height() + $('#front_page > .container .info_list').height() + 20; //padding: 20
+  $('#front_page > .container').css( 'top', (parseInt(($(window).height() - units) / 2, 10)).toString() + "px");
+})();
+
 //Validaciones sobre formulario de contacto
 
 $("#formulario_de_contacto").validate({
@@ -236,16 +242,6 @@ function handle(delta) {
         scrollTop: $(window).scrollTop() - (distance * delta)
     }, time );
 }
-
-(function(){
-  //var container_original_top =  $('#front_page > .container').css( 'top')
-  var units = $('#front_page > .container .main_title img').height() + $('#front_page > .container .info_list').height() + 20; //padding: 20
-  $('#front_page > .container').css( 'top', (parseInt(($(window).height() - units) / 2, 10)).toString() + "px");
-  // if( $('#front_page > .container').offset().top >= $(window).height() ) {
-  //   $('#front_page > .container').css( 'top', 0 );
-  // }
-})();
-
 
 //$("document").on("ready page:change", function() {
 $("document").ready(function() {
