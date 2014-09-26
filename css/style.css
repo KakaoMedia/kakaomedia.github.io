@@ -1102,7 +1102,21 @@ header a, header a:visited {  color: #FFF;  }
 	transition: border 0.4s linear;
 }
 
+/*#portfolio-info .close {
+	cursor: pointer;
+	padding: 0 5px;
+	position: absolute;
+	width: 4%;
+	right: 2%;
+	top: 2%;
+	z-index: 1;
+	content: url('/img/cerrar.png');
+}*/
+
 #portfolio-info .close:hover { border-color: #000; }
+/*#portfolio-info .close:hover {
+	content: url('/img/cerrar-hover.png');
+}*/
 
 #portfolio-body { margin: 30px 30px; }
 

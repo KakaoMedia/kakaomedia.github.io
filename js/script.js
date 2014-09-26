@@ -1,9 +1,3 @@
-//Colocar centrado la imágen de Kakao Media en el header para desktops y macs
-(function(){
-  var units = $('#front_page > .container .main_title img').height() + $('#front_page > .container .info_list').height() + 20; //padding: 20
-  $('#front_page > .container').css( 'top', (parseInt(($(window).height() - units) / 2, 10)).toString() + "px");
-})();
-
 //Validaciones sobre formulario de contacto
 
 $("#formulario_de_contacto").validate({
@@ -264,6 +258,10 @@ $("document").ready(function() {
 	$('#contact .form_container').css('display', 'block');
 	$('#quote .rotate').css('display', 'block');
 	$('#portfolio #ptf_showcase .left').css('display', 'none');
+
+  // Centering the header's image
+  var units = $('#front_page > .container .main_title img').height() + $('#front_page > .container .info_list').height() + 20; //padding: 20
+  $('#front_page > .container').css( 'top', (parseInt(($(window).height() - units) / 2, 10)).toString() + "px");
 
 	function methodToFixLayout(e) {
 		var res;
