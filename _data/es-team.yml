@@ -1,72 +1,79 @@
 - name: Johannus Vogel
   twitter: jagovel
   picture: johannus1.jpg
-  job: Co-Founder/ CEO
+  job: Director Ejecutivo
   phone: 85164727
   email: johannus@kakaomedia.com
 
 - name: Erick Vanegas
   twitter: eveevans
   picture: Erick.jpg
-  job: Co-Founder / CTO
+  job: Director de Tecnología
   phone: 85164727
   email: erick@kakaomedia.com
 
 - name: Josue Flores
   twitter: elnacatamal
   picture: JosueFlores2.jpg
-  job: Productivity Manager
+  job: Director Administrativo
   phone: 85164727
   email: josue@kakaomedia.com
+
+- name: Bianka Ponce
+  twitter:
+  picture: Bianka.jpg
+  job: Directora de Mercadeo y Ventas
+  phone: 85164727
+  email: bianka@kakaomedia.com
 
 - name: Andrea Flores
   twitter: ffregina
   picture: Andrea.jpg
-  job: Marketing Officer
+  job: Directora de Contenido
   phone: 85164727
   email: andrea@kakaomedia.com
 
 - name: Silvio Duarte
   twitter: 
   picture: Silvio1.jpg
-  job: Project Manager
+  job: Administrador de Proyectos
   phone: 85164727
   email: silvio@kakaomedia.com
 
 - name: Gerardo Ortega
   twitter: gortega
   picture: gerardo.jpg
-  job: Lead Developer
+  job: Coordinador de Desarrollo
   phone: 85164727
   email: gerardo@kakaomedia.com
 
 - name: Oswald Lopez
   twitter: 
   picture: OswaldLopez1.png
-  job: Web Developer
+  job: Desarrollador Web
   phone: 85164727
   email: oswald@kakaomedia.com
-
-- name: Dexter Sequeira
-  twitter:
-  picture: Dexter.jpg
-  job: Graphic Designer
-  phone: 85164727
-  email: dexter@folkano.com
 
 - name: Lucia Gaitán
   twitter: sassy_lulu25
   picture: Lucia.jpg
-  job: UX/UI Designer
+  job: Diseñadora UX/UI
   phone: 85164727
   email: lucia@kakaomedia.com
 
-- name: Dennis Gallo
-  twitter: dgallo_
-  picture: DennisGallo.jpg
-  job: Intern Developer
+- name: Dexter Sequeira
+  twitter:
+  picture: Dexter.jpg
+  job: Diseñador Gráfico
   phone: 85164727
-  email: dennis@kakaomedia.com
+  email: dexter@folkano.com
+
+# - name: Dennis Gallo
+#   twitter: dgallo_
+#   picture: DennisGallo.jpg
+#   job: Intern Developer
+#   phone: 85164727
+#   email: dennis@kakaomedia.com
 
 - name: Jeans Real
   twitter: 
@@ -78,6 +85,6 @@
 - name: Jose Baltodano
   twitter: 
   picture: JoseAngel.jpg
-  job: Web Developer
+  job: Desarrollador Web
   phone: 85164727
   email: JoseAngel@kakaomedia.com

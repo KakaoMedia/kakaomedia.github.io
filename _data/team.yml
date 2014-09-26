@@ -15,14 +15,21 @@
 - name: Josue Flores
   twitter: elnacatamal
   picture: JosueFlores2.jpg
-  job: Productivity Manager
+  job: Administrative Director
   phone: 85164727
   email: josue@kakaomedia.com
+
+- name: Bianka Ponce
+  twitter:
+  picture: Bianka.jpg
+  job: Marketing Director
+  phone: 85164727
+  email: bianka@kakaomedia.com
 
 - name: Andrea Flores
   twitter: ffregina
   picture: Andrea.jpg
-  job: Marketing Officer
+  job: Content Manager
   phone: 85164727
   email: andrea@kakaomedia.com
 
@@ -47,13 +54,6 @@
   phone: 85164727
   email: oswald@kakaomedia.com
 
-- name: Dexter Sequeira
-  twitter:
-  picture: Dexter.jpg
-  job: Graphic Designer
-  phone: 85164727
-  email: dexter@folkano.com
-
 - name: Lucia Gaitán
   twitter: sassy_lulu25
   picture: Lucia.jpg
@@ -61,12 +61,19 @@
   phone: 85164727
   email: lucia@kakaomedia.com
 
-- name: Dennis Gallo
-  twitter: dgallo_
-  picture: DennisGallo.jpg
-  job: Intern Developer
+- name: Dexter Sequeira
+  twitter:
+  picture: Dexter.jpg
+  job: Graphic Designer
   phone: 85164727
-  email: dennis@kakaomedia.com
+  email: dexter@folkano.com
+
+# - name: Dennis Gallo
+#   twitter: dgallo_
+#   picture: DennisGallo.jpg
+#   job: Intern Developer
+#   phone: 85164727
+#   email: dennis@kakaomedia.com
 
 - name: Jeans Real
   twitter: 
