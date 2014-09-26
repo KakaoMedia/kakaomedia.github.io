@@ -815,12 +815,12 @@ header a, header a:visited {  color: #FFF;  }
 }
 
 #portfolio #ptf_showcase .left {
-	background-image: linear-gradient(to left, rgba(255, 255, 255, 0.5) 0px, transparent 100%);
+	background-image: none;/*linear-gradient(to left, rgba(255, 255, 255, 0.5) 0px, transparent 100%);*/
 	margin-left: -0.8%;
 }
 
 #portfolio #ptf_showcase .right {
-	background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0px, transparent 100%);
+	background-image: none;/*linear-gradient(to right, rgba(255, 255, 255, 0.5) 0px, transparent 100%);*/
 }
 
 #portfolio #ptf_showcase .carousel-control span {
