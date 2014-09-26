@@ -1235,16 +1235,6 @@ header a, header a:visited {  color: #FFF;  }
 	color: #30BAA4;
 }
 
-#portfolio .ptf_page .ptf_page_prev {
-	margin-left: 10%;
-	float: left;
-}
-
-#portfolio .ptf_page .ptf_page_next {
-	margin-right: 60%;
-	float: right;
-}
-
 #portfolio .ptf_page li {
 	text-decoration: none;
 	display: inline-block;
@@ -1262,42 +1252,6 @@ header a, header a:visited {  color: #FFF;  }
 #portfolio .ptf_page li span{
 	font-size: 1.6em;
 	margin-left: -0.8em;
-}
-
-@media screen and (max-width: 620px) and (min-width: 450px) {
-	#portfolio .ptf_page .ptf_page_prev{
-		margin-left: 17%;
-		float:left;
-	}
-
-	#portfolio .ptf_page .ptf_page_next{
-		margin-right: 10%;
-		float:right;
-	}
-}
-
-@media screen and (max-width: 449px) and (min-width: 331px) {
-	#portfolio .ptf_page .ptf_page_prev{
-		margin-left: 17%;
-		float:left;
-	}
-
-	#portfolio .ptf_page .ptf_page_next{
-		margin-right: 6%;
-		float:right;
-	}
-}
-
-@media screen and (max-width: 330px){
-	#portfolio .ptf_page .ptf_page_prev{
-		margin-left: 19%;
-		float:left;
-	}
-
-	#portfolio .ptf_page .ptf_page_next{
-		margin-right: 5%;
-		float:right;
-	}
 }
 
 /*------------------------------------*\
