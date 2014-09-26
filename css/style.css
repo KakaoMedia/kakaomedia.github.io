@@ -1087,13 +1087,14 @@ header a, header a:visited {  color: #FFF;  }
 
 #portfolio-info .close {
 	border: 1px solid #333;
+	border-radius: 20%;
 	cursor: pointer;
 	font-size: 2em;
 	padding: 0 5px;
 	position: absolute;
 	right: 1%;
 	transition: border 0.4s linear;
-	top: 2%;
+	top: 1.7%;
 	z-index: 1;
 
 	-o-transition: border 0.4s linear;
