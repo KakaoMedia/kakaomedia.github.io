@@ -259,16 +259,9 @@ $("document").ready(function() {
 	$('#quote .rotate').css('display', 'block');
 	$('#portfolio #ptf_showcase .left').css('display', 'none');
 
-  // Centering the header's image
-  var units = $('#front_page > .container .main_title img').height() + $('#front_page > .container .info_list').height() + 20; //padding: 20
-  $('#front_page > .container').css( 'top', (parseInt(($(window).height() - units) / 2, 10)).toString() + "px");
-
 	function methodToFixLayout(e) {
 		var res;
     winWidth = $(window).outerWidth() + 17;
-
-    var units = $('#front_page > .container .main_title img').height() + $('#front_page > .container .info_list').height() + 20; //padding: 20
-    $('#front_page > .container').css( 'top', (parseInt(($(window).height() - units) / 2, 10)).toString() + "px");
 
     $('#descr-row').empty();
 
