@@ -82,7 +82,7 @@ header a, header a:visited {  color: #FFF;  }
 
 .logo-kakao {
 	color: #FFF !important;
-	display: none !important;
+	display: none;
 	padding: 4px 10px 3px 0;
 	margin-left: 1em !important;
 }
@@ -98,9 +98,9 @@ header a, header a:visited {  color: #FFF;  }
 .navbar.affix {
 	height: 50px;
 	position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10000;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
 }
 
 .navbar-collapse.in { overflow: hidden; }

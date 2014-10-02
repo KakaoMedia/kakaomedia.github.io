@@ -259,9 +259,33 @@ $("document").ready(function() {
 	$('#quote .rotate').css('display', 'block');
 	$('#portfolio #ptf_showcase .left').css('display', 'none');
 
+  var header_inner_original_top = $('div.site.content div.navbar').css('top');
+  var fixmeTop = $('div.site.content div.navbar').offset().top;
+  function navbar_set_pos() {
+    var currentScroll = $(window).scrollTop();
+    if (currentScroll >= fixmeTop) {
+      $('div.site.content div.navbar').addClass('affix');
+      $('.container .navbar-header a.navbar-brand.logo-kakao').css({
+        display: 'inline-block'
+      });
+    } else {
+      $('div.site.content div.navbar').removeClass('affix');
+      $('.container .navbar-header a.navbar-brand.logo-kakao').css({
+        display: 'none'
+      });
+    }
+  };
+  navbar_set_pos();  
+
 	function methodToFixLayout(e) {
 		var res;
     winWidth = $(window).outerWidth() + 17;
+
+    // para obtener el verdadero offset.top
+    $('div.site.content div.navbar').removeClass('affix');
+    fixmeTop = $('div.site.content div.navbar').offset().top;
+    // llama a la función
+    navbar_set_pos();
 
     $('#descr-row').empty();
 
@@ -312,18 +336,22 @@ $("document").ready(function() {
 
 	$(window).on("resize", methodToFixLayout);
 
-	$('.navbar').affix({
-	    offset: { top: 625, bottom: function () {
-	        	return (this.bottom = $('.footer').outerHeight(true));
-      		}
-		}
-  	});
+	// $('.navbar').affix({
+ //    offset: {
+ //      top: 625,
+ //      bottom: function () {
+ //        return (this.bottom = $('.footer').outerHeight(true));
+ //    	}
+	//   }
+	// });
 
-  	$(".rotate").textrotator({
-  		animation: "dissolve",
-  		separator: ";;;",
-  		speed: 2000
-  	});
+  $(window).scroll(navbar_set_pos);
+
+	$(".rotate").textrotator({
+		animation: "dissolve",
+		separator: ";;;",
+		speed: 2000
+	});
 
 	$(".main h2, .main p.lead, #what_we_do .title_info").not("#front_page h2").addClass("animated fadeOut");
 
@@ -627,14 +655,11 @@ $("document").ready(function() {
 		}
     $('#portfolio #ptf_showcase .right').css('display', 'none');
     $('#portfolio #ptf_showcase .left').css('display', 'none');
-    console.log('--------------------------');
-    console.log((pagination_index + page_limit).toString() + ' _ ' + portfolio_prods.length.toString());
     if(pagination_index + page_limit < portfolio_prods.length) {
       if(winWidth > 603) {
         $('#portfolio #ptf_showcase .right').css('display', 'block'); 
       }
     }
-    console.log((pagination_index - page_limit).toString() + ' _ 0');
     if(pagination_index - page_limit >= 0) {
       if(winWidth > 603) {
         $('#portfolio #ptf_showcase .left').css('display', 'block');
