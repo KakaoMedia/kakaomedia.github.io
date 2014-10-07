@@ -3,6 +3,12 @@ layout: en-default
 title: Kakao Media Web Site
 ---
 
+<header>
+  <div id="front_page" class="main">
+    {% include front_page.html %}
+  </div>
+</header>
+
 <div class="navbar navbar-static-top">
 	{% include navigation.html %}
 </div>
@@ -11,16 +17,8 @@ title: Kakao Media Web Site
 	{% include quote.html %}
 </div>
 
-<div id="who_we_are" class="main">
-	{% include who_we_are.html %}
-</div>
-
 <div id="what_we_do" class="main">
 	{% include what_we_do.html %}
-</div>
-
-<div id="how_we_work" class="main">
-	{% include how_we_work.html %}
 </div>
 
 <div id="tools" class="main">
@@ -29,10 +27,6 @@ title: Kakao Media Web Site
 
 <div id="portfolio" class="main">
 	{% include portfolio.html %}
-</div>
-
-<div id="team" class="main">
-	{% include team.html %}
 </div>
 
 <div id="contact" class="main">

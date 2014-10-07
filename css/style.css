@@ -15,6 +15,8 @@ body {
 	padding: 150px 15px;
 	position: relative;
 	text-align: center;
+	padding-top: 100px !important;
+	padding-bottom: 100px !important;
 }
 
 .main .container { position: relative; }
@@ -55,6 +57,17 @@ body {
 	top: 0;
 	width: 100%;
 }
+
+/*------------------------------------*\
+    $CONTENT
+\*------------------------------------*/
+.content {
+	position: relative;
+  z-index: 200;
+  height: 100%;
+  width: 100%;
+}
+
 
 /*------------------------------------*\
     $HEADER
@@ -103,15 +116,35 @@ header a, header a:visited {  color: #FFF;  }
   z-index: 10000;
 }
 
-.navbar-collapse.in { overflow: hidden; }
-
-.navbar, .navbar .container { background-color: #171717; }
-
-.nav>li>a, .nav>li>a {	
-	color: #FFF;
+.navbar-collapse {
+	max-height: none;
 }
 
-.nav>li>a:hover, .nav>li>a:focus {
+.navbar-collapse.in { overflow: hidden; }
+
+.navbar, .navbar .container, .nav.navbar-nav>li.dropdown>ul, .nav.navbar-nav>li.dropdown>button { background-color: #171717; }
+
+.nav.navbar-nav>li.dropdown {
+	padding-top: 0.67em;
+}
+
+.nav.navbar-nav>li.dropdown>button {
+	color: #FFF;
+	border: 0;
+}
+
+.nav>li>a, .nav>li>a, .nav.navbar-nav>li.dropdown>ul>li>a {
+	color: #FFF;
+	padding-left:15px;
+}
+
+ .nav.navbar-nav>li.dropdown>ul>li>a {
+	padding-top: 10px;
+	padding-bottom: 10px;
+ }
+
+.nav>li>a:hover, .nav>li>a:focus, .nav.navbar-nav>li.dropdown>button:hover,
+.nav.navbar-nav>li.dropdown>ul>li>a:hover, .nav.navbar-nav>li.dropdown>ul>li>a:focus {
 	background-color: #171717;
 	color: #F69136;
 }
@@ -223,14 +256,6 @@ header a, header a:visited {  color: #FFF;  }
 		color: #FFF;
 		display: inline-block;
 	}
-}
-
-/*------------------------------------*\
-    $CONTENT
-\*------------------------------------*/
-.content {
-	position: relative;
-    z-index: 200;
 }
 
 /*------------------------------------*\
