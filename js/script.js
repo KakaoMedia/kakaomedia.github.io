@@ -26,24 +26,26 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
         };
 }());
 
-    var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+    var width, height, largeHeader, canvas, ctx, points, target = 0, animateHeader = true, points_anim_min_width = 768;
+    width = window.innerWidth;
+    height = window.innerHeight;
+    target = {x: width/2, y: height/2};
+
+    largeHeader = document.getElementById('large-header');
+    largeHeader.style.height = height+'px';
+
+    canvas = document.getElementById('demo-canvas');
+    canvas.width = width;
+    canvas.height = height;
 
     // Main
-    initHeader();
-    initAnimation();
-    addListeners();
+    if($(window).width() > points_anim_min_width){
+      initHeader();
+      initAnimation();
+      addListeners();
+    }
 
     function initHeader() {
-        width = window.innerWidth;
-        height = window.innerHeight;
-        target = {x: width/2, y: height/2};
-
-        largeHeader = document.getElementById('large-header');
-        largeHeader.style.height = height+'px';
-
-        canvas = document.getElementById('demo-canvas');
-        canvas.width = width;
-        canvas.height = height;
         ctx = canvas.getContext('2d');
 
         // create points
@@ -483,6 +485,7 @@ $("document").ready(function() {
 
 	function methodToFixLayout(e) {
 		var res;
+
     resize();
 
     winWidth = $(window).outerWidth() + 17;
@@ -541,15 +544,6 @@ $("document").ready(function() {
 	}
 
 	$(window).on("resize", methodToFixLayout);
-
-	// $('.navbar').affix({
- //    offset: {
- //      top: 625,
- //      bottom: function () {
- //        return (this.bottom = $('.footer').outerHeight(true));
- //    	}
-	//   }
-	// });
 
   $(window).scroll(navbar_set_pos);
 

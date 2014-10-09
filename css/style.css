@@ -114,6 +114,7 @@ header a, header a:visited {  color: #FFF;  }
   top: 0;
   width: 100%;
   z-index: 10000;
+  display:block;
 }
 
 .navbar-collapse {
