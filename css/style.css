@@ -1525,6 +1525,10 @@ header a, header a:visited {  color: #FFF;  }
 	width: 1.9em;
 }
 
+#contact .icon-gplus::before{
+	padding-left: 6%;
+}
+
 #contact .info_container .fontello{
 	position:relative;
 	top: 1px;

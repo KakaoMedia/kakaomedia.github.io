@@ -10,6 +10,10 @@
   icon:  'icon-facebook fontello'
   url:   'https://facebook.com/kakaoMedia'
 
+- value: 'Find us in Google+'
+  icon:  'icon-gplus fontello'
+  url:   'https://plus.google.com/118115936036474399788/posts'
+
 - value: 'Come and see us in Github!'
   icon:  'icon-github fontello'
   url:   'https://github.com/kakaoMedia'
