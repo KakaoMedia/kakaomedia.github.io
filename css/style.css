@@ -451,7 +451,10 @@ header a, header a:visited {  color: #FFF;  }
 	-webkit-transition: all .2s ease-in-out;
 }
 
-#what_we_do .sub_title:after { width: 39%; }
+#what_we_do .sub_title:after {
+	width: 39%;
+	background: -webkit-gradient(linear, 0 0, 100% 0, from(#000), to(#000), color-stop(50%, #F97E03));
+}
 
 #what_we_do .darker { opacity: 0.4; }
 
@@ -835,6 +838,7 @@ header a, header a:visited {  color: #FFF;  }
 
 #portfolio .sub_title:after {
 	width: 57%;
+	background: -webkit-gradient(linear, 0 0, 100% 0, from(#fff), to(#fff), color-stop(50%, #F97E03));
 }
 
 #portfolio p {
@@ -1518,6 +1522,7 @@ header a, header a:visited {  color: #FFF;  }
 \*------------------------------------*/
 #contact .sub_title:after {
 	width: 43%;
+	background: -webkit-gradient(linear, 0 0, 100% 0, from(#181818), to(#4D4D4D), color-stop(50%, #F97E03));
 }
 
 #contact .fa {
