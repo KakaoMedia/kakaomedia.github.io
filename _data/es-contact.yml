@@ -2,6 +2,10 @@
   icon:  'icon-mail fontello'
   url:   'mailto:info@kakaomedia.com'
 
+- value: 'Ven! Entra a nuestro blog'
+  icon:  'icon-database fontello'
+  url:   'http://blog.kakaomedia.com/'
+
 - value: 'Síguenos!'
   icon:  'icon-twitter fontello'
   url:   'https://twitter.com/@kakaomedia'
