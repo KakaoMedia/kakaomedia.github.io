@@ -46,6 +46,8 @@ body {
 	margin: 10px auto 0;
 	
 	background: -webkit-gradient(linear, 0 0, 100% 0, from(#232323), to(#232323), color-stop(50%, #F97E03));
+	background: -moz-radial-gradient(#F97E03, #000);
+	background: -o-radial-gradient(#F97E03, #000);
 }
 
 .main .darker {
@@ -454,6 +456,8 @@ header a, header a:visited {  color: #FFF;  }
 #what_we_do .sub_title:after {
 	width: 39%;
 	background: -webkit-gradient(linear, 0 0, 100% 0, from(#000), to(#000), color-stop(50%, #F97E03));
+	background: -moz-radial-gradient(#F97E03, #A40, #000);
+	background: -o-radial-gradient(#F97E03, #A40, #000);
 }
 
 #what_we_do .darker { opacity: 0.4; }
@@ -602,7 +606,10 @@ header a, header a:visited {  color: #FFF;  }
 
 #how_we_work h2:after { 
 	background: -webkit-gradient(linear, 0 0, 100% 0, from(#FFF), to(#FFF), color-stop(50%, #F97E03));
-	width: 48%;}
+	background: -moz-radial-gradient(#F97E03, #FFF);
+	background: -o-radial-gradient(#F97E03, #FFF);
+	width: 48%;
+}
 
 #how_we_work .row div {
 	padding: 0 10px;
@@ -838,7 +845,9 @@ header a, header a:visited {  color: #FFF;  }
 
 #portfolio .sub_title:after {
 	width: 57%;
-	background: -webkit-gradient(linear, 0 0, 100% 0, from(#fff), to(#fff), color-stop(50%, #F97E03));
+	background: -webkit-gradient(linear, 0 0, 100% 0, from(#FFF), to(#FFF), color-stop(50%, #F97E03));
+	background: -moz-radial-gradient(#F97E03, #FFF);
+	background: -o-radial-gradient(#F97E03, #FFF);
 }
 
 #portfolio p {
@@ -1523,6 +1532,8 @@ header a, header a:visited {  color: #FFF;  }
 #contact .sub_title:after {
 	width: 43%;
 	background: -webkit-gradient(linear, 0 0, 100% 0, from(#181818), to(#4D4D4D), color-stop(50%, #F97E03));
+	background: -moz-radial-gradient(#F97E03, #000);
+	background: -o-radial-gradient(#F97E03, #000);
 }
 
 #contact .fa {
