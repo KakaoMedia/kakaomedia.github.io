@@ -6,6 +6,6 @@ gallery: [Hurtado(1).jpg, Hurtado(2).jpg, Hurtado(3).jpg]
 footer: Website
 year: 2013
 works: [HTML, CSS3]
-website: http://www.hurtadoarq.com
+website: http://hurtadoarq.com/en
 categories: [portfolio,en]
 ---

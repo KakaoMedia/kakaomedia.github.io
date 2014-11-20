@@ -6,6 +6,6 @@ gallery: [HogardeFe.jpg, HogardeFe2.jpg]
 footer: Website
 year: 2013
 works: [HTML, CSS3]
-website: http://www.hogardefe.org
+website: http://hogardefe.org
 categories: [portfolio,en]
 ---

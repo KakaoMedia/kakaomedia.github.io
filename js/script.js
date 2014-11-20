@@ -441,8 +441,8 @@
       }, time );
   }
 
-  //$("document").on("ready page:change", function() {
-  $("document").ready(function() {
+  $("document").on("ready page:load", function() {
+  //$("document").ready(function() {
   	// Variable declaration
   	var item, overlay, clipPropFirst, clipPropLast, lang, desc_url;
   	var winWidth = $(window).outerWidth() + 17;

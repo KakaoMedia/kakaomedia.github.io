@@ -86,6 +86,7 @@
         <script type="text/javascript" src="/js/plugins/jquery.animate.clip.js"></script>
         <script type="text/javascript" src="/js/plugins/jquery.validate.min.js"></script>
         <script type="text/javascript" src="/js/plugins/jquery.simple-text-rotator.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/turbolinks.js"></script>
         <script type="text/javascript" src="/js/localization/messages_en.js"></script>
         <script type="text/javascript" src="/js/script-min.js"></script>
         <script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
@@ -93,10 +94,12 @@
 
 <!-- Zendesk Intregration -->
 <style type="text/css" media="screen, projection">
-  @import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);
+  @media screen and (min-width: 1100px) {
+    @import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);
+  }
 </style>
 <script type="text/javascript">
-  if (typeof(Zenbox) !== "undefined") {
+  if (typeof(Zenbox) !== "undefined" && $(document).width() >= 1100) {
     Zenbox.init({
       dropboxID:   "20118729",
       url:         "https://kakaomedia.zendesk.com",
