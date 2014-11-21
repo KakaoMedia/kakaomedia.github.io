@@ -464,10 +464,12 @@ header a, header a:visited {  color: #FFF;  }
 
 #what_we_do .row { position: relative; }
 
-#what_we_do .row .first_group > div, #what_we_do .row .second_group > div { 
-	font-size: 17px; 
+#what_we_do .row.work_groups .work_elements{
+	font-size: 17px;
 	margin-bottom: 20px; 
 	position: initial;
+	display: inline-block;
+	margin: 2em 5% auto 5%;
 }
 
 #what_we_do .title_info { cursor: pointer; }
@@ -493,10 +495,15 @@ header a, header a:visited {  color: #FFF;  }
 	}
 }
 
-#what_we_do .first_group .title_info .fontello, #what_we_do .second_group .title_info .fontello{
+#what_we_do .work_elements .title_info a{
+	color: inherit;
+	text-decoration: none;
+}
+
+#what_we_do .work_elements .title_info .fontello{
 	position:relative;
 	top: 1px;
-	font-size:2.5em;
+	font-size: 3em;
 	padding: 0.2em !important;
 	opacity: 1 !important;
 	display: inline-block;
@@ -504,12 +511,11 @@ header a, header a:visited {  color: #FFF;  }
 	border-radius: 50%;
 	width: 2em;
 	height: 2em;
-	font-size: 3em; 
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-#what_we_do #descr-row .fontello, #what_we_do .first_group .info .fontello, #what_we_do .second_group .info .fontello {
+#what_we_do #descr-row .fontello, #what_we_do .work_elements .info .fontello {
 	color: #17DDC5;
 	font-size:2em;
 	display: inline-block;
@@ -551,10 +557,6 @@ header a, header a:visited {  color: #FFF;  }
 	margin: 15px 0px 0;
 }
 
-@media screen (min-width: 992px) {
-	#what_we_do .row .first_group, #what_we_do .row .second_group { height: 0; }
-}
-
 @media screen and (min-width: 992px) and (max-width: 1199px) { 
 	#what_we_do .row .title_info p span { font-size: 0.9em; }
 	.es #what_we_do .row .title_info p span { font-size: 0.8em; }
@@ -563,19 +565,10 @@ header a, header a:visited {  color: #FFF;  }
 @media screen and (min-width: 768px) and (max-width: 991px) {
 	#what_we_do { padding-bottom: 30px; }
 
-	#what_we_do .row .first_group, #what_we_do .row .second_group {
-		height: 160px;
-	}
-
 	#what_we_do .info {
 		left: 16%;
 		margin-right: 29%;
 	}
-
-	#what_we_do .row .first_group > div:nth-child(1) .arrow { left: 10%; }
-	#what_we_do .row .first_group > div:nth-child(2) .arrow { left: 83%; }
-	#what_we_do .row .second_group > div:nth-child(1) .arrow { right: 85%; }
-	#what_we_do .row .second_group > div:nth-child(2) .arrow { right: 11%; }
 }
 
 @media screen and (max-width: 767px) {
@@ -586,9 +579,8 @@ header a, header a:visited {  color: #FFF;  }
 		width: 100%;
 		position: relative;
 	}
-
-	#what_we_do .row .arrow { 
-		left: 48% !important;
+	#what_we_do .row.work_groups .work_elements{
+		display: block;
 	}
 }
 

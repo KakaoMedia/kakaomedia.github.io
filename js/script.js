@@ -512,15 +512,12 @@ $(window).on("resize", methodToFixLayout);
   		$("#what_we_do #second-lead .info").hide();
   		$("#what_we_do #second-lead .title_info").css("color", "#FFF");
   		what_we_do_curr_item_with_focus = "-1";
-  		$("#what_we_do .first_group, #what_we_do .second_group").height("160px");
   		$("#what_we_do").css("padding-bottom", "30px");
 
   		if(winWidth >= 768 && winWidth <= 991) {
-  	    	$("#what_we_do #first_group, #what_we_do #second_group").height(0);
   	    	$("#what_we_do .info:visible").parent().parent().height(($("#what_we_do .info:visible").height() * 2) - 80);
   	    } else if(winWidth > 991) {
   	    	$("#what_we_do").css("padding-bottom", $("#what_we_do .info:visible").height() + 50);
-  	    	$("#what_we_do .first_group, #what_we_do .second_group").height("0");
   	    }
 
   	    if(winWidth <= 991)
@@ -593,6 +590,10 @@ $(window).on("resize", methodToFixLayout);
 
   	//WHAT WE DO - INFO
   	$("#what_we_do .title_info").on('click', function() {
+      if($(this).parent().children(".info").length == 0){
+        $('#descr-row').empty();
+        return null;
+      }
   		var $desc, $row, $cell, $info_desc, $glyph;
   		//$("#what_we_do #second-lead .info").hide();
   		if(winWidth < 768) {
@@ -634,55 +635,107 @@ $(window).on("resize", methodToFixLayout);
   		$info_desc.text($(this).parent().find(".info").find("p").text());
   		$info_desc.appendTo($desc);
 
-  		switch(true) { // the else (default) is winWidth > 768
-  			case $(this).attr("data-nth") === "1":
-  				switch(true) {
-  					case winWidth > 1200:
-  						$glyph.css("left", "4.4%");
-  						break;
-  					default:
-  						$glyph.css("left", "4.4%");
-  				}
-  				break;
-  			case $(this).attr("data-nth") === "2":
-  				switch(true) {
-  					case winWidth > 1200:
-  						$glyph.css("left", "32.6%");
-  						break;
-  					case winWidth > 991:
-  						$glyph.css("left", "31.5%");
-  						break;
-  					default:
-  						$glyph.css("right", "10%");
-  				}
-  				break;
-  			case $(this).attr("data-nth") === "3":
-  				switch(true) {
-  					case winWidth > 1200:
-  						$glyph.css("right", "33.5%");
-  						break;
-  					case winWidth > 991:
-  						$glyph.css("right", "32.25%");
-  						break;
-  					default:
-  						$glyph.css("left", "5.5%");
-  				}
-  				break;
-  			case $(this).attr("data-nth") === "4":
-  				switch(true) {
-  					case winWidth > 1200:
-  						$glyph.css("right", "5%");
-  						break;
-  					case winWidth > 991:
-  						$glyph.css("right", "3.5%");
-  						break;
-  					default:
-  						$glyph.css("right", "10%");
-  				}
-  				break;
-  			default:
-  				$glyph.css("display", "none");
-  		}
+      if( $("body").hasClass("en") ){
+    		switch(true) { // the else (default) is winWidth > 768
+    			case $(this).attr("data-nth") === "1":
+    				switch(true) {
+    					case winWidth > 1200:
+    						$glyph.css("left", "22.8%");
+    						break;
+    					default:
+    						$glyph.css("left", "0");
+    				}
+    				break;
+    			case $(this).attr("data-nth") === "2":
+    				switch(true) {
+    					case winWidth > 1200:
+    						$glyph.css("right", "23.5%");
+    						break;
+    					case winWidth > 991:
+    						$glyph.css("right", "21%");
+    						break;
+    					default:
+    						$glyph.css("right", "0");
+    				}
+    				break;
+    			case $(this).attr("data-nth") === "3":
+    				switch(true) {
+    					case winWidth > 1200:
+    						$glyph.css("left", "32.5%");
+    						break;
+    					case winWidth > 991:
+    						$glyph.css("left", "30.2%");
+    						break;
+    					default:
+    						$glyph.css("left", "16%");
+    				}
+    				break;
+    			case $(this).attr("data-nth") === "4":
+    				switch(true) {
+    					case winWidth > 1200:
+    						$glyph.css("right", "36%");
+    						break;
+    					case winWidth > 991:
+    						$glyph.css("right", "34.6%");
+    						break;
+    					default:
+    						$glyph.css("right", "28%");
+    				}
+    				break;
+    			default:
+    				$glyph.css("display", "none");
+        }
+  		} else {
+        switch(true) { // for Spanish
+          case $(this).attr("data-nth") === "1":
+            switch(true) {
+              case winWidth > 1200:
+                $glyph.css("left", "24.2%");
+                break;
+              default:
+                $glyph.css("left", "0");
+            }
+            break;
+          case $(this).attr("data-nth") === "2":
+            switch(true) {
+              case winWidth > 1200:
+                $glyph.css("right", "17.5%");
+                break;
+              case winWidth > 991:
+                $glyph.css("right", "16%");
+                break;
+              default:
+                $glyph.css("right", "0");
+            }
+            break;
+          case $(this).attr("data-nth") === "3":
+            switch(true) {
+              case winWidth > 1200:
+                $glyph.css("left", "28.7%");
+                break;
+              case winWidth > 991:
+                $glyph.css("left", "28%");
+                break;
+              default:
+                $glyph.css("left", "9.4%");
+            }
+            break;
+          case $(this).attr("data-nth") === "4":
+            switch(true) {
+              case winWidth > 1200:
+                $glyph.css("right", "33.2%");
+                break;
+              case winWidth > 991:
+                $glyph.css("right", "32.4%");
+                break;
+              default:
+                $glyph.css("right", "22%");
+            }
+            break;
+          default:
+            $glyph.css("display", "none");
+        }
+      }
   		if(what_we_do_curr_item_with_focus === $(this).attr("data-nth")){
   			$('#descr').slideUp("slow");
   			what_we_do_curr_item_with_focus = "-1";
