@@ -464,12 +464,13 @@ header a, header a:visited {  color: #FFF;  }
 
 #what_we_do .row { position: relative; }
 
-#what_we_do .row.work_groups .work_elements{
+#what_we_do .work_groups .work_elements{
 	font-size: 17px;
 	margin-bottom: 20px; 
 	position: initial;
 	display: inline-block;
-	margin: 2em 5% auto 5%;
+	margin: 2em auto auto auto;
+	width: 25%;
 }
 
 #what_we_do .title_info { cursor: pointer; }
@@ -557,13 +558,18 @@ header a, header a:visited {  color: #FFF;  }
 	margin: 15px 0px 0;
 }
 
-@media screen and (min-width: 992px) and (max-width: 1199px) { 
+@media screen and (min-width: 992px) and (max-width: 1199px) {
 	#what_we_do .row .title_info p span { font-size: 0.9em; }
 	.es #what_we_do .row .title_info p span { font-size: 0.8em; }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
 	#what_we_do { padding-bottom: 30px; }
+	#what_we_do .work_groups .work_elements{ width: 27%;}
+	.es #what_we_do .work_groups .work_elements{
+		display: block;
+		width: auto;
+	}
 
 	#what_we_do .info {
 		left: 16%;
@@ -579,8 +585,9 @@ header a, header a:visited {  color: #FFF;  }
 		width: 100%;
 		position: relative;
 	}
-	#what_we_do .row.work_groups .work_elements{
+	#what_we_do .work_groups .work_elements{
 		display: block;
+		width: auto;
 	}
 }
 
