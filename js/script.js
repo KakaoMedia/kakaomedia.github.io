@@ -734,7 +734,7 @@ $(window).on("resize", methodToFixLayout);
 
     //Header Items' jump to what_we_do
     $('#front_page .info_list a').on('click', function(event){
-      console.log(event.target.id);
+      what_we_do_curr_item_with_focus = "-1";
       switch(true){
         case event.target.id === 'info_list_startup':
           $('#title_info_startup').triggerHandler('click'); break;
