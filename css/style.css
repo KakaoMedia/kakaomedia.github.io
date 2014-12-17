@@ -327,6 +327,11 @@ header a, header a:visited {  color: #FFF;  }
 	font-family: 'Open Sans', sans-serif;
 }
 
+#front_page .info_list a {
+	color: inherit;
+	text-decoration: none;
+}
+
 @media (max-width: 767px) {
 	#front_page .info_list { 
 		padding: 0 10px;

@@ -639,47 +639,38 @@ $(window).on("resize", methodToFixLayout);
     		switch(true) { // the else (default) is winWidth > 768
     			case $(this).attr("data-nth") === "1":
     				switch(true) {
-    					case winWidth > 1200:
-    						$glyph.css("left", "22.8%");
+    					case winWidth > 960:
+    						$glyph.css("left", "18%");
     						break;
     					default:
-    						$glyph.css("left", "0");
+    						$glyph.css("left", "4%");
     				}
     				break;
     			case $(this).attr("data-nth") === "2":
     				switch(true) {
-    					case winWidth > 1200:
-    						$glyph.css("right", "23.5%");
-    						break;
-    					case winWidth > 991:
-    						$glyph.css("right", "21%");
+    					case winWidth > 960:
+    						$glyph.css("right", "19%");
     						break;
     					default:
-    						$glyph.css("right", "0");
+    						$glyph.css("right", "8%");
     				}
     				break;
     			case $(this).attr("data-nth") === "3":
     				switch(true) {
-    					case winWidth > 1200:
+    					case winWidth > 960:
     						$glyph.css("left", "32.5%");
     						break;
-    					case winWidth > 991:
-    						$glyph.css("left", "30.2%");
-    						break;
     					default:
-    						$glyph.css("left", "16%");
+    						$glyph.css("left", "22.4%");
     				}
     				break;
     			case $(this).attr("data-nth") === "4":
     				switch(true) {
-    					case winWidth > 1200:
-    						$glyph.css("right", "36%");
-    						break;
-    					case winWidth > 991:
-    						$glyph.css("right", "34.6%");
+    					case winWidth > 960:
+    						$glyph.css("right", "33.4%");
     						break;
     					default:
-    						$glyph.css("right", "28%");
+    						$glyph.css("right", "26.8%");
     				}
     				break;
     			default:
@@ -689,8 +680,8 @@ $(window).on("resize", methodToFixLayout);
         switch(true) { // for Spanish
           case $(this).attr("data-nth") === "1":
             switch(true) {
-              case winWidth > 1200:
-                $glyph.css("left", "24.2%");
+              case winWidth > 960:
+                $glyph.css("left", "19.5%");
                 break;
               default:
                 $glyph.css("left", "0");
@@ -698,11 +689,8 @@ $(window).on("resize", methodToFixLayout);
             break;
           case $(this).attr("data-nth") === "2":
             switch(true) {
-              case winWidth > 1200:
-                $glyph.css("right", "17.5%");
-                break;
-              case winWidth > 991:
-                $glyph.css("right", "16%");
+              case winWidth > 960:
+                $glyph.css("right", "19%");
                 break;
               default:
                 $glyph.css("right", "0");
@@ -711,10 +699,10 @@ $(window).on("resize", methodToFixLayout);
           case $(this).attr("data-nth") === "3":
             switch(true) {
               case winWidth > 1200:
-                $glyph.css("left", "28.7%");
+                $glyph.css("left", "33%");
                 break;
-              case winWidth > 991:
-                $glyph.css("left", "28%");
+              case winWidth > 960:
+                $glyph.css("left", "31.7%");
                 break;
               default:
                 $glyph.css("left", "9.4%");
@@ -722,11 +710,8 @@ $(window).on("resize", methodToFixLayout);
             break;
           case $(this).attr("data-nth") === "4":
             switch(true) {
-              case winWidth > 1200:
+              case winWidth > 960:
                 $glyph.css("right", "33.2%");
-                break;
-              case winWidth > 991:
-                $glyph.css("right", "32.4%");
                 break;
               default:
                 $glyph.css("right", "22%");
@@ -746,6 +731,21 @@ $(window).on("resize", methodToFixLayout);
   			what_we_do_curr_item_with_focus = $(this).attr("data-nth");
   		}
   	});
+
+    //Header Items' jump to what_we_do
+    $('#front_page .info_list a').on('click', function(event){
+      console.log(event.target.id);
+      switch(true){
+        case event.target.id === 'info_list_startup':
+          $('#title_info_startup').triggerHandler('click'); break;
+        case event.target.id === 'info_list_design':
+          $('#title_info_design').triggerHandler('click'); break;
+        case event.target.id === 'info_list_ecommerce':
+          $('#title_info_ecommerce').triggerHandler('click'); break;
+        case event.target.id === 'info_list_web':
+          $('#title_info_web').triggerHandler('click'); break;
+      }
+    });
 
   	//Tools
   	$("#tools .first_img .point_guide").waypoint(function(direction) {
