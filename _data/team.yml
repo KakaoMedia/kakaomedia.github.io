@@ -12,13 +12,6 @@
   phone: 85164727
   email: erick@kakaomedia.com
 
-- name: Josue Flores
-  twitter: elnacatamal
-  picture: JosueFlores2.jpg
-  job: Administrative Director
-  phone: 85164727
-  email: josue@kakaomedia.com
-
 - name: Bianka Ponce
   twitter:
   picture: Bianka.jpg
@@ -33,33 +26,12 @@
   phone: 85164727
   email: andrea@kakaomedia.com
 
-- name: Silvio Duarte
+- name: Paul Guerrero
   twitter: 
-  picture: Silvio1.jpg
-  job: Project Manager
-  phone: 85164727
-  email: silvio@kakaomedia.com
-
-- name: Gerardo Ortega
-  twitter: gortega
-  picture: gerardo.jpg
-  job: Lead Developer
-  phone: 85164727
-  email: gerardo@kakaomedia.com
-
-- name: Oswald Lopez
-  twitter: 
-  picture: OswaldLopez1.png
+  picture: Paul.jpg
   job: Web Developer
   phone: 85164727
-  email: oswald@kakaomedia.com
-
-- name: Lucia Gaitán
-  twitter: sassy_lulu25
-  picture: Lucia.jpg
-  job: UX/UI Designer
-  phone: 85164727
-  email: lucia@kakaomedia.com
+  email: paul@kakaomedia.com
 
 - name: Dennis Gallo
   twitter: dgallo_
@@ -68,16 +40,30 @@
   phone: 85164727
   email: dennis@kakaomedia.com
 
-- name: Paul Guerrero
-  twitter: 
-  picture: Paul.jpg
-  job: Web Developer
-  phone: 85164727
-  email: paul@kakaomedia.com
+# - name: Gerardo Ortega
+#   twitter: gortega
+#   picture: gerardo.jpg
+#   job: Lead Developer
+#   phone: 85164727
+#   email: gerardo@kakaomedia.com
 
-- name: Jose Baltodano
-  twitter: 
-  picture: JoseAngel.jpg
-  job: Web Developer
-  phone: 85164727
-  email: JoseAngel@kakaomedia.com
+# - name: Oswald Lopez
+#   twitter: 
+#   picture: OswaldLopez1.png
+#   job: Web Developer
+#   phone: 85164727
+#   email: oswald@kakaomedia.com
+
+# - name: Lucia Gaitán
+#   twitter: sassy_lulu25
+#   picture: Lucia.jpg
+#   job: UX/UI Designer
+#   phone: 85164727
+#   email: lucia@kakaomedia.com
+
+# - name: Jose Baltodano
+#   twitter: 
+#   picture: JoseAngel.jpg
+#   job: Web Developer
+#   phone: 85164727
+#   email: JoseAngel@kakaomedia.com

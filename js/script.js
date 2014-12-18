@@ -553,11 +553,14 @@ $(window).on("resize", methodToFixLayout);
 
   	$(window).on("resize", methodToFixLayout);
 
+
+    // Start of the animation of the phrases in the Quote section
   	$(".rotate").textrotator({
   		animation: "dissolve",
   		separator: ";;;",
   		speed: 2000
   	});
+    // End of the animation of the phrases in the Quote section
 
   	$(".main h2, .main p.lead, #what_we_do .title_info").not("#front_page h2").addClass("animated fadeOut");
 
@@ -927,7 +930,7 @@ $(window).on("resize", methodToFixLayout);
   	}
 
   	function fillProjectData(){
-  		var $ptf_li, index, $ptf_li_ind, $ptf_li_inner, $ptf_li_inner_img;
+  		var $ptf_li, index, text_of_website, $ptf_li_ind, $ptf_li_inner, $ptf_li_inner_img;
   		$('#ptf_brand').text(portfolio_prods[portfolio_item_index].name);
   		$('#ptf_year').text(portfolio_prods[portfolio_item_index].year);
 
@@ -940,7 +943,11 @@ $(window).on("resize", methodToFixLayout);
   		$('#ptf_website').attr('href', portfolio_prods[portfolio_item_index].website );
   		index = portfolio_prods[portfolio_item_index].website.indexOf("://");
   		if(index > -1) {
-  			$('#ptf_website').text(portfolio_prods[portfolio_item_index].website.substring(index+3, portfolio_prods[portfolio_item_index].website.length));
+        text_of_website = portfolio_prods[portfolio_item_index].website.substring(index+3, 25);
+        if(portfolio_prods[portfolio_item_index].website.length > 25){
+          text_of_website += '..';
+        }
+  			$('#ptf_website').text(text_of_website);
   		}
       else {
         $('#ptf_website').text('');
