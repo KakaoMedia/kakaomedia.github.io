@@ -40,30 +40,30 @@
   phone: 85164727
   email: dennis@kakaomedia.com
 
-# - name: Gerardo Ortega
-#   twitter: gortega
-#   picture: gerardo.jpg
-#   job: Coordinador de Desarrollo
-#   phone: 85164727
-#   email: gerardo@kakaomedia.com
+- name: Gerardo Ortega
+  twitter: gortega
+  picture: gerardo.jpg
+  job: Coordinador de Desarrollo
+  phone: 85164727
+  email: gerardo@kakaomedia.com
 
-# - name: Oswald Lopez
-#   twitter: 
-#   picture: OswaldLopez1.png
-#   job: Desarrollador Web
-#   phone: 85164727
-#   email: oswald@kakaomedia.com
+- name: Oswald Lopez
+  twitter: 
+  picture: OswaldLopez1.png
+  job: Desarrollador Web
+  phone: 85164727
+  email: oswald@kakaomedia.com
 
-# - name: Lucia Gaitán
-#   twitter: sassy_lulu25
-#   picture: Lucia.jpg
-#   job: Diseñadora UX/UI
-#   phone: 85164727
-#   email: lucia@kakaomedia.com
+- name: Lucia Gaitán
+  twitter: sassy_lulu25
+  picture: Lucia.jpg
+  job: Diseñadora UX/UI
+  phone: 85164727
+  email: lucia@kakaomedia.com
 
-# - name: Jose Baltodano
-#   twitter: 
-#   picture: JoseAngel.jpg
-#   job: Desarrollador Web
-#   phone: 85164727
-#   email: JoseAngel@kakaomedia.com
+- name: Jose Baltodano
+  twitter: 
+  picture: JoseAngel.jpg
+  job: Desarrollador Web
+  phone: 85164727
+  email: JoseAngel@kakaomedia.com
