@@ -2,9 +2,9 @@
   icon:  'icon-mail fontello'
   url:   'mailto:info@kakaomedia.com'
 
-- value: 'Come! See our blog'
-  icon:  'icon-rss fontello'
-  url:   'http://blog.kakaomedia.com/'
+# - value: 'Come! See our blog'
+#   icon:  'icon-rss fontello'
+#   url:   'http://blog.kakaomedia.com/'
 
 - value: 'Follow us!'
   icon:  'icon-twitter fontello'
