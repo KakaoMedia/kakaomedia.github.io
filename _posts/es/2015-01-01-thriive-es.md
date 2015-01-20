@@ -6,6 +6,6 @@ gallery: [thriive-1.jpg, thriive-2.jpg, thriive-3.jpg]
 footer: Website
 year: 2015
 works: [WORDPRESS, JAVASCRIPT]
-website: thriivenicaragua.org
+website: http://thriivenicaragua.org
 categories: [portfolio,es]
 ---

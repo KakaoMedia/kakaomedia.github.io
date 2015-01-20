@@ -458,6 +458,10 @@ header a, header a:visited {  color: #FFF;  }
 	-webkit-transition: all .2s ease-in-out;
 }
 
+.en #what_we_do .icon-up-dir.fontello{
+	display: none !important;
+}
+
 #what_we_do .sub_title:after {
 	width: 39%;
 	background: -webkit-gradient(linear, 0 0, 100% 0, from(#000), to(#000), color-stop(50%, #F97E03));
