@@ -1,5 +1,5 @@
 ---
-name: Cavasfest
+name: Canvasfest
 lang: es
 img_profile: canvas-front.jpg
 gallery: [canvas-1.jpg, canvas-2.jpg, canvas-3.jpg]
